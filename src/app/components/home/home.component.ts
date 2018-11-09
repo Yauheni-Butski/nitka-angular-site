@@ -9,7 +9,7 @@ import { CategoryService } from '../../services/category.service';
 })
 export class HomeComponent implements OnInit {
 
-  categories: Category[];
+  categories: Category[] = [];
 
   constructor(private categoryService: CategoryService) { }
 
@@ -17,10 +17,14 @@ export class HomeComponent implements OnInit {
     this.getCategories();
   }
 
+  //TODO. For test. Need to debug mapping
+  mapCategories(categ:any) :void {
+    this.categories = categ;
+  }
+
   getCategories(): void {
     /* this.categories = this.categoryService.getCategories(); */
-    this.categoryService.getCategories()
-      .subscribe(categ => this.categories = categ);
+    this.categoryService.getCategories().subscribe(categ => this.mapCategories(categ));
   }
 
 }
