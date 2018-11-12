@@ -6,6 +6,7 @@ export const httpOptions = {
 
 export class BaseService{
     public baseAPIurl = 'http://localhost:13021/api';
+    public categoriesUrl = 'http://localhost:13021/api/categories';
 
     constructor(){
         

@@ -24,8 +24,6 @@ export class CategoryService extends BaseService {
     ];
     return of(testCategories); */
 
-
-    let categoriesUrl = this.baseAPIurl + '/' + 'categories';
-    return this.http.get<Category[]>(categoriesUrl);
+    return this.http.get<Category[]>(this.categoriesUrl);
   }
 }
