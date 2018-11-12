@@ -18,8 +18,18 @@ export class HomeComponent implements OnInit {
   }
 
   //TODO. For test. Need to debug mapping
-  mapCategories(categ:any) :void {
-    this.categories = categ;
+  mapCategories(categ:Category[]) : void {
+
+    this.categories = [];
+    categ.forEach(element => {
+      let categObj = new Category(element);
+      console.log(categObj);
+      this.categories.push(categObj)
+    });
+
+    //this.categories = categ;
+    console.log(this.categories);
+    console.log(this.categories[0].getFullNameDescription());
   }
 
   getCategories(): void {

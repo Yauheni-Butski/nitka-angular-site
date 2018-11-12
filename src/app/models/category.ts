@@ -5,4 +5,12 @@ export class Category{
     order: number;
     description: string;
     coverImagePath: string;
+
+    getFullNameDescription() {
+        return this.name + ' ' + this.description;
+    }
+
+    constructor(data: any) {
+        Object.assign(this, data);
+    }
 }
