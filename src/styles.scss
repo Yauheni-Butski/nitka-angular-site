@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+}
+
+body{
+    margin: 0 30px;
+
+    header{
+        height: 10%;
+        border: solid 1px rgb(236, 162, 162);
+
+        .logo{
+            text-align: center;
+
+            .logo-item{
+                display: inline-block;
+                padding: 10px 10px;
+                border: solid 1px gray;
+            }
+        }
+    }
+
+    div.content{
+        height: 85%;
+        border: solid 1px rgb(91, 171, 247);
+    }
+
+    footer{
+        height: 5%;
+        border: solid 1px rgb(179, 248, 199);
+    }
+}

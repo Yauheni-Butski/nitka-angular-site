@@ -1,6 +1,5 @@
-<p>home works!</p>
-<ul>
-  <li *ngFor="let category of categories">
+<div class="category-cards-container">
+  <div class="category-card" *ngFor="let category of categories">
     <span>{{category.getFullNameDescription() }}</span>
-  </li>
-</ul>
+  </div>
+</div>
