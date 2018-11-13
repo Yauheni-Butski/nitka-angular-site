@@ -17,24 +17,11 @@ export class HomeComponent implements OnInit {
     this.getCategories();
   }
 
-  //TODO. For test. Need to debug mapping
-  mapCategories(categ:Category[]) : void {
-
-    this.categories = [];
-    categ.forEach(element => {
-      let categObj = new Category(element);
-      console.log(categObj);
-      this.categories.push(categObj)
-    });
-
-    //this.categories = categ;
-    console.log(this.categories);
-    console.log(this.categories[0].getFullNameDescription());
-  }
-
   getCategories(): void {
-    /* this.categories = this.categoryService.getCategories(); */
-    this.categoryService.getCategories().subscribe(categ => this.mapCategories(categ));
+
+    this.categoryService.getCategories().subscribe(categories => 
+      categories.map(category => 
+        this.categories.push(new Category(category))));
   }
 
 }

@@ -7,7 +7,7 @@ export class Category{
     coverImagePath: string;
 
     getFullNameDescription() {
-        return this.name + ' ' + this.description;
+        return this.name + ' [ Description: ' + this.description + ']';
     }
 
     constructor(data: any) {
