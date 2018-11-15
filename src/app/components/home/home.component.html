@@ -1,5 +1,15 @@
-<div class="category-cards-container">
-  <div class="category-card" *ngFor="let category of categories">
-    <span>{{category.getFullNameDescription() }}</span>
+<div class="categ-cards-container">
+  <div class="categ-card" *ngFor="let category of categories">
+    <div class="categ-title-container">
+      <div class="categ-title">
+        <h4>
+          <span>{{category.name }}</span></h4>
+      </div>
+      <div class="categ-descr">
+        {{category.description}}
+      </div>
+    </div>
+    <div class="categ-cover-fader"></div>
+    <div class="categ-bg-cover" [ngStyle]="{ 'background-image' : 'url('+ category.coverImagePath +')'}"></div>
   </div>
 </div>

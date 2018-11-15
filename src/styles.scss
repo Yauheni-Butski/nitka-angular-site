@@ -12,17 +12,24 @@ body{
 
         .logo{
             text-align: center;
+            height: 100%;
 
             .logo-item{
+                height: 100%;
                 display: inline-block;
                 padding: 10px 10px;
                 border: solid 1px gray;
+
+                h1{
+                    line-height: unset;
+                }
             }
         }
     }
 
     div.content{
         height: 85%;
+        overflow: auto;
         border: solid 1px rgb(91, 171, 247);
     }
 
