@@ -1,0 +1,17 @@
+<div class="categ-cards-container">
+  <div class="categ-card" *ngFor="let section of sections">
+    <a routerLink="/section/{{section.id}}">
+      <div class="categ-title-container">
+        <div class="categ-title">
+          <h4>
+            <span>{{section.name }}</span></h4>
+        </div>
+        <div class="categ-descr">
+          {{section.description}}
+        </div>
+      </div>
+      <div class="categ-cover-fader"></div>
+      <div class="categ-bg-cover" [ngStyle]="{ 'background-image' : 'url('+ section.coverImagePath +')'}"></div>
+    </a>
+  </div>
+</div>

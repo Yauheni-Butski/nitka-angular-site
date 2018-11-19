@@ -3,13 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { HomeComponent } from './components/home/home.component';
-import { CategoryContentComponent } from './components/category-content/category-content.component';
+import { CategorySectionComponent } from './components/category-section/category-section.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'category/:id', component: CategoryContentComponent },
+  { path: 'category/:id', component: CategorySectionComponent },
   { path: 'gallery', component: GalleryComponent }
 ]
 

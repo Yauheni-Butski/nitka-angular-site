@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Category } from '../models/category';
+import { Section } from '../models/section';
 import { BaseService, httpOptions } from './base.service';
 import { HttpClient } from '@angular/common/http';
 
@@ -26,4 +27,11 @@ export class CategoryService extends BaseService {
 
     return this.http.get<Category[]>(this.categoriesUrl);
   }
+
+  getCategorySection(id: number) : Observable<Section[]> {
+    var url = this.categoriesUrl + '/' + `${id}`;
+    return this.http.get<Section[]>(url)
+  }
+
+
 }
