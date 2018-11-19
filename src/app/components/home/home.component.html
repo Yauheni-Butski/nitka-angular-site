@@ -1,17 +1,1 @@
-<div class="categ-cards-container">
-  <div class="categ-card" *ngFor="let category of categories">
-    <a routerLink="/category/{{category.id}}">
-      <div class="categ-title-container">
-        <div class="categ-title">
-          <h4>
-            <span>{{category.name }}</span></h4>
-        </div>
-        <div class="categ-descr">
-          {{category.description}}
-        </div>
-      </div>
-      <div class="categ-cover-fader"></div>
-      <div class="categ-bg-cover" [ngStyle]="{ 'background-image' : 'url('+ category.coverImagePath +')'}"></div>
-    </a>
-  </div>
-</div>
+<app-image-card-plates [imageCards]="categories"></app-image-card-plates>

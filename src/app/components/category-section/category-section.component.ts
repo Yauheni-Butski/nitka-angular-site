@@ -27,9 +27,18 @@ export class CategorySectionComponent implements OnInit {
 
   getCategoryContent() : void {
     const categoryId = +this.route.snapshot.paramMap.get('id'); 
-    this.categoryService.getCategorySection(categoryId).subscribe(sections =>
-      sections.map(section =>
-        this.sections.push(new Section(section))));
+    this.categoryService.getCategorySection(categoryId).subscribe(sections => this.getCategoriesOnLoad(sections));
+  }
+
+  getCategoriesOnLoad(sections: Section[]){
+    sections.map(section => this.sections.push(new Section(section)));
+    this.prepareSectionUrls();
+  }
+
+  prepareSectionUrls(): void {
+    this.sections.forEach(element => {
+      element.routerLinkUrl = `/section/${element.id}`;
+    });
   }
 
 }

@@ -8,13 +8,15 @@ import { AppComponent } from './components/app/app.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { HomeComponent } from './components/home/home.component';
 import { CategorySectionComponent } from './components/category-section/category-section.component';
+import { ImageCardPlatesComponent } from './components/image-card-plates/image-card-plates.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GalleryComponent,
     HomeComponent,
-    CategorySectionComponent
+    CategorySectionComponent,
+    ImageCardPlatesComponent
   ],
   imports: [
     BrowserModule,

@@ -18,10 +18,18 @@ export class HomeComponent implements OnInit {
   }
 
   getCategories(): void {
+    this.categoryService.getCategories().subscribe(categories => this.getCategoriesOnLoad(categories));
+  }
 
-    this.categoryService.getCategories().subscribe(categories => 
-      categories.map(category => 
-        this.categories.push(new Category(category))));
+  getCategoriesOnLoad(categories: Category[]){
+    categories.map(category => this.categories.push(new Category(category)));
+    this.prepareCategoryUrls();
+  }
+
+  prepareCategoryUrls(): void {
+    this.categories.forEach(element => {
+      element.routerLinkUrl = `/category/${element.id}`;
+    });
   }
 
 }
