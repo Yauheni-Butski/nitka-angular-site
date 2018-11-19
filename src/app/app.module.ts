@@ -7,12 +7,14 @@ import { HttpClientModule }    from '@angular/common/http';
 import { AppComponent } from './components/app/app.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { HomeComponent } from './components/home/home.component';
+import { CategoryContentComponent } from './components/category-content/category-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GalleryComponent,
-    HomeComponent
+    HomeComponent,
+    CategoryContentComponent
   ],
   imports: [
     BrowserModule,
