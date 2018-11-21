@@ -6,6 +6,7 @@ import { BaseService, httpOptions } from './base.service';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
+import { IImageCard } from '../models/interfaces/IImageCard';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class CategoryService extends BaseService {
     super();
   }
 
-  getCategories() : Observable<Category[]> {
+  getCategories() : Observable<IImageCard[]> {
 
     //Offline version. TODO. For TEST
    /*  let testCategories = [
@@ -25,12 +26,12 @@ export class CategoryService extends BaseService {
     ];
     return of(testCategories); */
 
-    return this.http.get<Category[]>(this.categoriesUrl);
+    return this.http.get<IImageCard[]>(this.categoriesUrl);
   }
 
-  getCategorySection(id: number) : Observable<Section[]> {
+  getCategorySection(id: number) : Observable<IImageCard[]> {
     var url = this.categoriesUrl + '/' + `${id}`;
-    return this.http.get<Section[]>(url)
+    return this.http.get<IImageCard[]>(url)
   }
 
 

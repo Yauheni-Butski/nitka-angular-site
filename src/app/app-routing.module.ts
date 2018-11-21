@@ -9,7 +9,7 @@ import { SectionComponent } from './components/section/section.component';
 const routes: Routes = [
   { path: '', redirectTo: '/category', pathMatch: 'full' },
   { path: 'category', component: CategoryComponent },
-  { path: 'category/:id', component: SectionComponent, runGuardsAndResolvers: 'paramsChange' },
+  { path: 'category/:id', component: CategoryComponent, runGuardsAndResolvers: 'paramsChange' },
   { path: 'gallery', component: GalleryComponent }
 ]
 
