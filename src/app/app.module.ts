@@ -6,7 +6,7 @@ import { HttpClientModule }    from '@angular/common/http';
 
 import { AppComponent } from './components/app/app.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { HomeComponent } from './components/home/home.component';
+import { CategoryComponent } from './components/category/category.component';
 import { CategorySectionComponent } from './components/category-section/category-section.component';
 import { ImageCardPlatesComponent } from './components/image-card-plates/image-card-plates.component';
 
@@ -14,7 +14,7 @@ import { ImageCardPlatesComponent } from './components/image-card-plates/image-c
   declarations: [
     AppComponent,
     GalleryComponent,
-    HomeComponent,
+    CategoryComponent,
     CategorySectionComponent,
     ImageCardPlatesComponent
   ],
