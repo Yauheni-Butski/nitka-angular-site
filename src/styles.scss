@@ -4,11 +4,12 @@ html, body {
 }
 
 body{
-    margin: 0 30px;
+    margin: 0 0px;
+    background-color: #f7f7f7;
 
     header{
         height: 10%;
-        border: solid 1px rgb(236, 162, 162);
+        /* border: solid 1px rgb(236, 162, 162); */
 
         .logo{
             text-align: center;
@@ -30,11 +31,18 @@ body{
     div.content{
         height: 85%;
         overflow: auto;
-        border: solid 1px rgb(91, 171, 247);
     }
 
     footer{
         height: 5%;
-        border: solid 1px rgb(179, 248, 199);
+        /* border: solid 1px rgb(179, 248, 199); */
     }
+}
+
+.fullHeight{
+    height: 100%;
+}
+
+.fullWidth{
+    widows: 100%;
 }

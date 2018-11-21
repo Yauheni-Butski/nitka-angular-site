@@ -10,6 +10,7 @@ import { IImageCard } from '../../models/interfaces/IImageCard';
 export class ImageCardPlatesComponent implements OnInit {
 
   @Input() imageCards: IImageCard[] = [];
+  @Input() isFullHeightPlates: boolean = false;
 
   constructor() { }
 
