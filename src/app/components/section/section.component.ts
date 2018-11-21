@@ -8,11 +8,11 @@ import { CategoryService } from '../../services/category.service';
 
 
 @Component({
-  selector: 'app-category-section',
-  templateUrl: './category-section.component.html',
-  styleUrls: ['./category-section.component.scss']
+  selector: 'app-section',
+  templateUrl: './section.component.html',
+  styleUrls: ['./section.component.scss']
 })
-export class CategorySectionComponent implements/*  OnInit,  */OnDestroy {
+export class SectionComponent implements/*  OnInit,  */OnDestroy {
 
   navigationSubscription;
   sections: Section[] = [];

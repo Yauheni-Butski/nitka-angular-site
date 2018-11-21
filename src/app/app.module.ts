@@ -7,7 +7,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { AppComponent } from './components/app/app.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CategoryComponent } from './components/category/category.component';
-import { CategorySectionComponent } from './components/category-section/category-section.component';
+import { SectionComponent } from './components/section/section.component';
 import { ImageCardPlatesComponent } from './components/image-card-plates/image-card-plates.component';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { ImageCardPlatesComponent } from './components/image-card-plates/image-c
     AppComponent,
     GalleryComponent,
     CategoryComponent,
-    CategorySectionComponent,
+    SectionComponent,
     ImageCardPlatesComponent
   ],
   imports: [
