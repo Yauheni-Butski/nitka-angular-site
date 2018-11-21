@@ -47,10 +47,7 @@ export class CategorySectionComponent implements/*  OnInit,  */OnDestroy {
   getCategoriesOnLoad(sections: Section[]){
     this.sections = [];
 
-    sections.map(section => 
-      
-      this.sections.push(new Section(section))
-    );
+    sections.map(section => this.sections.push(new Section(section)));
     this.prepareSectionUrls();
   }
 
