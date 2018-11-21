@@ -16,23 +16,11 @@ export class CategoryService extends BaseService {
     super();
   }
 
-  getCategories() : Observable<IImageCard[]> {
+  getCategories(id? :number) : Observable<IImageCard[]>{
+    var url = id 
+      ? this.categoriesUrl + '/' + `${id}` 
+      : this.categoriesUrl;
 
-    //Offline version. TODO. For TEST
-   /*  let testCategories = [
-      { id: 1, parentId: null, name: "Weeding", order: 1, description: "Some weeding photo", coverImagePath: '/image/test.jpg' },
-      { id: 2, parentId: null, name: "Portrait", order: 2, description: "Some portrait photo", coverImagePath: '/image/test.jpg' },
-      { id: 3, parentId: null, name: "Nature", order: 1, description: "Some nature photo", coverImagePath: '/image/test.jpg' }
-    ];
-    return of(testCategories); */
-
-    return this.http.get<IImageCard[]>(this.categoriesUrl);
+    return this.http.get<IImageCard[]>(url);
   }
-
-  getCategorySection(id: number) : Observable<IImageCard[]> {
-    var url = this.categoriesUrl + '/' + `${id}`;
-    return this.http.get<IImageCard[]>(url)
-  }
-
-
 }

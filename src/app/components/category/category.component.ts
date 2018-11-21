@@ -34,17 +34,15 @@ export class CategoryComponent implements OnDestroy {
 
   getCategories(): void {
     const categoryId = this.activatedRoute.snapshot.paramMap.get('id');
-    //TODO. TEMP call to 2 different urls + the same for Service method.
-    if(categoryId){
-      //if exist - load category
-      this.categoryService.getCategorySection(+categoryId).subscribe(sections => this.getCategoriesOnLoad(sections));
-    }
-    else{
-      this.categoryService.getCategories().subscribe(categories => this.getCategoriesOnLoad(categories));
-    }
+
+    var id = categoryId ? +categoryId : null;
+    this.categoryService.getCategories(id).subscribe(categories => this.getCategoriesOnLoad(categories));
+
   }
 
   getCategoriesOnLoad(categories: IImageCard[]){
+    this.categories = [];
+
     categories.map(category => this.categories.push(new Category(category)));
     this.prepareCategoryUrls();
   }

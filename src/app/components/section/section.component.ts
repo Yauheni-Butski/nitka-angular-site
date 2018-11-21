@@ -40,8 +40,9 @@ export class SectionComponent implements/*  OnInit,  */OnDestroy {
   }
 
   getCategoryContent() : void {
-    const categoryId = +this.activatedRoute.snapshot.paramMap.get('id'); 
-    this.categoryService.getCategorySection(categoryId).subscribe(sections => this.getCategoriesOnLoad(sections));
+    const categoryId = +this.activatedRoute.snapshot.paramMap.get('id');
+    //TODO. TEMP. OLD FUNCTION. WE WILL USE SECTION SERVICE
+    this.categoryService.getCategories(categoryId).subscribe(sections => this.getCategoriesOnLoad(sections));
   }
 
   getCategoriesOnLoad(sections: Section[]){
