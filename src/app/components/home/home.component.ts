@@ -28,7 +28,8 @@ export class HomeComponent implements OnInit {
 
   prepareCategoryUrls(): void {
     this.categories.forEach(element => {
-      element.routerLinkUrl = `/category/${element.id}`;
+      var elementType = element.isLeaf == true ? 'section' : 'category';
+      element.routerLinkUrl = `/${elementType}/${element.id}`;
     });
   }
 

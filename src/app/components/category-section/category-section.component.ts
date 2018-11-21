@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component/* , OnInit */, OnDestroy } from '@angular/core';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 import { Section } from '../../models/section';
 
@@ -12,32 +12,52 @@ import { CategoryService } from '../../services/category.service';
   templateUrl: './category-section.component.html',
   styleUrls: ['./category-section.component.scss']
 })
-export class CategorySectionComponent implements OnInit {
+export class CategorySectionComponent implements/*  OnInit,  */OnDestroy {
 
+  navigationSubscription;
   sections: Section[] = [];
 
   constructor(
     private categoryService: CategoryService,
-    private route: ActivatedRoute
-    ) { }
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+    ) {
+      this.navigationSubscription = this.router.events.subscribe((e: any) => {
+        if (e instanceof NavigationEnd) {
+          this.getCategoryContent();
+        }
+      })
+     }
 
-  ngOnInit() {
+  /*   ngOnInit() {
     this.getCategoryContent();
+  } */
+
+  ngOnDestroy() {
+    if(this.navigationSubscription) {
+      this.navigationSubscription.unsubscribe();
+    }
   }
 
   getCategoryContent() : void {
-    const categoryId = +this.route.snapshot.paramMap.get('id'); 
+    const categoryId = +this.activatedRoute.snapshot.paramMap.get('id'); 
     this.categoryService.getCategorySection(categoryId).subscribe(sections => this.getCategoriesOnLoad(sections));
   }
 
   getCategoriesOnLoad(sections: Section[]){
-    sections.map(section => this.sections.push(new Section(section)));
+    this.sections = [];
+
+    sections.map(section => 
+      
+      this.sections.push(new Section(section))
+    );
     this.prepareSectionUrls();
   }
 
   prepareSectionUrls(): void {
     this.sections.forEach(element => {
-      element.routerLinkUrl = `/section/${element.id}`;
+      var elementType = element.isLeaf == true ? 'section' : 'category';
+      element.routerLinkUrl = `/${elementType}/${element.id}`;
     });
   }
 
