@@ -35,7 +35,53 @@ body{
 
     footer{
         height: 5%;
-        /* border: solid 1px rgb(179, 248, 199); */
+
+        .social-icons{
+            height: 100%;
+            width: 400px;
+            margin: 0 auto;
+
+            position: relative;
+            overflow: hidden;
+
+            .social-icons-wrapper{
+                $iconSize: 26px;
+                $iconsCount: 4;
+                $iconMargin: 10px;
+
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                width: ($iconSize * $iconsCount) + ($iconMargin * 2 * $iconsCount);
+                margin-top: -($iconSize / 2);
+                margin-left: auto;
+                margin-right: auto;
+
+                .s-icon {
+                    float: left;
+                    margin: 0 $iconMargin;
+
+                    a{
+                        &:hover{
+                            img{
+                                -webkit-transform: translateY(-3px) rotate(360deg) scale(1.2);
+                                -moz-transform: translateY(-3px) rotate(360deg) scale(1.2);
+                                -ms-transform: translateY(-3px) rotate(360deg) scale(1.2);
+                                -o-transform: translateY(-3px) rotate(360deg) scale(1.2);
+                            }
+                        }
+
+                        img{
+                            transition: all 0.6s ease;
+
+                            width: $iconSize;
+                            height: $iconSize;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -44,5 +90,5 @@ body{
 }
 
 .fullWidth{
-    widows: 100%;
+    width: 100%;
 }
