@@ -9,6 +9,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { CategoryComponent } from './components/category/category.component';
 import { SectionComponent } from './components/section/section.component';
 import { ImageCardPlatesComponent } from './components/image-card-plates/image-card-plates.component';
+import { CommonNavigationComponent } from './components/common-navigation/common-navigation.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ImageCardPlatesComponent } from './components/image-card-plates/image-c
     GalleryComponent,
     CategoryComponent,
     SectionComponent,
-    ImageCardPlatesComponent
+    ImageCardPlatesComponent,
+    CommonNavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,6 @@ import { ImageCardPlatesComponent } from './components/image-card-plates/image-c
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, CommonNavigationComponent]
 })
 export class AppModule { }
