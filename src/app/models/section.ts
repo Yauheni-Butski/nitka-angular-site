@@ -1,14 +1,7 @@
-import { IImageCard } from './interfaces/IImageCard'
+import { NavLink } from './navLink';
 
-export class Section implements IImageCard {
-    id: number;
-    parentId?: number;
-    name: string;
-    order: number;
-    description: string;
-    coverImagePath: string;
-    routerLinkUrl: string;
-    isLeaf: boolean;
+export class Section{
+    navLinks: NavLink[];
 
     constructor(data: any) {
         Object.assign(this, data);

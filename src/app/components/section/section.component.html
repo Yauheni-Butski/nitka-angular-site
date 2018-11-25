@@ -1,5 +1,7 @@
-<nav>
-  <span><a routerLink="">Home</a></span>
-  <span><a routerLink="/gallery">Gallery</a></span>
+<nav *ngIf="section">
+  <div class="nav-links-wrapper">
+    <div *ngFor="let navLink of section.navLinks" class="section-nav-link">
+      <a routerLink="./{{navLink.routeName}}">{{navLink.title}}</a> <!-- we use "./" for to make link "Main page" be sending to itself.-->
+    </div>
+  </div>
 </nav>
-<app-image-card-plates [imageCards]="sections"></app-image-card-plates>

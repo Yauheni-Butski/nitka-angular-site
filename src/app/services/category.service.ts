@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { Category } from '../models/category';
-import { Section } from '../models/section';
 import { BaseService, httpOptions } from './base.service';
 import { HttpClient } from '@angular/common/http';
 

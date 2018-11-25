@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/category', pathMatch: 'full' },
   { path: 'category', component: CategoryComponent },
   { path: 'category/:id', component: CategoryComponent, runGuardsAndResolvers: 'paramsChange' },
+  { path: 'section/:id', component: SectionComponent },
   { path: 'gallery', component: GalleryComponent }
 ]
 
