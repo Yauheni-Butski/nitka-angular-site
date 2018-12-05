@@ -11,6 +11,9 @@ import { SectionComponent } from './components/section/section.component';
 import { ImageCardPlatesComponent } from './components/image-card-plates/image-card-plates.component';
 import { CommonNavigationComponent } from './components/common-navigation/common-navigation.component';
 
+import { AdminModule } from './admin/admin.module';
+import { AuthModule } from './auth/auth.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,9 @@ import { CommonNavigationComponent } from './components/common-navigation/common
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent, CommonNavigationComponent]
