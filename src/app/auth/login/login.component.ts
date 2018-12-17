@@ -15,13 +15,23 @@ export class LoginComponent {
   }
 
   setMessage() {
-    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
+    this.message = 'You are logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
   }
 
-  login() {
-    this.message = 'Trying to log in ...';
+  logout() {
+    this.authService.logout();
+    this.setMessage();
+  }
 
-    this.authService.login().subscribe(() => {
+  loginUser(event) {
+    event.preventDefault()
+    const target = event.target
+    //TODO. Rework getting values from fields
+    const username = target.querySelector('#username').value
+    const password = target.querySelector('#password').value
+
+    this.message = 'Trying to log in ...';
+    this.authService.loginUser(username, password).subscribe(() => {
       this.setMessage();
       if (this.authService.isLoggedIn) {
         // Get the redirect URL from our auth service
@@ -37,12 +47,11 @@ export class LoginComponent {
 
         // Redirect the user
         this.router.navigate([redirect], navigationExtras);
+      } else {
+        this.message = 'Wrong login or password!';
+        target.querySelector('#username').value = '';
+        target.querySelector('#password').value = '';
       }
     });
-  }
-
-  logout() {
-    this.authService.logout();
-    this.setMessage();
   }
 }

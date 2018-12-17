@@ -1,6 +1,18 @@
 <h2>LOGIN</h2>
 <p>{{message}}</p>
-<p>
-  <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-  <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
-</p>
+
+<form (submit)="loginUser($event)" *ngIf="!authService.isLoggedIn">
+  <div>
+  <div>
+    <input type="text" autocomplete="off" placeholder="Username" id="username">
+  </div>
+  <div>
+    <input type="password" autocomplete="off" placeholder="Password" id="password">
+  </div>
+  <div>
+    <button type="submit" id="submit">Login</button>
+  </div>
+</div>
+</form>
+
+<button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
