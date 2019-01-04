@@ -1,7 +1,4 @@
 import { Injectable } from '@angular/core';
-
-import { Observable, of } from 'rxjs';
-import { tap, delay } from 'rxjs/operators';
 import { BaseService, httpOptions } from '../services/base.service';
 import { HttpClient } from '@angular/common/http';
 
@@ -20,15 +17,7 @@ export class AuthService extends BaseService{
 
   loginUser(username, password) {
     var data = JSON.stringify({username, password});
-    return this.http.post<boolean>(this.loginUrl, data, httpOptions)
-    .subscribe(data => {
-      this.isLoggedIn = data;
-    });
-
-/*     return of(isCanLogin).pipe(
-      delay(1000),
-      tap(val => this.isLoggedIn = isCanLogin)
-    ); */
+    return this.http.post<boolean>(this.loginUrl, data, httpOptions);
   }
 
   logout(): void {
