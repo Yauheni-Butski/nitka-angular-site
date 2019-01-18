@@ -1,7 +1,7 @@
 <h2>LOGIN</h2>
 <p>{{message}}</p>
 
-<form (submit)="loginUser($event)" *ngIf="!authService.isLoggedIn">
+<form (submit)="loginUser($event)" *ngIf="!authService.getLoggedStatus()">
   <div>
   <div>
     <input type="text" autocomplete="off" placeholder="Username" id="username">
@@ -15,4 +15,4 @@
 </div>
 </form>
 
-<button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
+<button (click)="logout()" *ngIf="authService.getLoggedStatus()">Logout</button>

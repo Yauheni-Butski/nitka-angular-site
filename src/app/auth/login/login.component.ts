@@ -15,7 +15,7 @@ export class LoginComponent {
   }
 
   setMessage() {
-    this.message = 'You are logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
+    this.message = 'You are logged ' + (this.authService.getLoggedStatus() ? 'in' : 'out');
   }
 
   logout() {
@@ -33,12 +33,12 @@ export class LoginComponent {
     this.message = 'Trying to log in ...';
     
     this.authService.loginUser(username, password).subscribe(data => {
-      if (data){
-        this.authService.isLoggedIn = true;
+      if (data.success){
+        this.authService.setLoggedStatus(true, data.userToken);
       }
 
       this.setMessage();
-      if (this.authService.isLoggedIn) {
+      if (this.authService.getLoggedStatus()) {
         // Get the redirect URL from our auth service
         // If no redirect has been set, use the default
         let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin';
