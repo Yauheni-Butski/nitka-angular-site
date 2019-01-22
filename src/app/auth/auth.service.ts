@@ -22,7 +22,7 @@ export class AuthService extends BaseService{
   setLoggedStatus(value: boolean, userToken: string) {
     this._isLoggedIn = value;
     localStorage.setItem('loggedIn', value.toString());
-    localStorage.setItem('userToken', JSON.stringify(userToken));
+    localStorage.setItem('userToken', userToken);
   }
   getLoggedStatus(): boolean{
     return this._isLoggedIn;
