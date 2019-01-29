@@ -1,18 +1,20 @@
-<h2>LOGIN</h2>
-<p>{{message}}</p>
+<div class="login-form-wrapper">
+  <h2>LOGIN</h2>
+  <p>{{message}}</p>
 
-<form (submit)="loginUser($event)" *ngIf="!authService.getLoggedStatus()">
-  <div>
-  <div>
-    <input type="text" autocomplete="off" placeholder="Username" id="username">
+  <form (submit)="loginUser($event)" *ngIf="!authService.getLoggedStatus()">
+    <div>
+    <div>
+      <input type="text" autocomplete="off" placeholder="Username" id="username">
+    </div>
+    <div>
+      <input type="password" autocomplete="off" placeholder="Password" id="password">
+    </div>
+    <div>
+      <button type="submit" id="submit">Login</button>
+    </div>
   </div>
-  <div>
-    <input type="password" autocomplete="off" placeholder="Password" id="password">
-  </div>
-  <div>
-    <button type="submit" id="submit">Login</button>
-  </div>
+  </form>
+
+  <button (click)="logout()" *ngIf="authService.getLoggedStatus()">Logout</button>
 </div>
-</form>
-
-<button (click)="logout()" *ngIf="authService.getLoggedStatus()">Logout</button>
