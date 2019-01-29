@@ -2,16 +2,16 @@
   <h2>LOGIN</h2>
   <p>{{message}}</p>
 
-  <form (submit)="loginUser($event)" *ngIf="!authService.getLoggedStatus()">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()" *ngIf="!authService.getLoggedStatus()">
     <div>
     <div>
-      <input type="text" autocomplete="off" placeholder="Username" id="username">
+      <input type="text" autocomplete="off" placeholder="Username" formControlName="username" required>
     </div>
     <div>
-      <input type="password" autocomplete="off" placeholder="Password" id="password">
+      <input type="password" autocomplete="off" placeholder="Password" formControlName="password" required>
     </div>
     <div>
-      <button type="submit" id="submit">Login</button>
+      <button type="submit" [disabled]="!loginForm.valid">Login</button>
     </div>
   </div>
   </form>

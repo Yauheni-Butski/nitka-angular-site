@@ -1,6 +1,7 @@
-import { Component }        from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import { AuthService }      from '../auth.service';
+import { AuthService } from '../auth.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,14 @@ import { AuthService }      from '../auth.service';
 })
 export class LoginComponent {
   message: string;
+  loginForm = this.fb.group({
+    username: ['', Validators.required],
+    password: ['', Validators.required]
+  });
 
-  constructor(public authService: AuthService, public router: Router) {
+  constructor(public authService: AuthService,
+              public router: Router,
+              private fb: FormBuilder) {
     this.setMessage();
   }
 
@@ -23,15 +30,12 @@ export class LoginComponent {
     this.setMessage();
   }
 
-  loginUser(event) {
-    event.preventDefault()
-    const target = event.target
-    //TODO. Rework getting values from fields
-    const username = target.querySelector('#username').value
-    const password = target.querySelector('#password').value
+  loginUser(){
+    const username = this.loginForm.get('username').value;
+    const password = this.loginForm.get('password').value;
 
     this.message = 'Trying to log in ...';
-    
+
     this.authService.loginUser(username, password).subscribe(data => {
       if (data.success){
         this.authService.setLoggedStatus(true, data.userToken);
@@ -54,8 +58,7 @@ export class LoginComponent {
         this.router.navigate([redirect], navigationExtras);
       } else {
         this.message = 'Wrong login or password!';
-        target.querySelector('#username').value = '';
-        target.querySelector('#password').value = '';
+        this.loginForm.setValue({username: '', password: ''});
       }
     });
   }

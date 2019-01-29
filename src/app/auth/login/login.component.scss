@@ -26,6 +26,13 @@
             border-color: #38999b;
             cursor: pointer;
         }
+
+        &[disabled] {
+            border-color: #dbdbdd !important;
+            color: #dbdbdd !important;
+            cursor: default !important;
+            pointer-events: none !important;
+        }
     }
 
     input{
