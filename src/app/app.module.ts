@@ -13,6 +13,10 @@ import { CommonNavigationComponent } from './components/common-navigation/common
 
 import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
+/* Layouts */
+import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
+import { SiteHeaderComponent } from './_layout/site-header/site-header.component';
+import { SiteFooterComponent } from './_layout/site-footer/site-footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,10 @@ import { AuthModule } from './auth/auth.module';
     CategoryComponent,
     SectionComponent,
     ImageCardPlatesComponent,
-    CommonNavigationComponent
+    CommonNavigationComponent,
+    SiteLayoutComponent,
+    SiteHeaderComponent,
+    SiteFooterComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +38,6 @@ import { AuthModule } from './auth/auth.module';
     AuthModule
   ],
   providers: [],
-  bootstrap: [AppComponent, CommonNavigationComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

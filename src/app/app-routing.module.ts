@@ -5,13 +5,22 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { CategoryComponent } from './components/category/category.component';
 import { SectionComponent } from './components/section/section.component';
 
+/* Layouts */
+import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/category', pathMatch: 'full' },
-  { path: 'category', component: CategoryComponent },
-  { path: 'category/:id', component: CategoryComponent, runGuardsAndResolvers: 'paramsChange' },
-  { path: 'section/:id', component: SectionComponent },
-  { path: 'gallery', component: GalleryComponent }
+
+  //Site (layout) routes
+  {
+    path: '',
+    component: SiteLayoutComponent,
+    children: [
+      { path: '', component: CategoryComponent, pathMatch: 'full' },
+      { path: 'category/:id', component: CategoryComponent, runGuardsAndResolvers: 'paramsChange' },
+      { path: 'section/:id', component: SectionComponent },
+      { path: 'gallery', component: GalleryComponent }
+    ]
+  },
 ]
 
 @NgModule({

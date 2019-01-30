@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../auth/auth.guard';
 
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
-import { LoginComponent } from '../auth/login/login.component';
 
 const adminRoutes: Routes = [
   { path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard] }
