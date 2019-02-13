@@ -1,4 +1,8 @@
-.full-height-home-container{
-    height: 100%;
+.category-cards-wrapper{
     overflow: hidden;
+    height: calc(100% - 53px); /*Inner navigation height*/
+
+    &.full-h-cards{
+        height: 100%;
+    }
 }

@@ -13,6 +13,7 @@ export class CategoryComponent implements OnDestroy {
 
   navigationSubscription: any;
   category: Category;
+  hasInnerNavigation: boolean = false;
 
   constructor(
     private categoryService: CategoryService,
@@ -41,6 +42,7 @@ export class CategoryComponent implements OnDestroy {
 
   getCategoryOnLoad(category: Category){
     this.category = new Category(category);
+    this.hasInnerNavigation = (category.navLinks !== null && category.navLinks.length !== 0);
     this.prepareCategoryUrls();
   }
 

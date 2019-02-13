@@ -1,3 +1,4 @@
-<div class="full-height-home-container">
+<app-inner-nav *ngIf="hasInnerNavigation" [navLinks]="category.navLinks"></app-inner-nav>
+<div [class.full-h-cards]="!hasInnerNavigation"  class="category-cards-wrapper">
     <app-image-card-plates [imageCards]="category.categoryCards" [isFullHeightPlates]="true">Loading...</app-image-card-plates> <!-- TODO. Add loading. gif in the middle -->
 </div>
