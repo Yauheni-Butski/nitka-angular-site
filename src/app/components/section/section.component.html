@@ -1,7 +1,3 @@
 <nav *ngIf="section">
-  <div class="nav-links-wrapper">
-    <div *ngFor="let navLink of section.navLinks" class="section-nav-link">
-      <a routerLink="./{{navLink.routeName}}">{{navLink.title}}</a> <!-- we use "./" for to make link "Main page" be sending to itself.-->
-    </div>
-  </div>
+  <app-inner-nav [navLinks]="section.navLinks"></app-inner-nav>
 </nav>

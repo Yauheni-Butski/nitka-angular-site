@@ -1,18 +1,9 @@
-import { IImageCard } from './interfaces/IImageCard'
+import { NavLink } from './navLink';
+import { CategoryCard } from './categoryCard';
 
-export class Category implements IImageCard{
-    id: number;
-    parentId?: number;
-    name: string;
-    order: number;
-    description: string;
-    coverImagePath: string;
-    routerLinkUrl: string;
-    isLeaf: boolean;
-
-    getFullNameDescription() {
-        return this.name + ' [ Description: ' + this.description + ']';
-    }
+export class Category {
+    navLinks: NavLink[];
+    categoryCards: CategoryCard[];
 
     constructor(data: any) {
         Object.assign(this, data);

@@ -17,6 +17,7 @@ import { AuthModule } from './auth/auth.module';
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
 import { SiteHeaderComponent } from './_layout/site-header/site-header.component';
 import { SiteFooterComponent } from './_layout/site-footer/site-footer.component';
+import { InnerNavComponent } from './components/_shared/inner-nav/inner-nav.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SiteFooterComponent } from './_layout/site-footer/site-footer.component
     CommonNavigationComponent,
     SiteLayoutComponent,
     SiteHeaderComponent,
-    SiteFooterComponent
+    SiteFooterComponent,
+    InnerNavComponent
   ],
   imports: [
     BrowserModule,

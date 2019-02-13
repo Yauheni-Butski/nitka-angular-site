@@ -1,0 +1,7 @@
+<nav>
+  <div class="nav-links-wrapper">
+    <div *ngFor="let navLink of this.navLinks" class="inner-nav-link">
+      <a routerLink="{{navLink.relativeUrl}}">{{navLink.title}}</a>
+    </div>
+  </div>
+</nav>

@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 
 import { Category } from '../models/category';
-import { BaseService, httpOptions } from './base.service';
+import { BaseService} from './base.service';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
-import { IImageCard } from '../models/interfaces/IImageCard';
+import { Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +14,11 @@ export class CategoryService extends BaseService {
     super();
   }
 
-  getCategories(id? :number) : Observable<IImageCard[]>{
+  getCategory(id? :number) : Observable<Category>{
     var url = id 
       ? this.categoriesUrl + '/' + `${id}` 
       : this.categoriesUrl;
 
-    return this.http.get<IImageCard[]>(url);
+    return this.http.get<Category>(url);
   }
 }

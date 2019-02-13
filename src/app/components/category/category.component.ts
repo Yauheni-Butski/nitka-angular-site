@@ -3,7 +3,6 @@ import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 import { Category } from '../../models/category';
 import { CategoryService } from '../../services/category.service';
-import { IImageCard } from 'src/app/models/interfaces/IImageCard';
 
 @Component({
   selector: 'app-category',
@@ -13,7 +12,7 @@ import { IImageCard } from 'src/app/models/interfaces/IImageCard';
 export class CategoryComponent implements OnDestroy {
 
   navigationSubscription: any;
-  categories: Category[] = [];
+  category: Category;
 
   constructor(
     private categoryService: CategoryService,
@@ -36,19 +35,17 @@ export class CategoryComponent implements OnDestroy {
     const categoryId = this.activatedRoute.snapshot.paramMap.get('id');
 
     var id = categoryId ? +categoryId : null;
-    this.categoryService.getCategories(id).subscribe(categories => this.getCategoriesOnLoad(categories));
+    this.categoryService.getCategory(id).subscribe(categoryRes => this.getCategoryOnLoad(categoryRes));
 
   }
 
-  getCategoriesOnLoad(categories: IImageCard[]){
-    this.categories = [];
-
-    categories.map(category => this.categories.push(new Category(category)));
+  getCategoryOnLoad(category: Category){
+    this.category = new Category(category);
     this.prepareCategoryUrls();
   }
 
   prepareCategoryUrls(): void {
-    this.categories.forEach(element => {
+    this.category.categoryCards.forEach(element => {
       var elementType = element.isLeaf == true ? 'section' : 'category';
       element.routerLinkUrl = `/${elementType}/${element.id}`;
     });

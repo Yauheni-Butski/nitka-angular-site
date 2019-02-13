@@ -1,6 +1,6 @@
 export class NavLink{
     title: string;
-    routeName: string;
+    relativeUrl: string;
     order: number;
 
     constructor(data: any) {
