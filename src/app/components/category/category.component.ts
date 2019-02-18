@@ -3,7 +3,7 @@ import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 import { Category } from '../../models/category';
 import { CategoryService } from '../../services/category.service';
-import { delay } from 'rxjs/operators'; //FOR TEST LOADING SPINNER
+//import { delay } from 'rxjs/operators'; //FOR TEST LOADING SPINNER
 
 @Component({
   selector: 'app-category',
@@ -38,7 +38,7 @@ export class CategoryComponent implements OnDestroy {
 
     var id = categoryId ? +categoryId : null;
     this.categoryService.getCategory(id)
-      .pipe(delay(1000)) //FOR TEST LOADING SPINNER
+      //.pipe(delay(1000)) //FOR TEST LOADING SPINNER
       .subscribe(categoryRes => this.getCategoryOnLoad(categoryRes));
 
   }

@@ -13,7 +13,6 @@ import { SectionService } from '../../services/section.service';
   styleUrls: ['./section.component.scss']
 })
 export class SectionComponent implements OnInit {
-
   section: Section;
 
   constructor(
