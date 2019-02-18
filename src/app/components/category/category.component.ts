@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 import { Category } from '../../models/category';
 import { CategoryService } from '../../services/category.service';
+import { delay } from 'rxjs/operators'; //FOR TEST LOADING SPINNER
 
 @Component({
   selector: 'app-category',
@@ -36,7 +37,9 @@ export class CategoryComponent implements OnDestroy {
     const categoryId = this.activatedRoute.snapshot.paramMap.get('id');
 
     var id = categoryId ? +categoryId : null;
-    this.categoryService.getCategory(id).subscribe(categoryRes => this.getCategoryOnLoad(categoryRes));
+    this.categoryService.getCategory(id)
+      .pipe(delay(1000)) //FOR TEST LOADING SPINNER
+      .subscribe(categoryRes => this.getCategoryOnLoad(categoryRes));
 
   }
 
@@ -47,6 +50,7 @@ export class CategoryComponent implements OnDestroy {
   }
 
   prepareCategoryUrls(): void {
+    debugger;
     this.category.categoryCards.forEach(element => {
       var elementType = element.isLeaf == true ? 'section' : 'category';
       element.routerLinkUrl = `/${elementType}/${element.id}`;

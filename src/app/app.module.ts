@@ -18,6 +18,7 @@ import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component
 import { SiteHeaderComponent } from './_layout/site-header/site-header.component';
 import { SiteFooterComponent } from './_layout/site-footer/site-footer.component';
 import { InnerNavComponent } from './components/_shared/inner-nav/inner-nav.component';
+import { LoadingSpinnerComponent } from './components/_shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { InnerNavComponent } from './components/_shared/inner-nav/inner-nav.comp
     SiteLayoutComponent,
     SiteHeaderComponent,
     SiteFooterComponent,
-    InnerNavComponent
+    InnerNavComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
