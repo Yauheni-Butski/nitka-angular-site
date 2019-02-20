@@ -1,5 +1,6 @@
 $imageColumnsCount: 5;
-
+$imagePlateBorderRadius: 14px;
+$fadeAndScaleTransitionTime: 0.2s;
 
 .section-content-wrapper{
     overflow: auto;
@@ -14,13 +15,14 @@ $imageColumnsCount: 5;
         column-count:         $imageColumnsCount;
         column-gap:           0px;
 
-        img{
+        /* Первый вариант. */
+/*         img{
             width: 100%;
             height: auto;
 
-            border: 5px solid transparent; /*Add border for images*/
-            border-radius: 14px;
-        }
+            border: 5px solid transparent; 
+            border-radius: $imagePlateBorderRadius;
+        } */
 
         /* Второй вариант */
         .image-plate{
@@ -28,20 +30,52 @@ $imageColumnsCount: 5;
             height: auto;
             display: inline-block;
 
-            border: 5px solid transparent; /*Add border for images*/
-
+            border: 3.5px solid transparent; /*Add border for images*/ /*Оставляем или 3.5px + закругление, или 1px и без закругления*/
             
-            .image-holder{
-                background-size: cover;
-                background-position: center;
-                border-radius: 14px;
+            .plate-wrapper{
+                position: relative;
+                border-radius: $imagePlateBorderRadius; /*Оставляем или 3.5px + закругление, или 1px и без закругления*/
+                overflow: hidden;
+                cursor: pointer;
+                /*Fix scale + overflow + border-radius on Chrome*/
+                -webkit-transform: translate(0px,0px);
+                -moz-transform: translate(0px,0px);
+                -ms-transform: translate(0px,0px);
+                -o-transform: translate(0px,0px);
 
-                img{
-                    visibility: hidden;
+                &:hover{
+                    .image-holder{
+                        -webkit-transform: scale(1.05);
+                        -moz-transform: scale(1.05);
+                        -ms-transform: scale(1.05);
+                        -o-transform: scale(1.05);
+                    }
+                    .image-fader{
+                        background-color: rgba(0,0,0,0.2);
+                    }
+                }
 
-                    /* Просто для показа - Если квадратные нужны. Просто чтобы показать*/
-                    /* width: 380.6px;
-                    height: 380.6px; */
+                .image-holder{
+                    background-size: cover;
+                    background-position: center;
+                    transition: all $fadeAndScaleTransitionTime ease-in-out;
+    
+                    img{
+                        width: 100%;
+                        visibility: hidden;
+                    }
+                }
+    
+                .image-fader{
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                    background-color: rgba(0,0,0,0);
+                    -webkit-transition: all $fadeAndScaleTransitionTime ease;
+                    transition: all $fadeAndScaleTransitionTime ease;
+                    z-index: 100;
                 }
             }
         }

@@ -1,7 +1,6 @@
 <app-inner-nav *ngIf="section" [navLinks]="section.navLinks"></app-inner-nav>
 
 <div class="section-content-wrapper">
-        <!-- <app-image-card-plates *ngIf="category" [imageCards]="category.categoryCards" [isFullHeightPlates]="true"></app-image-card-plates> -->
         <ng-container *ngIf="section">
         <div class="image-plate-container">
 
@@ -10,12 +9,13 @@
 
             <!-- Второй вариант, через Backgroung image, чтобы можно было сентрировать изображение -->
             <div class="image-plate" *ngFor="let imagePlate of section.imagePlates">
-                <div class="image-holder" [ngStyle]="{ 'background-image' : 'url('+ imagePlate.thumbPath +')'}">
-                        <img [src]="imagePlate.thumbPath">
+                <div class="plate-wrapper">
+                    <div class="image-fader"></div>
+                    <div class="image-holder" [ngStyle]="{ 'background-image' : 'url('+ imagePlate.thumbPath +')'}">
+                            <img [src]="imagePlate.thumbPath">
+                    </div>
                 </div>
             </div>
-
-
         </div>
         </ng-container>
         <app-loading-spinner *ngIf="!section"></app-loading-spinner>
