@@ -1,0 +1,17 @@
+<div class="image-lightbox-viewer">
+  <div class="top-right">
+    <div class="close-btn" (click)="closeViewer()">
+        <i class="material-icons">close</i>
+    </div>
+  </div>
+  <div class="loader-spinner">
+    <app-loading-spinner [spinnerHeight]="80" [spinnerWidth]="80"></app-loading-spinner>
+  </div>
+  <div *ngIf="activeImage" class="acive-image" [ngStyle]="{ 'background-image' : 'url('+ activeImage.imagePath +')'}"></div>
+  <div class="img-nav-link prev"> <!--TODO. Disable or not-->
+    <i class="material-icons">navigate_before</i>
+  </div>
+  <div class="img-nav-link next"> <!-- TODO. Visible or not-->
+    <i class="material-icons">navigate_next</i>
+  </div>
+</div>

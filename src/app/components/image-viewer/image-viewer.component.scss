@@ -1,0 +1,103 @@
+.image-lightbox-viewer{
+    background-color: rgba(0,0,0,0.9);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 10001;
+
+    .top-right{
+        position: absolute;
+        top: 20px;
+        right: 45px;
+
+        .close-btn{
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+            
+            &:hover{
+                i{
+                    -webkit-transform: scale(1.2);
+                    -moz-transform: scale(1.2);
+                    -ms-transform: scale(1.2);
+                    -o-transform: scale(1.2);
+                }
+            }
+
+            i{
+                color: #fff;
+                font-size: 40px;
+            }
+        }
+    }
+
+    .loader-spinner{
+        position: absolute;
+        z-index: 9997;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+    }
+
+    .img-nav-link{
+        z-index: 9999;
+        position: absolute;
+        cursor: pointer;
+        top: 80px;
+        bottom: 70px;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+        width: 80px;
+
+        &.prev{
+            left: 0;
+
+            i{
+                left: 20px;
+            }
+        }
+        &.next{
+            right: 0;
+
+            i{
+                right: 20px;
+            }
+        }
+
+        i{
+            color: #fff;
+            font-size: 60px;
+            line-height: 60px;
+            margin-top: -30px;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+
+            &:hover{
+                -webkit-transform: scale(1.2);
+                -moz-transform: scale(1.2);
+                -ms-transform: scale(1.2);
+                -o-transform: scale(1.2);
+            }
+        }
+    }
+
+    .acive-image{
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
+        bottom: 80px;
+        -webkit-background-size: contain;
+        background-size: contain;
+        z-index: 9998;
+        background-position: center center;
+        background-repeat: no-repeat;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+}

@@ -2,30 +2,18 @@
 
 <div class="section-content-wrapper">
         <ng-container *ngIf="section">
-        <div class="image-plate-container">
+            <div class="image-plate-container">
 
-            <!--Первый вариант. Просто через IMG вставляем -->
-            <!-- <img *ngFor="let imagePlate of section.imagePlates" [src]="imagePlate.thumbPath"> -->
+                <!--Первый вариант. Просто через IMG вставляем -->
+                <!-- <img *ngFor="let imagePlate of section.imagePlates" [src]="imagePlate.thumbPath"> -->
 
-            <!-- Второй вариант, через Backgroung image, чтобы можно было сентрировать изображение -->
-            <div class="image-plate" *ngFor="let imagePlate of section.imagePlates">
-                <div class="plate-wrapper">
-                    <div class="image-fader"></div>
-                    <div class="image-title-actions">
-                        <div class="action-wrapper">
-                            <i class="material-icons action-icon">zoom_in</i>
-                            <!-- <span class="action-title">Увеличить</span> --> <!--TODO. Поменять разметку, чтобы наведение лучше работало-->
-                        </div>
-                        <!-- <div class="action-wrapper">
-                            <i class="material-icons action-icon">perm_contact_calendar</i>
-                        </div> -->
-                    </div>
-                    <div class="image-holder" [ngStyle]="{ 'background-image' : 'url('+ imagePlate.thumbPath +')'}">
-                            <img [src]="imagePlate.thumbPath">
-                    </div>
-                </div>
+                <!-- Второй вариант, через Backgroung image, чтобы можно было сентрировать изображение -->
+                <ng-container *ngFor="let imagePlate of section.imagePlates">
+                    <app-galerry-image-plate [imagePlate]="imagePlate" (zoomingImage)="showImageViewer($event)"></app-galerry-image-plate>
+                </ng-container>
             </div>
-        </div>
         </ng-container>
         <app-loading-spinner *ngIf="!section"></app-loading-spinner>
 </div>
+
+<app-image-viewer *ngIf="isImageViewerVisible" [activeImage]="activeImage" [images]="section.imagePlates" (onCloseViewer)="closeImageViewer()"></app-image-viewer>

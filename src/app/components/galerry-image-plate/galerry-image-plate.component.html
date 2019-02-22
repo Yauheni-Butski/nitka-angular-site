@@ -1,0 +1,17 @@
+<div *ngIf="imagePlate" class="image-plate">
+  <div  class="plate-wrapper">
+      <div class="image-fader"></div>
+      <div class="image-title-actions">
+          <div class="action-wrapper" (click)="this.zoomImage()">
+              <i class="material-icons action-icon">zoom_in</i>
+              <!-- <span class="action-title">Увеличить</span> --> <!--TODO. Поменять разметку, чтобы наведение лучше работало-->
+          </div>
+          <!-- <div class="action-wrapper">
+              <i class="material-icons action-icon">perm_contact_calendar</i>
+          </div> -->
+      </div>
+      <div class="image-holder" [ngStyle]="{ 'background-image' : 'url('+ imagePlate.thumbPath +')'}">
+              <img [src]="imagePlate.thumbPath">
+      </div>
+  </div>
+</div>

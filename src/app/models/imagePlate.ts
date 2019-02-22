@@ -1,4 +1,5 @@
 export class ImagePlate{
+    id: number;
     thumbPath: string;
     imagePath: string;
 

@@ -19,6 +19,8 @@ import { SiteHeaderComponent } from './_layout/site-header/site-header.component
 import { SiteFooterComponent } from './_layout/site-footer/site-footer.component';
 import { InnerNavComponent } from './components/_shared/inner-nav/inner-nav.component';
 import { LoadingSpinnerComponent } from './components/_shared/loading-spinner/loading-spinner.component';
+import { GalerryImagePlateComponent } from './components/galerry-image-plate/galerry-image-plate.component';
+import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { LoadingSpinnerComponent } from './components/_shared/loading-spinner/lo
     SiteHeaderComponent,
     SiteFooterComponent,
     InnerNavComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    GalerryImagePlateComponent,
+    ImageViewerComponent
   ],
   imports: [
     BrowserModule,

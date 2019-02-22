@@ -5,7 +5,7 @@ import { ActivatedRoute} from '@angular/router';
 import { Section } from '../../models/section';
 
 import { SectionService } from '../../services/section.service';
-
+import { ImagePlate } from 'src/app/models/imagePlate';
 
 @Component({
   selector: 'app-section',
@@ -14,6 +14,8 @@ import { SectionService } from '../../services/section.service';
 })
 export class SectionComponent implements OnInit {
   section: Section;
+  isImageViewerVisible: boolean = false;
+  activeImage: ImagePlate;
 
   constructor(
     private sectionService: SectionService,
@@ -24,11 +26,19 @@ export class SectionComponent implements OnInit {
       this.getSectionContent();
     }
 
+    getSectionContent() : void {
+      const sectionId = +this.activatedRoute.snapshot.paramMap.get('id');
 
-  getSectionContent() : void {
-    const sectionId = +this.activatedRoute.snapshot.paramMap.get('id');
+      this.sectionService.getSection(sectionId)
+        .subscribe(section => { this.section = new Section(section) });
+    }
 
-    this.sectionService.getSection(sectionId)
-      .subscribe(section => { this.section = new Section(section) });
-  }
+    showImageViewer(activeImagePlateId: number){
+      this.activeImage = this.section.imagePlates.find(ip => ip.id === activeImagePlateId);
+      this.isImageViewerVisible = true;
+    }
+
+    closeImageViewer(){
+      this.isImageViewerVisible = false;
+    }
 }
