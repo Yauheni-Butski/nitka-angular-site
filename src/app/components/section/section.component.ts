@@ -14,8 +14,7 @@ import { ImagePlate } from 'src/app/models/imagePlate';
 })
 export class SectionComponent implements OnInit {
   section: Section;
-  isImageViewerVisible: boolean = false;
-  activeImage: ImagePlate;
+  activeImage: ImagePlate = null;
 
   constructor(
     private sectionService: SectionService,
@@ -35,10 +34,9 @@ export class SectionComponent implements OnInit {
 
     showImageViewer(activeImagePlateId: number){
       this.activeImage = this.section.imagePlates.find(ip => ip.id === activeImagePlateId);
-      this.isImageViewerVisible = true;
     }
 
     closeImageViewer(){
-      this.isImageViewerVisible = false;
+      this.activeImage = null;
     }
 }

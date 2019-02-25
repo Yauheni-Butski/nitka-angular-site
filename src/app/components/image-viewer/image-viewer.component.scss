@@ -19,6 +19,7 @@
             
             &:hover{
                 i{
+                    opacity: 1;
                     -webkit-transform: scale(1.2);
                     -moz-transform: scale(1.2);
                     -ms-transform: scale(1.2);
@@ -29,6 +30,8 @@
             i{
                 color: #fff;
                 font-size: 40px;
+                opacity: 0.5;
+                transition: .2s;
             }
         }
     }
@@ -55,34 +58,46 @@
 
         &.prev{
             left: 0;
-
-            i{
-                left: 20px;
+        
+            .nav-icon{
+                left: 0;
+                margin: -12px 0 0 38px;
+                background-position: -12px -41px;
             }
         }
         &.next{
             right: 0;
 
-            i{
-                right: 20px;
+            .nav-icon{
+                right: 0;
+                margin: -12px 38px 0 0;
+                background-position: -14px -75px;
             }
         }
 
-        i{
-            color: #fff;
-            font-size: 60px;
-            line-height: 60px;
-            margin-top: -30px;
-            display: inline-block;
-            position: absolute;
-            top: 50%;
-
-            &:hover{
+        &:hover{
+            .nav-icon{
+                opacity: 1;
                 -webkit-transform: scale(1.2);
                 -moz-transform: scale(1.2);
                 -ms-transform: scale(1.2);
                 -o-transform: scale(1.2);
             }
+        }
+
+        .nav-icon{
+            opacity: 0.5;
+            width: 16px;
+            height: 24px;
+            position: absolute;
+            top: 50%;
+            pointer-events: none;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+            -o-transition: .2s;
+            transition: .2s;
+            background-image: url("/assets/icons/viewerIcons.png");
+            background-repeat: no-repeat;
         }
     }
 
@@ -91,7 +106,7 @@
         top: 60px;
         right: 0;
         left: 0;
-        bottom: 80px;
+        bottom: 75px;
         -webkit-background-size: contain;
         background-size: contain;
         z-index: 9998;
@@ -99,5 +114,77 @@
         background-repeat: no-repeat;
         -webkit-transition: all 0.5s ease;
         transition: all 0.5s ease;
+    }
+
+    .thumbnails-container{
+        position: absolute;
+        right: 0px;
+        left: 0px;
+        bottom: 0px;
+        z-index: 9998;
+        height: 70px;
+        padding-bottom: 10px;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        overflow: hidden;
+        text-align: center;
+
+        //border: solid 1px white; /*For test*/
+
+        .thumbnail-wrapper{
+            /* margin: 0px auto; */
+            position: relative;
+            display: inline-block;
+            /* max-width: 70%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            height: 100%; */
+            
+            .thumb-item{
+                float: left; //for using hor. scroll
+                //display: inline-block; //for using hor. scroll
+                margin: 0px 5px;
+                cursor: pointer;
+                position: relative;
+
+                &::-webkit-scrollbar { 
+                    display: none;
+                    height: 0;
+                }
+
+                .thumb-item-bg{
+                    //background-image: url(http://cdn.pinsupreme.com/wp-content/uploads/2015/05/photo56-150x150.jpg);
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    width: 60px;
+                    height: 60px;
+                    background-size: cover;
+                }
+                .thumb-item-fader{
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    left: 0px;
+                    bottom: 0px;
+                    background-color: rgba(0,0,0,0.4);
+                    -webkit-transition: all 0.3s linear;
+                    transition: all 0.3s linear;
+                }
+
+                &.active{
+                    .thumb-item-fader{
+                        -webkit-box-shadow: inset 0px 0px 0px 5px #fff;
+                        box-shadow: inset 0px 0px 0px 5px #fff;
+                    }
+                }
+
+                &:hover{
+                    .thumb-item-fader{
+                        background-color: rgba(0,0,0,0);
+                    }
+                }
+            }
+        }
     }
 }

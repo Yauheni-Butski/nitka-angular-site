@@ -1,4 +1,4 @@
-<div class="image-lightbox-viewer">
+<div class="image-lightbox-viewer" *ngIf="activeImage !== null">
   <div class="top-right">
     <div class="close-btn" (click)="closeViewer()">
         <i class="material-icons">close</i>
@@ -7,11 +7,21 @@
   <div class="loader-spinner">
     <app-loading-spinner [spinnerHeight]="80" [spinnerWidth]="80"></app-loading-spinner>
   </div>
-  <div *ngIf="activeImage" class="acive-image" [ngStyle]="{ 'background-image' : 'url('+ activeImage.imagePath +')'}"></div>
-  <div class="img-nav-link prev"> <!--TODO. Disable or not-->
-    <i class="material-icons">navigate_before</i>
+  <div *ngIf="activeImage" class="acive-image" (click)="showNextImage()" [ngStyle]="{ 'background-image' : 'url('+ activeImage.imagePath +')'}"></div>
+  <div class="img-nav-link prev" (click)="showPrevImage()" [hidden]="!isPrevButtonVisible"> <!--TODO. Disable or not-->
+    <div class="nav-icon"></div>
   </div>
-  <div class="img-nav-link next"> <!-- TODO. Visible or not-->
-    <i class="material-icons">navigate_next</i>
+  <div class="img-nav-link next" (click)="showNextImage()" [hidden]="!isNextButtonVisible"> <!-- TODO. Visible or not-->
+    <div class="nav-icon"></div>
+  </div>
+  <div class="thumbnails-container">
+    <div class="thumbnail-wrapper">
+      <ng-container *ngFor="let thumb of this.images">
+          <div class="thumb-item" [class.active]="thumb.id === this.activeImage.id" (click)="updateActiveImage(thumb)">
+              <div class="thumb-item-bg" [ngStyle]="{ 'background-image' : 'url('+ thumb.thumbPath +')'}"></div>
+              <div class="thumb-item-fader"></div>
+            </div>
+      </ng-container>
+    </div>
   </div>
 </div>
