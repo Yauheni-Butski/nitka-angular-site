@@ -135,15 +135,20 @@
             /* margin: 0px auto; */
             position: relative;
             display: inline-block;
-            /* max-width: 70%;
-            overflow-x: auto;
+            max-width: 70%;
+            overflow-x: scroll;
             overflow-y: hidden;
             white-space: nowrap;
-            height: 100%; */
+            height: 100%;
+            -webkit-overflow-scrolling: touch;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
             
             .thumb-item{
-                float: left; //for using hor. scroll
-                //display: inline-block; //for using hor. scroll
+                //float: left; //for using hor. scroll
+                display: inline-block; //for using hor. scroll
                 margin: 0px 5px;
                 cursor: pointer;
                 position: relative;
@@ -154,7 +159,6 @@
                 }
 
                 .thumb-item-bg{
-                    //background-image: url(http://cdn.pinsupreme.com/wp-content/uploads/2015/05/photo56-150x150.jpg);
                     background-position: center center;
                     background-repeat: no-repeat;
                     width: 60px;

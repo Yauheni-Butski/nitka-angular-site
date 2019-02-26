@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, /* SimpleChanges, OnChanges */ } from '@angular/core';
 import { ImagePlate } from 'src/app/models/imagePlate';
 
 @Component({
@@ -6,7 +6,7 @@ import { ImagePlate } from 'src/app/models/imagePlate';
   templateUrl: './image-viewer.component.html',
   styleUrls: ['./image-viewer.component.scss']
 })
-export class ImageViewerComponent implements OnInit {
+export class ImageViewerComponent implements OnInit/* , OnChanges */ {
   private _activeImage: ImagePlate = null;
   get activeImage(): ImagePlate {
     return this._activeImage;
@@ -15,6 +15,13 @@ export class ImageViewerComponent implements OnInit {
   set activeImage(value: ImagePlate) {
     this._activeImage = value;
     this.updateViewerButtonsState();
+
+    //TODO. TEMP. Только показать! Здесь ещё нету изменений в разметке html
+    var activeElHtml = this.elRef.nativeElement.querySelector(".thumb-item.active");
+    if (activeElHtml !== null){
+      activeElHtml.scrollIntoView({behavior: "smooth", inline: "center"});
+    }
+    console.log(activeElHtml);
   }
 
   @Input() images:ImagePlate[] = [];
@@ -23,12 +30,23 @@ export class ImageViewerComponent implements OnInit {
   isPrevButtonVisible: boolean = true;
   isNextButtonVisible: boolean = true;
 
-  constructor() { }
+  constructor(private elRef: ElementRef) { }
 
   ngOnInit() {
     //пока тут полежит кусок кода. взять активный элемент
     //this.activeImage = this.section.imagePlates.find(ip => ip.id === activeImagePlateId);
   }
+
+  //TODO. Посмотреть другой способ! Нужно после изменения и пере-рендеринга ActiveElement проскролить до центра.
+/*   ngOnChanges(changes: SimpleChanges) {
+    console.log('onchange');
+    for (let propName in changes) {
+      if (propName === "activeImage"){
+        var activeElHtml = this.elRef.nativeElement.querySelector(".thumb-item.active");
+        console.log(activeElHtml);
+      }
+    }
+  } */
 
   closeViewer() {
     this.activeImage = null;
