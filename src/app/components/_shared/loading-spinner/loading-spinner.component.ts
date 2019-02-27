@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./loading-spinner.component.scss']
 })
 export class LoadingSpinnerComponent implements OnInit {
-  @Input() spinnerWidth: number = 200;
-  @Input() spinnerHeight: number = 200;
+  @Input() spinnerWidth: number = 400;
+  @Input() spinnerHeight: number = 400;
 
   constructor() { }
 
