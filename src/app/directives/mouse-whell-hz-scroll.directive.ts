@@ -1,34 +1,32 @@
-import { Directive, Output, HostListener, EventEmitter } from '@angular/core';
+import { Directive, Input, HostListener, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[mouseWheel]'
+  selector: '[mouseWheelHzScroll]'
 })
-export class MouseWheelDirective {
+export class MouseWheelHzScrollDirective {
+  @Input() scrollStep: number = 10;
 
-  @Output() mouseWheelUp = new EventEmitter();
-  @Output() mouseWheelDown = new EventEmitter();
-
-  constructor() { }
+  constructor(private el: ElementRef) { }
   
   @HostListener('mousewheel', ['$event']) onMouseWheelChrome(event: any) {
-    this.mouseWheelFunc(event);
+    this.onMouseWheel(event);
   }
 
   @HostListener('DOMMouseScroll', ['$event']) onMouseWheelFirefox(event: any) {
-    this.mouseWheelFunc(event);
+    this.onMouseWheel(event);
   }
 
   @HostListener('onmousewheel', ['$event']) onMouseWheelIE(event: any) {
-    this.mouseWheelFunc(event);
+    this.onMouseWheel(event);
   }
 
-  mouseWheelFunc(event: any) {
+  onMouseWheel(event: any) {
     var event = window.event || event; // old IE support
     var delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
     if(delta > 0) {
-        this.mouseWheelUp.emit(event);
+        this.scrollElementHorizontally(delta);
     } else if(delta < 0) {
-        this.mouseWheelDown.emit(event);
+        this.scrollElementHorizontally(delta);
     }
     // for IE
     event.returnValue = false;
@@ -36,5 +34,9 @@ export class MouseWheelDirective {
     if(event.preventDefault) {
         event.preventDefault();
     }
+  }
+
+  scrollElementHorizontally(delta: number){
+    this.el.nativeElement.scrollLeft -= (delta*this.scrollStep);
   }
 }

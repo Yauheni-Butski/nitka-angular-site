@@ -15,8 +15,7 @@
     <div class="nav-icon"></div>
   </div>
   <div class="thumbnails-container">
-    <!--TODO. Убрать. Конкретную диррективу сделать. MouseWheelHorizScroll-->
-    <div #thumbWrEl class="thumbnail-wrapper" mouseWheel (mouseWheelUp)="thumbsMouseWheelUp($event, thumbWrEl)" (mouseWheelDown)="thumbsMouseWheelDown($event, thumbWrEl)">
+    <div class="thumbnail-wrapper" mouseWheelHzScroll [scrollStep]="40">
       <ng-container *ngFor="let thumb of this.images">
           <div class="thumb-item" [class.active]="thumb.id === this.activeImage.id" (click)="updateActiveImage(thumb)">
               <div class="thumb-item-bg" [ngStyle]="{ 'background-image' : 'url('+ thumb.thumbPath +')'}"></div>
