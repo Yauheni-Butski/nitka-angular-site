@@ -8,10 +8,10 @@
     <app-loading-spinner [spinnerHeight]="80" [spinnerWidth]="80"></app-loading-spinner>
   </div>
   <div *ngIf="activeImage" class="acive-image" (click)="showNextImage()" [ngStyle]="{ 'background-image' : 'url('+ activeImage.imagePath +')'}"></div>
-  <div class="img-nav-link prev" (click)="showPrevImage()" [hidden]="!isPrevButtonVisible"> <!--TODO. Disable or not-->
+  <div class="img-nav-link prev" (click)="showPrevImage()" [hidden]="!isPrevButtonVisible">
     <div class="nav-icon"></div>
   </div>
-  <div class="img-nav-link next" (click)="showNextImage()" [hidden]="!isNextButtonVisible"> <!-- TODO. Visible or not-->
+  <div class="img-nav-link next" (click)="showNextImage()" [hidden]="!isNextButtonVisible">
     <div class="nav-icon"></div>
   </div>
   <div class="thumbnails-container">

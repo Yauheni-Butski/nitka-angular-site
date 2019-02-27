@@ -129,13 +129,11 @@
         overflow: hidden;
         text-align: center;
 
-        //border: solid 1px white; /*For test*/
-
         .thumbnail-wrapper{
             /* margin: 0px auto; */
             position: relative;
             display: inline-block;
-            max-width: 70%;
+            max-width: 50%;
             overflow-x: scroll;
             overflow-y: hidden;
             white-space: nowrap;
@@ -147,7 +145,6 @@
             }
             
             .thumb-item{
-                //float: left; //for using hor. scroll
                 display: inline-block; //for using hor. scroll
                 margin: 0px 5px;
                 cursor: pointer;

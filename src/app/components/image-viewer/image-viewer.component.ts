@@ -11,11 +11,11 @@ export class ImageViewerComponent implements OnInit {
   get activeImage(): ImagePlate {
     return this._activeImage;
   }
+  
   @Input('activeImage')
   set activeImage(value: ImagePlate) {
     this._activeImage = value;
     this.updateViewerButtonsState();
-
     this.tickAndScrollThumbs();
   }
 
