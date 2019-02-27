@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef, /* SimpleChanges, OnChanges */ } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef} from '@angular/core';
 import { ImagePlate } from 'src/app/models/imagePlate';
 
 @Component({
@@ -6,7 +6,7 @@ import { ImagePlate } from 'src/app/models/imagePlate';
   templateUrl: './image-viewer.component.html',
   styleUrls: ['./image-viewer.component.scss']
 })
-export class ImageViewerComponent implements OnInit/* , OnChanges */ {
+export class ImageViewerComponent implements OnInit {
   private _activeImage: ImagePlate = null;
   get activeImage(): ImagePlate {
     return this._activeImage;
@@ -16,12 +16,7 @@ export class ImageViewerComponent implements OnInit/* , OnChanges */ {
     this._activeImage = value;
     this.updateViewerButtonsState();
 
-    //TODO. TEMP. Только показать! Здесь ещё нету изменений в разметке html
-    var activeElHtml = this.elRef.nativeElement.querySelector(".thumb-item.active");
-    if (activeElHtml !== null){
-      activeElHtml.scrollIntoView({behavior: "smooth", inline: "center"});
-    }
-    console.log(activeElHtml);
+    this.tickAndScrollThumbs();
   }
 
   @Input() images:ImagePlate[] = [];
@@ -37,16 +32,14 @@ export class ImageViewerComponent implements OnInit/* , OnChanges */ {
     //this.activeImage = this.section.imagePlates.find(ip => ip.id === activeImagePlateId);
   }
 
-  //TODO. Посмотреть другой способ! Нужно после изменения и пере-рендеринга ActiveElement проскролить до центра.
-/*   ngOnChanges(changes: SimpleChanges) {
-    console.log('onchange');
-    for (let propName in changes) {
-      if (propName === "activeImage"){
-        var activeElHtml = this.elRef.nativeElement.querySelector(".thumb-item.active");
-        console.log(activeElHtml);
+  tickAndScrollThumbs() {
+    setTimeout(() => {
+      var activeElHtml = this.elRef.nativeElement.querySelector(".thumb-item.active");
+      if (activeElHtml !== null){
+        activeElHtml.scrollIntoView({behavior: "smooth", inline: "center"});
       }
-    }
-  } */
+     }, 100);
+  }
 
   closeViewer() {
     this.activeImage = null;
