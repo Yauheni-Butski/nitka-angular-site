@@ -91,4 +91,30 @@ export class ImageViewerComponent implements OnInit {
     }
   }
 
+  //TODO. Переписать. Просто непосредственно директиву сделать - MouseWheelHorizScroll
+  thumbsMouseWheelUp(event: any, el: any) {
+    console.log("WHELL UP");
+    console.log(event.wheelDelta || -event.detail);
+    console.log(el);
+
+    var delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
+    debugger;
+    el.scrollLeft -= (delta*40);
+
+    event.preventDefault();
+  }
+
+  thumbsMouseWheelDown(event: any, el: any){
+    console.log("WHELL DOWN");
+    console.log(event.wheelDelta || -event.detail);
+    console.log(el);
+
+    var delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
+    debugger;
+    el.scrollLeft -= (delta*20);
+    var currLeft = el.scrollLeft;
+
+    event.preventDefault();
+  }
+
 }

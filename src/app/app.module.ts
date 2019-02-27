@@ -21,6 +21,7 @@ import { InnerNavComponent } from './components/_shared/inner-nav/inner-nav.comp
 import { LoadingSpinnerComponent } from './components/_shared/loading-spinner/loading-spinner.component';
 import { GalerryImagePlateComponent } from './components/galerry-image-plate/galerry-image-plate.component';
 import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
+import { MouseWheelDirective } from './directives/mouse-wheel.directive';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ImageViewerComponent } from './components/image-viewer/image-viewer.com
     InnerNavComponent,
     LoadingSpinnerComponent,
     GalerryImagePlateComponent,
-    ImageViewerComponent
+    ImageViewerComponent,
+    MouseWheelDirective
   ],
   imports: [
     BrowserModule,
