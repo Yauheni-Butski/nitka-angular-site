@@ -38,7 +38,7 @@ export class CategoryComponent implements OnDestroy {
 
     var id = categoryId ? +categoryId : null;
     this.categoryService.getCategory(id)
-      .pipe(delay(1000)) //FOR TEST LOADING SPINNER
+      .pipe(delay(2000)) //FOR TEST LOADING SPINNER
       .subscribe(categoryRes => this.getCategoryOnLoad(categoryRes));
 
   }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { GalleryComponent } from './components/gallery/gallery.component';
 import { CategoryComponent } from './components/category/category.component';
 import { SectionComponent } from './components/section/section.component';
 
@@ -17,8 +16,7 @@ const routes: Routes = [
     children: [
       { path: '', component: CategoryComponent, pathMatch: 'full' },
       { path: 'category/:id', component: CategoryComponent, runGuardsAndResolvers: 'paramsChange' },
-      { path: 'section/:id', component: SectionComponent },
-      { path: 'gallery', component: GalleryComponent }
+      { path: 'section/:id', component: SectionComponent }
     ]
   },
 ]

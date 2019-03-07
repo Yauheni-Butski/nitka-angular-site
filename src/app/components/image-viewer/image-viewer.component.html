@@ -4,9 +4,7 @@
         <i class="material-icons">close</i>
     </div>
   </div>
-  <div class="loader-spinner">
-    <app-loading-spinner [spinnerHeight]="80" [spinnerWidth]="80"></app-loading-spinner>
-  </div>
+    <app-loading-spinner [spinnerHeight]="350" [spinnerWidth]="350"></app-loading-spinner>
   <div *ngIf="activeImage" class="acive-image" (click)="showNextImage()" [ngStyle]="{ 'background-image' : 'url('+ activeImage.imagePath +')'}"></div>
   <div class="img-nav-link prev" (click)="showPrevImage()" [hidden]="!isPrevButtonVisible">
     <div class="nav-icon"></div>
