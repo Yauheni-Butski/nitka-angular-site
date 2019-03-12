@@ -4,11 +4,11 @@
       <div class="image-title-actions">
           <div class="action-wrapper" (click)="this.zoomImage()">
               <i class="material-icons action-icon">zoom_in</i>
-              <!-- <span class="action-title">Увеличить</span> --> <!--TODO. Поменять разметку, чтобы наведение лучше работало-->
           </div>
-          <!-- <div class="action-wrapper">
-              <i class="material-icons action-icon">perm_contact_calendar</i>
-          </div> -->
+          <div class="action-wrapper" (click)="this.toggleLikeImage()">
+            <i class="material-icons action-icon like-icon" [class.liked]="imagePlate?.isUserLike">favorite_border</i>
+            <span class="like-count" [class.active]="imagePlate?.isUserLike">{{imagePlate?.likeCount}}</span>
+          </div>
       </div>
       <div class="image-holder" [ngStyle]="{ 'background-image' : 'url('+ imagePlate.thumbPath +')'}">
               <img [src]="imagePlate.thumbPath">

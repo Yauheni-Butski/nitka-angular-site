@@ -1,11 +1,28 @@
 <div class="image-lightbox-viewer" *ngIf="activeImage !== null">
+  <div class="top-left">
+    <div class="action-panel">
+        <div class="action-wrapper" (click)="this.toggleLikeActiveImage()">
+            <i class="material-icons action-icon like-icon" [class.liked]="activeImage?.isUserLike">favorite_border</i>
+            <span class="action-text" [class.liked]="activeImage?.isUserLike">{{activeImage?.likeCount}}</span>
+        </div>
+        <div class="action-wrapper">
+            <i class="material-icons action-icon">share</i>
+        </div>
+        <div class="action-wrapper">
+              <a class="booking" routerLink="/booking">
+                <i class="material-icons action-icon">perm_contact_calendar</i>
+                <span class="action-text">Хочу так же!</span>
+              </a>
+        </div>
+    </div>
+  </div>
   <div class="top-right">
     <div class="close-btn" (click)="closeViewer()">
         <i class="material-icons">close</i>
     </div>
   </div>
     <app-loading-spinner [spinnerHeight]="350" [spinnerWidth]="350"></app-loading-spinner>
-  <div *ngIf="activeImage" class="acive-image" (click)="showNextImage()" [ngStyle]="{ 'background-image' : 'url('+ activeImage.imagePath +')'}"></div>
+  <div *ngIf="activeImage" class="active-image" (click)="showNextImage()" [ngStyle]="{ 'background-image' : 'url('+ activeImage.imagePath +')'}"></div>
   <div class="img-nav-link prev" (click)="showPrevImage()" [hidden]="!isPrevButtonVisible">
     <div class="nav-icon"></div>
   </div>

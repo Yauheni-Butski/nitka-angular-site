@@ -7,9 +7,74 @@
     bottom: 0;
     z-index: 10001;
 
+    .top-left{
+        position: absolute;
+        left: 35px;
+        top: 15px;
+
+        .action-panel{
+            .action-wrapper{
+                display: inline-block;
+                vertical-align: middle;
+                color: #fff;
+                padding: 0 15px;
+                border-right: 1px solid rgba(255,255,255,0.1);
+                cursor: pointer;
+
+                .action-icon{
+                    font-size: 35px;
+                    line-height: 46px;
+                    opacity: 0.5;
+                    transition: .2s;
+                    float: left;
+                    margin-right: 5px;
+
+                    &.liked{
+                        color: #ff4c4c;
+                    }
+                }
+
+                .action-text{
+                    font-size: 22px;
+                    line-height: 46px;
+                    min-width: 35px;
+                    text-align: center;
+                    display: inline-block;
+                    opacity: 0.5;
+
+                    &.liked{
+                        color: #ff4c4c;
+                    }
+                }
+
+                .booking{
+                    color: white;
+                    text-decoration: none;
+
+                    .action-text{
+                        font-size: 20px;
+                    }
+                }
+
+                &:hover{
+                    .action-icon{
+                        opacity: 1;
+                        -webkit-transform: scale(1.2);
+                        -moz-transform: scale(1.2);
+                        -ms-transform: scale(1.2);
+                        -o-transform: scale(1.2);
+                    }
+                    .action-text{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
     .top-right{
         position: absolute;
-        top: 20px;
+        top: 15px;
         right: 45px;
 
         .close-btn{
@@ -90,9 +155,9 @@
         }
     }
 
-    .acive-image{
+    .active-image{
         position: absolute;
-        top: 60px;
+        top: 65px;
         right: 0;
         left: 0;
         bottom: 75px;
@@ -119,7 +184,6 @@
         text-align: center;
 
         .thumbnail-wrapper{
-            /* margin: 0px auto; */
             position: relative;
             display: inline-block;
             max-width: 50%;

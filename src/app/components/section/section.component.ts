@@ -26,7 +26,6 @@ export class SectionComponent implements OnInit {
 
     getSectionContent() : void {
       const sectionId = +this.activatedRoute.snapshot.paramMap.get('id');
-
       this.sectionService.getSection(sectionId)
         .pipe(delay(1000)) //FOR TEST LOADING SPINNER
         .subscribe(section => { this.section = new Section(section) });

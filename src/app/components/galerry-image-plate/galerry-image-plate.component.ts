@@ -20,4 +20,9 @@ export class GalerryImagePlateComponent implements OnInit {
     this.zoomingImage.emit(this.imagePlate.id);
   }
 
+  toggleLikeImage(){
+    this.imagePlate.isUserLike = !this.imagePlate.isUserLike;
+    this.imagePlate.likeCount = this.imagePlate.isUserLike ? this.imagePlate.likeCount + 1 : this.imagePlate.likeCount - 1;
+  }
+
 }

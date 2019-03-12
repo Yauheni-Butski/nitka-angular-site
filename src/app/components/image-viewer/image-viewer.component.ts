@@ -90,4 +90,10 @@ export class ImageViewerComponent implements OnInit {
       this.isPrevButtonVisible = true;
     }
   }
+
+  toggleLikeActiveImage(){
+    //TODO. Отправить запрос на сервер, сохранить.
+    this.activeImage.isUserLike = !this.activeImage.isUserLike;
+    this.activeImage.likeCount = this.activeImage.isUserLike ? this.activeImage.likeCount + 1 : this.activeImage.likeCount - 1;
+  }
 }

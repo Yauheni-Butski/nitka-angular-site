@@ -93,12 +93,34 @@ $fadeAndScaleTransitionTime: 0.2s;
                 background-color: rgba(0,0,0,0.5); /*hover*/
 
                 .action-icon{
-                    font-size: 56px;
+                    font-size: 46px;
                     color: #ffffff8a;
                     cursor: pointer;
 
                     &:hover{
                         color: #ffffff;
+                    }
+                }
+
+                .like-icon{
+                    &.liked{
+                        color: #ff4c4c;
+                    }
+                }
+
+                .like-count{
+                    display: block;
+                    font-size: 20px;
+                    font-weight: 600;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: -15px;
+                    opacity: 0;
+                    color: #ff4c4c;
+
+                    &.active{
+                        opacity: 1;
                     }
                 }
             }
