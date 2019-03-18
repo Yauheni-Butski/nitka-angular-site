@@ -5,6 +5,7 @@
           <div class="action-wrapper" (click)="this.zoomImage()">
               <i class="material-icons action-icon">zoom_in</i>
           </div>
+          <!-- TODO. Может всё таки убираем отсюда лайк? -->
           <div class="action-wrapper" (click)="this.toggleLikeImage()">
             <i class="material-icons action-icon like-icon" [class.liked]="imagePlate?.isUserLike">favorite_border</i>
             <span class="like-count" [class.active]="imagePlate?.isUserLike">{{imagePlate?.likeCount}}</span>
