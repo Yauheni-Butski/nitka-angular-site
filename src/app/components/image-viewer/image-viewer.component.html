@@ -22,7 +22,7 @@
     </div>
   </div>
     <app-loading-spinner></app-loading-spinner>
-  <div *ngIf="activeImage" class="active-image" (click)="showNextImage()" [ngStyle]="{ 'background-image' : 'url('+ activeImage.imagePath +')'}"></div>
+  <div *ngIf="activeImage" class="active-image" [ngStyle]="{ 'background-image' : 'url('+ activeImage.imagePath +')'}"></div>
   <div class="img-nav-link prev" (click)="showPrevImage()" [hidden]="!isPrevButtonVisible">
     <div class="nav-icon"></div>
   </div>

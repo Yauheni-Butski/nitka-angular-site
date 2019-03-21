@@ -11,6 +11,7 @@ $fadeAndScaleTransitionTime: 0.2s;
         position: relative;
         border-radius: $imagePlateBorderRadius; /*Оставляем или 3.5px + закругление, или 1px и без закругления*/
         overflow: hidden;
+        cursor: pointer;
         /* cursor: pointer; */
         /*Fix scale + overflow + border-radius on Chrome*/
         -webkit-transform: translate(0px,0px);
@@ -75,7 +76,6 @@ $fadeAndScaleTransitionTime: 0.2s;
             width: 100%;
             text-align: center;
 
-            /* background-color: white; */
             .action-wrapper{
                 display: inline-block;
                 position: relative;
@@ -90,16 +90,11 @@ $fadeAndScaleTransitionTime: 0.2s;
                 /* background-color: rgba(0,0,0,0.2); */
                 /* border: solid 1px #ffffff; */
 
-                background-color: rgba(0,0,0,0.5); /*hover*/
+                background-color: rgba(0,0,0,0.5);
 
                 .action-icon{
                     font-size: 46px;
                     color: #ffffff8a;
-                    cursor: pointer;
-
-                    &:hover{
-                        color: #ffffff;
-                    }
                 }
 
                 .like-icon{

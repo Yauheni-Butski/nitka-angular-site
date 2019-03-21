@@ -1,14 +1,9 @@
 <div *ngIf="imagePlate" class="image-plate">
-  <div  class="plate-wrapper">
+  <div  class="plate-wrapper" (click)="this.zoomImage()">
       <div class="image-fader"></div>
       <div class="image-title-actions">
-          <div class="action-wrapper" (click)="this.zoomImage()">
+          <div class="action-wrapper">
               <i class="material-icons action-icon">zoom_in</i>
-          </div>
-          <!-- TODO. Может всё таки убираем отсюда лайк? -->
-          <div class="action-wrapper" (click)="this.toggleLikeImage()">
-            <i class="material-icons action-icon like-icon" [class.liked]="imagePlate?.isUserLike">favorite_border</i>
-            <span class="like-count" [class.active]="imagePlate?.isUserLike">{{imagePlate?.likeCount}}</span>
           </div>
       </div>
       <div class="image-holder" [ngStyle]="{ 'background-image' : 'url('+ imagePlate.thumbPath +')'}">

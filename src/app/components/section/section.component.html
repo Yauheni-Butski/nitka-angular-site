@@ -16,4 +16,4 @@
         <app-loading-spinner *ngIf="!section"></app-loading-spinner>
 </div>
 
-<app-image-viewer *ngIf="section && section.imagePlates" (onCloseViewer)="closeImageViewer()" [images]="section.imagePlates" [activeImage]="activeImage"></app-image-viewer> <!--(onCloseViewer)="closeImageViewer()" *ngIf="isImageViewerVisible"-->
+<app-image-viewer *ngIf="section && section.imagePlates" (onCloseViewer)="closeImageViewer()" [images]="section.imagePlates" [activeImage]="activeImage"></app-image-viewer>
