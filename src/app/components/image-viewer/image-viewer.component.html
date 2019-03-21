@@ -1,4 +1,4 @@
-<div class="image-lightbox-viewer" *ngIf="activeImage !== null">
+<div class="image-lightbox-viewer" *ngIf="activeImage !== null" [mouseWheelHzScroll]="thumbNailDiv" [scrollStep]="40">
   <div class="top-left">
     <div class="action-panel">
         <div class="action-wrapper" (click)="this.toggleLikeActiveImage()">
@@ -30,7 +30,7 @@
     <div class="nav-icon"></div>
   </div>
   <div class="thumbnails-container">
-    <div class="thumbnail-wrapper" mouseWheelHzScroll [scrollStep]="40">
+    <div #thumbNailDiv class="thumbnail-wrapper">
       <ng-container *ngFor="let thumb of this.images">
           <div class="thumb-item" [class.active]="thumb.id === this.activeImage.id" (click)="updateActiveImage(thumb)">
               <div class="thumb-item-bg" [ngStyle]="{ 'background-image' : 'url('+ thumb.thumbPath +')'}"></div>

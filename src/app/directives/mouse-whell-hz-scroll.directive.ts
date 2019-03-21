@@ -4,7 +4,8 @@ import { Directive, Input, HostListener, ElementRef } from '@angular/core';
   selector: '[mouseWheelHzScroll]'
 })
 export class MouseWheelHzScrollDirective {
-  @Input() scrollStep: number = 10;
+  @Input() scrollStep: number = 40;
+  @Input('mouseWheelHzScroll') scrollEl : HTMLElement;
 
   constructor(private el: ElementRef) { }
   
@@ -37,6 +38,12 @@ export class MouseWheelHzScrollDirective {
   }
 
   scrollElementHorizontally(delta: number){
-    this.el.nativeElement.scrollLeft -= (delta*this.scrollStep);
+    //path needed HTMLElement for scroll. by default - current element
+    if (this.scrollEl){
+      this.scrollEl.scrollLeft -= (delta*this.scrollStep);
+    }
+    else{
+      this.el.nativeElement.scrollLeft -= (delta*this.scrollStep);
+    }
   }
 }
