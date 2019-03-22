@@ -4,13 +4,24 @@
         <p>Write me a message, I am always happy to answer any questions you might have.</p>
     </div>
     <div class="form-el">
-      <label for="city">Город</label>
-      <select class="cust-input" id="city" required aria-placeholder="" title=""> <!-- custom-select d-block -->
-        <option value hidden selected="selected">Выберите город</option>
-        <option value="1">Минск</option>
-        <option value="2">Могилёв</option>
-        <option value="0">Другой</option>
-      </select>
+        <!-- <label for="city">Город</label>
+        <select class="cust-input" id="city" required aria-placeholder="" title="">
+          <option value hidden selected="selected">Выберите город</option>
+          <option value="1">Минск</option>
+          <option value="2">Могилёв</option>
+          <option value="0">Другой</option>
+        </select> -->
+      <mat-form-field>
+        <input matInput placeholder="Имя">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Номер телефона">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Город">
+        <mat-hint>Укажите город, в котором вы бы хотели съёмку</mat-hint>
+      </mat-form-field>
+
     </div>
   </div>
 </div>

@@ -19,6 +19,8 @@ import { MouseWheelHzScrollDirective } from './directives/mouse-whell-hz-scroll.
 
 import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
+import { AppMaterialModule } from './app-material.module';
+
 /* Layouts */
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
 import { SiteHeaderComponent } from './_layout/site-header/site-header.component';
@@ -46,7 +48,8 @@ import { SiteFooterComponent } from './_layout/site-footer/site-footer.component
     AppRoutingModule,
     HttpClientModule,
     AdminModule,
-    AuthModule
+    AuthModule,
+    AppMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

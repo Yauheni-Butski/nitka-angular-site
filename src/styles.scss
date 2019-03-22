@@ -15,3 +15,21 @@ body{
 .fullWidth{
     width: 100%;
 }
+
+/*Overide some angular material controls styles*/
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+$materialMainColor: red;
+
+.mat-form-field{
+    width: 100%;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: $materialMainColor;
+}
+.mat-form-field.mat-focused .mat-input-element{
+    caret-color: $materialMainColor;
+}
+.mat-form-field.mat-focused .mat-form-field-label{
+    color: $materialMainColor;
+}

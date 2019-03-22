@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-booking-day',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./booking-day.component.scss']
 })
 export class BookingDayComponent implements OnInit {
+  bookingForm = this.fb.group({
+    name: ['', Validators.required],
+    city: ['', Validators.required]
+  });
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }
