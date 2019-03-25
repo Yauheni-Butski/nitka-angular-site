@@ -13,7 +13,7 @@ import { InnerNavComponent } from './components/_shared/inner-nav/inner-nav.comp
 import { LoadingSpinnerComponent } from './components/_shared/loading-spinner/loading-spinner.component';
 import { GalerryImagePlateComponent } from './components/galerry-image-plate/galerry-image-plate.component';
 import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
-import { BookingDayComponent } from './components/booking-day/booking-day.component';
+import { ContactMeComponent } from './components/contact-me/contact-me.component';
 
 import { MouseWheelHzScrollDirective } from './directives/mouse-whell-hz-scroll.directive';
 
@@ -41,7 +41,7 @@ import { SiteFooterComponent } from './_layout/site-footer/site-footer.component
     GalerryImagePlateComponent,
     ImageViewerComponent,
     MouseWheelHzScrollDirective,
-    BookingDayComponent
+    ContactMeComponent
   ],
   imports: [
     BrowserModule,

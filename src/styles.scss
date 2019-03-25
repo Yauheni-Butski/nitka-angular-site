@@ -19,7 +19,7 @@ body{
 /*Overide some angular material controls styles*/
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-$materialMainColor: red;
+$materialMainColor: #064877;// red; //#51acae;
 
 .mat-form-field{
     width: 100%;
@@ -35,5 +35,13 @@ $materialMainColor: red;
 }
 
 .mat-form-field.mat-focused .mat-form-field-required-marker{
+    color: $materialMainColor;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick{
+    color: $materialMainColor;
+}
+
+.mat-form-field-flex:hover .mat-form-field-outline-thick{
     color: $materialMainColor;
 }
