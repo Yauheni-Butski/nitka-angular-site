@@ -11,44 +11,60 @@
         right: 0;
         margin: auto auto;
 
-        width: 400px;
-        height: 500px;
+        width: 600px; /*TEMP*/
+        height: 540px;
 
-        border: solid 1px black;
+        border: solid 1px #cbcbcb;
         border-radius: 10px;
         padding: 10px;
         background-color: #ffffff;
 
-        .form-el{
-            width: 100%;           
+        .form-row{
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+            
+            &:not(:last-child){
+                margin-bottom: 10px;
+            }
 
-            /* label{
-                display: block;
-                line-height: 1.2;
-                margin-bottom: 5px;
+            .form-col{
+                width: 50%;
+                float: left;
+
+                padding: 0 5px;
+
+                mat-form-field{
+                    margin-bottom: 10px;
+                }
+            }
+
+            .header{
+                margin: 5px auto;
+            }
+
+            .header-text{
+                font-style: italic;
+                font-family: Open sans-serif;
+                font-size: 18px;
+            }
+
+            .phone-number::-webkit-outer-spin-button,
+            .phone-number::-webkit-inner-spin-button {
+                display: none;
+            }
+
+
+            .comment{
+                resize: none;
+            }
+
+            .submit-btn{
+                width: 100%;
+                border: 1px solid #51acae;
+                outline: none;
                 color: #51acae;
-                font-size: 14px;
-                font-weight: bold;
-                user-select: none;
-            } */
-
-            /* .cust-input{
-                display: block;
-                height: 35px;
-                border-radius: 2px;
-                background-color: #f7f7f7;
-                width: 250px;
-                padding: 0 10px;
-                border-radius: 3px;
-
-                color: #2f3844;
-                font-size: 15px;
-                font-family: "Open Sans";
-            } */
-
-            /* select.cust-input{
-                cursor: pointer;
-            } */
+            }
         }
     }
 }

@@ -9,7 +9,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class BookingDayComponent implements OnInit {
   bookingForm = this.fb.group({
     name: ['', Validators.required],
-    city: ['', Validators.required]
+    city: [''],
+    phoneNumber: ['', Validators.required],
+    email: ['', Validators.email]
   });
 
   constructor(private fb: FormBuilder) { }

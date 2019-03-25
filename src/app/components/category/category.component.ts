@@ -50,7 +50,6 @@ export class CategoryComponent implements OnDestroy {
   }
 
   prepareCategoryUrls(): void {
-    debugger;
     this.category.categoryCards.forEach(element => {
       var elementType = element.isLeaf == true ? 'section' : 'category';
       element.routerLinkUrl = `/${elementType}/${element.id}`;

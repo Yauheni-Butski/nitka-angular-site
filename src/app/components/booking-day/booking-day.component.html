@@ -1,27 +1,41 @@
 <div class="booking-day-container">
   <div class="booking-day-form-wrapper">
-    <div class="form-el">
-        <p>Write me a message, I am always happy to answer any questions you might have.</p>
+    <div class="form-row">
+      <h3 class="header">Контакты</h3>
     </div>
-    <div class="form-el">
-        <!-- <label for="city">Город</label>
-        <select class="cust-input" id="city" required aria-placeholder="" title="">
-          <option value hidden selected="selected">Выберите город</option>
-          <option value="1">Минск</option>
-          <option value="2">Могилёв</option>
-          <option value="0">Другой</option>
-        </select> -->
-      <mat-form-field>
-        <input matInput placeholder="Имя">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Номер телефона">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Город">
-        <mat-hint>Укажите город, в котором вы бы хотели съёмку</mat-hint>
+    <div class="form-row">
+      <p class="header-text">Напишите мне сообщение и я всегда буду рада связаться с вами и ответить на все вопросы!</p>
+    </div>
+    <div class="form-row">
+      <div class="form-col">
+        <mat-form-field>
+          <input matInput placeholder="Имя" autocomplete="off" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Номер телефона" class="phone-number" type="number" autocomplete="off" required>
+          <span matPrefix>+&nbsp;</span>
+        </mat-form-field>
+      </div>
+
+      <div class="form-col">
+          <mat-form-field>
+              <input matInput placeholder="Город" autocomplete="off">
+              <mat-hint>...в котором вы бы хотели съёмку</mat-hint>
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput placeholder="Email">
+          </mat-form-field>
+      </div>
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Сообщение</mat-label>
+        <textarea class="comment" matInput rows="5"></textarea>
       </mat-form-field>
 
+    </div>
+    <div class="form-row">
+        <button mat-button class="submit-btn">Отправить</button>
     </div>
   </div>
 </div>
