@@ -1,6 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, AbstractControl, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material';
 import { ContactService } from '../../services/contact.service';
+import { Contact } from '../../models/contact';
+
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MaterialErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched));
+  }
+}
 
 @Component({
   selector: 'app-contact-me',
@@ -9,6 +20,10 @@ import { ContactService } from '../../services/contact.service';
 })
 export class ContactMeComponent implements OnInit {
   contactMeForm: FormGroup;
+  message: string;
+  isErrorSubmit: boolean = false;
+
+  matcher = new MaterialErrorStateMatcher();
 
   constructor(private fb: FormBuilder, private contactService: ContactService) { }
 
@@ -28,11 +43,16 @@ export class ContactMeComponent implements OnInit {
   get comment() { return this.contactMeForm.get('comment'); }
 
   onSubmit() {
-    console.log(this.contactMeForm.value);
     if (this.contactMeForm.valid){
-      //TODO. Create Contact form Model object
-      this.contactService.submitContactForm(this.contactMeForm.value).subscribe(res => {
-
+      var contactData = new Contact(this.contactMeForm.value);
+      this.contactService.submitContactForm(contactData).subscribe(res => {
+        if (res.success){
+          this.contactMeForm.reset();
+        }
+        else{
+          this.isErrorSubmit = true;
+        }
+        this.message = res.message;
       });
 
     }
