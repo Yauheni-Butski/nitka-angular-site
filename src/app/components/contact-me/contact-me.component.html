@@ -27,6 +27,7 @@
   </div>
   <div class="right-contact-panel">
     <div class="form-wrapper">
+      <form [formGroup]="contactMeForm" (ngSubmit)="onSubmit()">
         <div class="form-row">
             <h3 class="header">Позвольте мне связаться с вами!</h3>
           </div>
@@ -36,34 +37,39 @@
           <div class="form-row">
             <div class="form-col">
               <mat-form-field>
-                <input tabindex="1" matInput placeholder="Имя" autocomplete="off" required>
+                <input formControlName="name" tabindex="1" matInput placeholder="Имя" autocomplete="off" required>
+                <mat-error *ngIf="name.hasError('required')">Укажите Ваше имя</mat-error>
               </mat-form-field>
               <mat-form-field>
-                <input matInput tabindex="3" placeholder="Номер телефона" class="phone-number" type="number" autocomplete="off" required>
+                <input formControlName="phoneNumber" matInput tabindex="3" placeholder="Номер телефона" class="phone-number" type="number" autocomplete="off" required>
+                <mat-error *ngIf="phoneNumber.invalid && phoneNumber.hasError('required')">Укажите номер телефона, чтобы я смог связаться с вами</mat-error>
                 <span matPrefix>+&nbsp;</span>
               </mat-form-field>
             </div>
       
             <div class="form-col">
                 <mat-form-field>
-                    <input tabindex="2" matInput placeholder="Город" autocomplete="off">
+                    <input formControlName="city" tabindex="2" matInput placeholder="Город" autocomplete="off">
                     <mat-hint>...в котором вы бы хотели съёмку</mat-hint>
                 </mat-form-field>
                 <mat-form-field>
-                    <input tabindex="4" matInput placeholder="Email">
+                    <input formControlName="email" tabindex="4" matInput placeholder="Email">
+                    <mat-error *ngIf="email.invalid && email.hasError('email')">Неверный формат email-адреса</mat-error>
                 </mat-form-field>
             </div>
           </div>
           <div class="form-row">
             <mat-form-field appearance="outline">
               <mat-label>Сообщение</mat-label>
-              <textarea tabindex="5" class="comment" matInput rows="5"></textarea>
+              <textarea formControlName="comment" maxlength="1000" tabindex="5" class="comment" matInput rows="5"></textarea>
+              <mat-error *ngIf="comment.invalid && comment.hasError('maxLength')">Превышено максимальное количество символом (1000)</mat-error>
             </mat-form-field>
       
           </div>
           <div class="form-row">
-              <button tabindex="5" mat-button class="submit-btn">Отправить</button>
+              <button [disabled]="!contactMeForm.valid" tabindex="5" mat-button class="submit-btn">Отправить</button>
           </div>
+      </form>      
     </div>
   </div>
 </div>

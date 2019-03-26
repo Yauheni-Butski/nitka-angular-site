@@ -9,6 +9,7 @@ export class BaseService{
     public categoriesUrl = 'http://work.local/api/categories';
     public sectionUrl = 'http://work.local/api/section';
     public loginUrl = 'http://work.local/api/login';//'http://work.local/api/login'  'http://localhost:13021/api/login';
+    public contactUrl = 'http://work.local/api/contact';
 
     public adminDashboardUrl =  'http://work.local/api/admin/dashboard'; //'http://localhost:13021/api/admin/dashboard'; //'http://work.local/api/admin/dashboard'
 

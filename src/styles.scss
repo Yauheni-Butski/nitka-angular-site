@@ -19,29 +19,43 @@ body{
 /*Overide some angular material controls styles*/
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-$materialMainColor: #064877;// red; //#51acae;
+$materialMainColor: #064877; //#51acae;
 
 .mat-form-field{
     width: 100%;
-}
-.mat-form-field.mat-focused .mat-form-field-ripple {
-    background-color: $materialMainColor;
-}
-.mat-form-field.mat-focused .mat-input-element{
-    caret-color: $materialMainColor;
-}
-.mat-form-field.mat-focused .mat-form-field-label{
-    color: $materialMainColor;
+
+    &.mat-focused{
+        .mat-form-field-ripple {
+            background-color: $materialMainColor;
+        }
+        .mat-input-element{
+            caret-color: $materialMainColor;
+        }
+        .mat-form-field-label{
+            color: $materialMainColor;
+        }
+        .mat-form-field-required-marker{
+            color: $materialMainColor;
+        }
+    }
 }
 
-.mat-form-field.mat-focused .mat-form-field-required-marker{
-    color: $materialMainColor;
+.mat-form-field-appearance-outline{
+    &.mat-focused{
+        .mat-form-field-outline-thick{
+            color: $materialMainColor;
+        }
+    }
+
+    .mat-form-field-outline{
+        color: rgba(0,0,0,.42);
+    }
 }
 
-.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick{
-    color: $materialMainColor;
-}
-
-.mat-form-field-flex:hover .mat-form-field-outline-thick{
-    color: $materialMainColor;
+.mat-form-field-flex{
+    &:hover{
+        .mat-form-field-outline-thick{
+            color: $materialMainColor;
+        }
+    }
 }

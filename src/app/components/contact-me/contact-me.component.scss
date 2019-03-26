@@ -75,17 +75,6 @@
         float: right;
         width: 67%;
         position: relative;
-        /* display: none; */
-
-/*         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto auto; */
-
-        /* width: 600px; */ /*TEMP*/
-        /* height: 540px; */
         height: 100%;
 
         border: solid 1px #cbcbcb;
@@ -153,6 +142,11 @@
                 font-weight: bold;
                 outline: none;
                 color: #064877;
+
+                &[disabled]{
+                    border: 1px solid #cdcdcd;
+                    color: #cdcdcd;
+                }
             }
         }
     }
