@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './components/category/category.component';
 import { SectionComponent } from './components/section/section.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
+import { ContactMeOldComponent } from './components/contact-me-old/contact-me-old.component';
 
 /* Layouts */
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
       { path: '', component: CategoryComponent, pathMatch: 'full' },
       { path: 'category/:id', component: CategoryComponent, runGuardsAndResolvers: 'paramsChange' },
       { path: 'section/:id', component: SectionComponent },
-      { path: 'contact', component: ContactMeComponent }
+      { path: 'contact', component: ContactMeComponent },
+      { path: 'contact-old', component: ContactMeOldComponent }
     ]
   },
 ]

@@ -38,6 +38,12 @@ $materialMainColor: #064877; //#51acae;
             color: $materialMainColor;
         }
     }
+
+    &:hover{
+        .mat-form-field-underline{
+            background-color: $materialMainColor;
+        }
+    }
 }
 
 .mat-form-field-appearance-outline{

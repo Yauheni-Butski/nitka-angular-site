@@ -15,6 +15,7 @@ import { LoadingSpinnerComponent } from './components/_shared/loading-spinner/lo
 import { GalerryImagePlateComponent } from './components/galerry-image-plate/galerry-image-plate.component';
 import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
+import { ContactMeOldComponent } from './components/contact-me-old/contact-me-old.component';
 
 import { MouseWheelHzScrollDirective } from './directives/mouse-whell-hz-scroll.directive';
 
@@ -42,7 +43,8 @@ import { SiteFooterComponent } from './_layout/site-footer/site-footer.component
     GalerryImagePlateComponent,
     ImageViewerComponent,
     MouseWheelHzScrollDirective,
-    ContactMeComponent
+    ContactMeComponent,
+    ContactMeOldComponent
   ],
   imports: [
     BrowserModule,

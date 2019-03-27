@@ -32,7 +32,7 @@
             <h3 class="header">Позвольте мне связаться с вами!</h3>
           </div>
           <div class="form-row">
-            <p class="header-text">Напишите мне сообщение, оставив свои контактные данные, и я всегда буду рад связаться с вами и ответить на интересующие вас вопросы!</p>
+            <p class="header-text">Напишите мне сообщение, оставив свои контактные данные, и я всегда буду рада связаться с вами и ответить на интересующие вас вопросы!</p>
           </div>
           <div class="form-row">
             <div class="form-col">
@@ -42,11 +42,10 @@
               </mat-form-field>
               <mat-form-field>
                 <input formControlName="phoneNumber" matInput tabindex="3" placeholder="Номер телефона" class="phone-number" type="number" autocomplete="off" [errorStateMatcher]="matcher" required>
-                <mat-error *ngIf="phoneNumber.hasError('required')">Укажите номер телефона, чтобы я смог связаться с вами</mat-error>
+                <mat-error *ngIf="phoneNumber.hasError('required')">Укажите номер телефона, чтобы я смогла связаться с вами</mat-error>
                 <span matPrefix>+&nbsp;</span>
               </mat-form-field>
             </div>
-      
             <div class="form-col">
                 <mat-form-field>
                     <input formControlName="city" tabindex="2" matInput placeholder="Город" autocomplete="off" [errorStateMatcher]="matcher">
@@ -64,7 +63,6 @@
               <textarea formControlName="comment" maxlength="1000" tabindex="5" class="comment" matInput rows="5" [errorStateMatcher]="matcher"></textarea>
               <mat-error *ngIf="comment.hasError('maxLength')">Превышено максимальное количество символом (1000)</mat-error>
             </mat-form-field>
-      
           </div>
           <div class="form-row">
               <button *ngIf="!this.message" [disabled]="!contactMeForm.valid" tabindex="5" mat-button class="submit-btn">Отправить</button>

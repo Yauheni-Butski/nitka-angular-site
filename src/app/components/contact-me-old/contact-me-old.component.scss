@@ -1,0 +1,86 @@
+.contact-container{
+    /* background-color: antiquewhite; */
+    height: 100%;
+    padding: 60px 65px;
+
+    .left-panel{
+       /*  background-color: azure; */
+        width: 33%;
+        height: 100%;
+        float: left;
+
+        .image-wrapper{
+            overflow: hidden;
+            height: 100%;
+            float: right;
+            padding: 0 20px;
+
+            img{
+               height: 100%; 
+            }
+        }
+    }
+    .right-panel{
+        /* background-color: burlywood; */
+        width: 67%;
+        height: 100%;
+        float: left;
+
+        .header{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .text-block{
+            padding: 0 50px;
+
+            .contact-block{
+                margin-top: 50px;
+
+                .contact-text{
+                    a{
+                        text-decoration: none;
+                        color: initial;
+                    }
+
+                    .title{
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .contact-links{
+                width: 100%;
+                text-align: center;
+                $linksColor: rgb(24, 134, 156);
+                margin-top: 50px;
+    
+                .contact-icon{
+                    width: 59.5px;
+                    height: 57px;
+                    display: inline-block;
+                    border: 1px solid black;
+                    margin: 0 10px;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    text-rendering: auto;
+                    border-radius: 10px;
+                    padding: 10px;
+                    cursor: pointer;
+
+                    i{
+                        font-size: 2.5em;
+                        font-style: normal;
+                    }
+
+                    &:hover{
+                        border: 1px solid $linksColor;
+
+                        i{
+                            color: $linksColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
