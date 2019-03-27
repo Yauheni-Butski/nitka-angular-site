@@ -8,6 +8,7 @@ import { ContactMeOldComponent } from './components/contact-me-old/contact-me-ol
 
 /* Layouts */
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
+import { ContactLayoutComponent } from './_layout/contact-layout/contact-layout.component';
 
 const routes: Routes = [
 
@@ -19,10 +20,16 @@ const routes: Routes = [
       { path: '', component: CategoryComponent, pathMatch: 'full' },
       { path: 'category/:id', component: CategoryComponent, runGuardsAndResolvers: 'paramsChange' },
       { path: 'section/:id', component: SectionComponent },
-      { path: 'contact', component: ContactMeComponent },
-      { path: 'contact-old', component: ContactMeOldComponent }
+      { path: 'contact', component: ContactMeComponent }
     ]
   },
+  {
+    path: 'contact-old',
+    component: ContactLayoutComponent,
+    children: [
+      { path: '', component: ContactMeOldComponent, pathMatch: 'full' },
+    ]
+  }
 ]
 
 @NgModule({

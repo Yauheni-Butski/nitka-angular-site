@@ -10,10 +10,6 @@
     cursor: pointer;
     z-index: 120;
     margin-top: -12.5px;
-
-    &::before{
-        content: "\f0c9";
-    }
 }
 
 .nav-menu-panel{

@@ -39,18 +39,44 @@
 
         .social-links{
             width: 100%;
-            padding: 50px 30px;
             text-align: center;
-            bottom: 0;
-            position: absolute;
-            left: 0;
+            margin-top: 50px;
 
-            .social-icon{
+            .links-wrapper{
                 display: inline-block;
-                width: 50px;
-                height: 50px;
-                border: 1px solid #fff;
-                margin: 0 10px;
+
+                .social-icon{
+                    width: 59.5px;
+                    height: 57px;
+                    margin: 0 10px;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    text-rendering: auto;
+                    border-radius: 10px;
+                    padding: 10px;
+                    cursor: pointer;
+                    float: left;
+
+                    -webkit-transition: .2s;
+                    -moz-transition: .2s;
+                    -o-transition: .2s;
+                    transition: .2s;
+    
+                    i{
+                        font-size: 2.5em;
+                        font-style: normal;
+    
+                        &.fa-telegram{
+                            font-size: 2.7em;
+                        }
+                    }
+    
+                    &:hover{
+                        -webkit-transform: scale(1.2);
+                        -moz-transform: scale(1.2);
+                        -ms-transform: scale(1.2);
+                        -o-transform: scale(1.2);
+                    }
+                }
             }
         }
 

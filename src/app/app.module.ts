@@ -27,6 +27,7 @@ import { AppMaterialModule } from './app-material.module';
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
 import { SiteHeaderComponent } from './_layout/site-header/site-header.component';
 import { SiteFooterComponent } from './_layout/site-footer/site-footer.component';
+import { ContactLayoutComponent } from './_layout/contact-layout/contact-layout.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { SiteFooterComponent } from './_layout/site-footer/site-footer.component
     ImageViewerComponent,
     MouseWheelHzScrollDirective,
     ContactMeComponent,
-    ContactMeOldComponent
+    ContactMeOldComponent,
+    ContactLayoutComponent
   ],
   imports: [
     BrowserModule,
