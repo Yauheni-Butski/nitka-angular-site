@@ -5,15 +5,20 @@ header{
     .logo{
         text-align: center;
         height: 100%;
+        padding-bottom: 5px;
 
         .logo-item{
             height: 100%;
             display: inline-block;
-            padding: 10px 10px;
-            border: solid 1px gray;
+            padding: 5px 10px; //was 10-10
+            /* border: solid 1px gray; */
+            overflow: hidden;
 
-            h1{
+            /* h1{
                 line-height: unset;
+            } */
+            img{
+                height: 100%;
             }
         }
     }
