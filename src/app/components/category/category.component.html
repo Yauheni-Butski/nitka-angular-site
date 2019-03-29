@@ -1,5 +1,5 @@
 <app-inner-nav *ngIf="hasInnerNavigation" [navLinks]="category.navLinks"></app-inner-nav>
-<div [class.full-h-cards]="!hasInnerNavigation"  class="category-cards-wrapper">
+<div [class.full-h-cards]="!hasInnerNavigation"  class="category-cards-wrapper" contextMenuProtection>
     <app-image-card-plates *ngIf="category" [imageCards]="category.categoryCards" [isFullHeightPlates]="true"></app-image-card-plates>
     <app-loading-spinner *ngIf="!category"></app-loading-spinner>
 </div>

@@ -16,8 +16,9 @@ import { GalerryImagePlateComponent } from './components/galerry-image-plate/gal
 import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { ContactMeOldComponent } from './components/contact-me-old/contact-me-old.component';
-
+/* Directives */
 import { MouseWheelHzScrollDirective } from './directives/mouse-whell-hz-scroll.directive';
+import { ContextMenuProtectionDirective } from './directives/context-menu-protection.directive';
 
 import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
@@ -28,6 +29,7 @@ import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component
 import { SiteHeaderComponent } from './_layout/site-header/site-header.component';
 import { SiteFooterComponent } from './_layout/site-footer/site-footer.component';
 import { ContactLayoutComponent } from './_layout/contact-layout/contact-layout.component';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { ContactLayoutComponent } from './_layout/contact-layout/contact-layout.
     MouseWheelHzScrollDirective,
     ContactMeComponent,
     ContactMeOldComponent,
-    ContactLayoutComponent
+    ContactLayoutComponent,
+    ContextMenuProtectionDirective
   ],
   imports: [
     BrowserModule,
