@@ -15,8 +15,6 @@ export class CommonNavigationComponent implements OnInit {
   }
 
   showHideCommonNavPanel(): void{
-    debugger;
-    console.log(this.isNavPanelVisible);
     this.isNavPanelVisible = !this.isNavPanelVisible;
   }
 

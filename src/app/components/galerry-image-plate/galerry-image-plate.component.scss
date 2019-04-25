@@ -5,15 +5,13 @@ $fadeAndScaleTransitionTime: 0.2s;
     height: auto;
     display: inline-block;
 
-    border: 3.5px solid transparent; /*Add border for images*/ /*Оставляем или 3.5px + закругление, или 1px и без закругления*/
+    border: 3.5px solid transparent;
 
     .plate-wrapper{
         position: relative;
-        border-radius: $imagePlateBorderRadius; /*Оставляем или 3.5px + закругление, или 1px и без закругления*/
+        border-radius: $imagePlateBorderRadius;
         overflow: hidden;
         cursor: pointer;
-        /* cursor: pointer; */
-        /*Fix scale + overflow + border-radius on Chrome*/
         -webkit-transform: translate(0px,0px);
         -moz-transform: translate(0px,0px);
         -ms-transform: translate(0px,0px);
@@ -87,8 +85,6 @@ $fadeAndScaleTransitionTime: 0.2s;
                 margin: 0 15px;
                 border-radius: 6px;
                 user-select: none;
-                /* background-color: rgba(0,0,0,0.2); */
-                /* border: solid 1px #ffffff; */
 
                 background-color: rgba(0,0,0,0.5);
 

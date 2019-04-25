@@ -4,7 +4,7 @@ import { Section } from '../../models/section';
 import { SectionService } from '../../services/section.service';
 import { ImagePlate } from 'src/app/models/imagePlate';
 
-//import { delay } from 'rxjs/operators'; //FOR TEST LOADING SPINNER
+import { delay } from 'rxjs/operators'; //TODO. Comment it. FOR TEST PURPOSE. LOADING SPINNER
 
 @Component({
   selector: 'app-section',
@@ -27,7 +27,7 @@ export class SectionComponent implements OnInit {
     getSectionContent() : void {
       const sectionId = +this.activatedRoute.snapshot.paramMap.get('id');
       this.sectionService.getSection(sectionId)
-        //.pipe(delay(1000)) //FOR TEST LOADING SPINNER
+        .pipe(delay(1000)) //TODO. Comment it. FOR TEST PURPOSE. LOADING SPINNER
         .subscribe(section => { this.section = new Section(section) });
     }
 

@@ -20,6 +20,7 @@
                 padding: 0 15px;
                 border-right: 1px solid rgba(255,255,255,0.1);
                 cursor: pointer;
+                user-select: none;
 
                 .action-icon{
                     font-size: 35px;
@@ -82,6 +83,7 @@
             display: inline-block;
             vertical-align: middle;
             cursor: pointer;
+            user-select: none;
             
             &:hover{
                 i{

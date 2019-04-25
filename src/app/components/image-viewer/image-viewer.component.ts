@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef} from '@angular/core';
+import { Component, Input, Output, EventEmitter, ElementRef} from '@angular/core';
 import { ImagePlate } from 'src/app/models/imagePlate';
 
 @Component({
@@ -6,7 +6,7 @@ import { ImagePlate } from 'src/app/models/imagePlate';
   templateUrl: './image-viewer.component.html',
   styleUrls: ['./image-viewer.component.scss']
 })
-export class ImageViewerComponent implements OnInit {
+export class ImageViewerComponent {
   private _activeImage: ImagePlate = null;
   get activeImage(): ImagePlate {
     return this._activeImage;
@@ -26,11 +26,6 @@ export class ImageViewerComponent implements OnInit {
   isNextButtonVisible: boolean = true;
 
   constructor(private elRef: ElementRef) { }
-
-  ngOnInit() {
-    //пока тут полежит кусок кода. взять активный элемент
-    //this.activeImage = this.section.imagePlates.find(ip => ip.id === activeImagePlateId);
-  }
 
   tickAndScrollThumbs() {
     setTimeout(() => {
@@ -92,7 +87,7 @@ export class ImageViewerComponent implements OnInit {
   }
 
   toggleLikeActiveImage(){
-    //TODO. Отправить запрос на сервер, сохранить.
+    //TODO. Send request to server for updating state
     this.activeImage.isUserLike = !this.activeImage.isUserLike;
     this.activeImage.likeCount = this.activeImage.isUserLike ? this.activeImage.likeCount + 1 : this.activeImage.likeCount - 1;
   }

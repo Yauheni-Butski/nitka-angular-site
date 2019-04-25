@@ -12,15 +12,6 @@ $imageColumnsCount: 5;
         -moz-column-gap:      0px;
         column-count:         $imageColumnsCount;
         column-gap:           0px;
-
-        /* Первый вариант. */
-/*         img{
-            width: 100%;
-            height: auto;
-
-            border: 5px solid transparent; 
-            border-radius: $imagePlateBorderRadius;
-        } */
     }
 }
 

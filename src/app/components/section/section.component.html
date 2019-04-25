@@ -3,11 +3,6 @@
 <div class="section-content-wrapper">
         <ng-container *ngIf="section">
             <div class="image-plate-container">
-
-                <!--Первый вариант. Просто через IMG вставляем -->
-                <!-- <img *ngFor="let imagePlate of section.imagePlates" [src]="imagePlate.thumbPath"> -->
-
-                <!-- Второй вариант, через Backgroung image, чтобы можно было сентрировать изображение -->
                 <ng-container *ngFor="let imagePlate of section.imagePlates">
                     <app-galerry-image-plate [imagePlate]="imagePlate" (zoomingImage)="showImageViewer($event)"></app-galerry-image-plate>
                 </ng-container>

@@ -59,7 +59,6 @@
 
                     span{
                         padding-bottom: 5px;
-                        /* border-bottom: 2px solid rgba(255,255,255,0.3); */
                         display: inline-block;
                         position: relative;
                     }
@@ -79,22 +78,10 @@
                     }
                 }
             }
-
-/*             .descr{
-                opacity: 0;
-                -webkit-transition: all 1.5s ease;
-                transition: all 1.5s ease;
-            } */
         }
 
         &:hover{
             .title-container{
-                /* bottom: 15%; */
-
-                /* .descr{
-                    opacity: 1;
-                }   */
-
                 .title{
                     h4{
                         span::after{
