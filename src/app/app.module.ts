@@ -16,6 +16,7 @@ import { GalerryImagePlateComponent } from './components/galerry-image-plate/gal
 import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { ContactMeOldComponent } from './components/contact-me-old/contact-me-old.component';
+import { ServicesComponent } from './components/services/services.component';
 /* Directives */
 import { MouseWheelHzScrollDirective } from './directives/mouse-whell-hz-scroll.directive';
 import { ContextMenuProtectionDirective } from './directives/context-menu-protection.directive';
@@ -49,7 +50,8 @@ import { ContactLayoutComponent } from './_layout/contact-layout/contact-layout.
     ContactMeComponent,
     ContactMeOldComponent,
     ContactLayoutComponent,
-    ContextMenuProtectionDirective
+    ContextMenuProtectionDirective,
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
