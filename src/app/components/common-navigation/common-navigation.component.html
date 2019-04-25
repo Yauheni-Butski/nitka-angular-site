@@ -1,12 +1,14 @@
 <div class="nav-menu-icon" (click)="showHideCommonNavPanel()">
-    <i class="fas fa-bars"></i>
+    <i *ngIf="!isNavPanelVisible" class="fas fa-bars"></i>
+    <i *ngIf="isNavPanelVisible" class="fas fa-times"></i>
 </div>
 
-<div class="nav-menu-panel" *ngIf="isNavPanelVisible">
-    <ul>
-        <li>LINK 1</li>
-        <li>LINK 1</li>
-        <li>LINK 1</li>
-        <li>LINK 1</li>
-    </ul>
+<div class="nav-menu-panel" [class.active]="isNavPanelVisible">
+    <div class="nav-menu-container">
+        <ul>
+            <li (click)="showHideCommonNavPanel()"><a routerLink="/">Главная</a></li>
+            <li (click)="showHideCommonNavPanel()"><a routerLink="/services">Услуги</a></li>
+            <li (click)="showHideCommonNavPanel()"><a routerLink="/contact">Контакты</a></li>
+        </ul>
+    </div>
 </div>

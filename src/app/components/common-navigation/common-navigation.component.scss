@@ -10,14 +10,79 @@
     cursor: pointer;
     z-index: 120;
     margin-top: -12.5px;
+
+    .fa-times{
+        font-size: 2rem;
+        color: #ffffff;
+    }
 }
 
 .nav-menu-panel{
-    background-color: antiquewhite;
+    background-color: rgba(0,0,0,0.9);
     position: absolute;
     top:0;
     bottom: 0;
     right: 0;
-    width: 33.3333%;
+    width: 0%;
+    overflow: hidden;
+    transition: all 0.5s;
     z-index: 110;
+
+    &.active{
+        width: 100%;
+    }
+
+    .nav-menu-container{
+        top: 50%;
+        left: 0px;
+        right: 0px;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        position: absolute;
+        padding: 10% 5%;
+
+        ul{
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+
+            li{
+                position: relative;
+                display: inline-block;
+                -webkit-transition: all 0.2s ease;
+                transition: all 0.2s ease;
+                margin: 20px 0px;
+                padding: 0px 40px;
+                border-right: 1px solid rgba(255,255,255,0.25);
+
+                &:last-of-type{
+                    border-right: none;
+                }
+
+                a{
+                    color: rgba(255,255,255,0.9);
+                    font-size: 36px;
+                    line-height: 36px;
+                    font-weight: 400;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    -webkit-transition: all 0.3s ease;
+                    transition: all 0.3s ease;
+                    display: inline-block;
+                    padding: 4px 0px;
+                    border-bottom: 2px solid transparent;
+                    user-select: none;
+                    cursor: pointer;
+
+                    &:hover,
+                    &:active{
+                        color: rgb(195, 113, 31);
+                    }
+                }
+            }
+        }
+    }
 }
