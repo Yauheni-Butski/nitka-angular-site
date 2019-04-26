@@ -1,0 +1,128 @@
+$mainColor: #00AFB3;
+.services-container{
+    height: 100%;
+    width: 100%;
+    padding: 20px 20px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    
+    .services-wrapper{
+        width: 2540px;
+        height: 100%;
+    }
+
+    .service-item{
+        height: 100%;
+        width: 500px;
+        border: solid 5px $mainColor;
+        border-radius: 5px;
+        float: left;
+        margin: 0 3px;
+        padding: 30px;
+        overflow: hidden;
+
+        .top-part{
+            padding: 60px 40px 60px 40px;
+
+            .top-part-content{
+                position: relative;
+
+                .pp-price-from-w{
+                    float: right;
+                    text-align: center;
+    
+                    .pp-price-from{
+                        font-size: 36px;
+                        line-height: 42px;
+                        font-weight: 700;
+                        color: $mainColor;
+                        margin-bottom: 5px;
+                        letter-spacing: -2px;
+                    }
+    
+                    .pp-price-label{
+                        color: $mainColor;
+                        text-transform: uppercase;
+                        border-top: 1px solid $mainColor;
+                        padding-top: 5px;
+                        font-size: 11px;
+                    }
+                }
+                .pp-name{
+                    margin: 0px;
+                    z-index: 100;
+                    position: relative;
+                    padding-top: 10px;
+                    font-size: 27px;
+                    line-height: 36px;
+                    text-transform: uppercase;
+                    letter-spacing: -1px;
+                }
+                .square-diamond{
+                    width: 80px;
+                    height: 80px;
+                    position: absolute;
+                    top: -20px;
+                    left: -30px;
+                    background-color: #fff;
+                    -webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    -o-transform: rotate(45deg);
+                }
+            }
+        }
+        .bottom-part{
+            padding: 0px 40px;
+
+            .pp-desc{
+                margin-bottom: 40px;
+                overflow: hidden;
+            }
+            .packages-label{
+                color: #828282;
+                text-align: center;
+            }
+            .pp-packages{
+                margin-top: 20px;
+
+                .pp-package-w{
+                    position: relative;
+
+                    .pp-package-quick-desc{
+                        background-color: rgba(255,255,255,0.95);
+                        padding: 5px;
+                        position: relative;
+
+                        .pp-package-price{
+                            float: right;
+                            font-size: 22px;
+                            line-height: 25px;
+                            font-weight: 700;
+                            padding: 10px 15px;
+                            background-color: #fcf9f2;
+                            color: #847c6e;
+                        }
+                        .pp-package-label{
+                            padding: 12px 0px 0px 15px;
+
+                            .pp-package-name{
+                                margin-top: 0px;
+                                margin-bottom: 0px;
+                                font-size: 18px;
+                                padding-bottom: 3px;
+                                display: inline-block;
+                            }
+                        }
+                    }
+                    .pp-package-quick-desc-content{
+                        background-color: rgba(255,255,255,0.6);
+                        padding: 20px;
+                        margin-bottom: 20px;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}
