@@ -4,12 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './components/category/category.component';
 import { SectionComponent } from './components/section/section.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
-import { ContactMeOldComponent } from './components/contact-me-old/contact-me-old.component';
 import { ServicesComponent } from './components/services/services.component';
 
 /* Layouts */
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
-import { ContactLayoutComponent } from './_layout/contact-layout/contact-layout.component';
 
 const routes: Routes = [
 
@@ -22,15 +20,9 @@ const routes: Routes = [
       { path: 'category/:id', component: CategoryComponent, runGuardsAndResolvers: 'paramsChange' },
       { path: 'section/:id', component: SectionComponent },
       { path: 'section/:id/services', component: ServicesComponent},
+      { path: 'category/:id/services', component: ServicesComponent}, /* TODO. Оставить один */
       { path: 'services', component: ServicesComponent},
       { path: 'contact', component: ContactMeComponent }
-    ]
-  },
-  {
-    path: 'contact-old',
-    component: ContactLayoutComponent,
-    children: [
-      { path: '', component: ContactMeOldComponent, pathMatch: 'full' },
     ]
   }
 ]
