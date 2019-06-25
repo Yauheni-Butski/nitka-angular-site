@@ -20,7 +20,7 @@ const routes: Routes = [
       { path: 'category/:id', component: CategoryComponent, runGuardsAndResolvers: 'paramsChange' },
       { path: 'section/:id', component: SectionComponent },
       { path: 'section/:id/services', component: ServicesComponent},
-      { path: 'category/:id/services', component: ServicesComponent}, /* TODO. Оставить один */
+      { path: 'category/:id/services', component: ServicesComponent},
       { path: 'services', component: ServicesComponent},
       { path: 'contact', component: ContactMeComponent }
     ]

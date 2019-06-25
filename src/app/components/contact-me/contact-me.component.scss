@@ -1,14 +1,13 @@
 .contact-me-container{
-    position: relative;
-    height: 100%;
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    min-height: 100%;
 
     .left-contact-panel{
         width: 33%;
-        height: 100%;
         background-image: url("/assets/images/contact-back.png");
-        float: left;
-        position: relative;
+        background-size: cover;
+        min-width: 230px;
 
         color: #fff;
         padding: 0 20px;
@@ -98,93 +97,117 @@
     }
 
     .right-contact-panel{
-        float: right;
         width: 67%;
-        position: relative;
-        height: 100%;
-
+        min-width: 340px;
         border: solid 1px #cbcbcb;
         padding: 10px;
         background-color: #ffffff;
 
         .form-wrapper{
-            width: 600px;
-            height: 600px;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto auto;
+            max-width: 550px;
             border: 1px solid #064877;
             padding: 40px;
             border-radius: 10px;
-        }
-
-        .form-row{
+            margin: auto auto;
+            transform: translateY(-50%);
             width: 100%;
-            margin-right: 0;
-            margin-left: 0;
-            
-            &:not(:last-child){
-                margin-bottom: 10px;
-            }
+            top: 50%;
+            position: relative;
 
-            .form-col{
-                width: 50%;
-                float: left;
-
-                padding: 0 5px;
-
-                mat-form-field{
+            .form-row{
+                width: 100%;
+                margin-right: 0;
+                margin-left: 0;
+                
+                &:not(:last-child){
                     margin-bottom: 10px;
                 }
-            }
-
-            .header{
-                margin: 5px auto;
-            }
-
-            .header-text{
-                font-style: italic;
-                font-family: Open sans-serif;
-                font-size: 18px;
-            }
-
-            .phone-number::-webkit-outer-spin-button,
-            .phone-number::-webkit-inner-spin-button {
-                display: none;
-            }
-
-
-            .comment{
-                resize: none;
-            }
-
-            .submit-btn{
-                width: 100%;
-                height: 38px;
-                border: 1px solid #064877;
-                text-transform: uppercase;
-                font-weight: bold;
-                outline: none;
-                color: #064877;
-
-                &[disabled]{
-                    border: 1px solid #cdcdcd;
-                    color: #cdcdcd;
+    
+                .form-col{
+                    width: 50%;
+                    float: left;
+    
+                    padding: 0 5px;
+    
+                    mat-form-field{
+                        margin-bottom: 10px;
+                    }
+                }
+    
+                .header{
+                    margin: 5px auto;
+                }
+    
+                .header-text{
+                    font-style: italic;
+                    font-family: Open sans-serif;
+                    font-size: 18px;
+                }
+    
+                .phone-number::-webkit-outer-spin-button,
+                .phone-number::-webkit-inner-spin-button {
+                    display: none;
+                }
+    
+    
+                .comment{
+                    resize: none;
+                }
+    
+                .submit-btn{
+                    width: 100%;
+                    height: 38px;
+                    border: 1px solid #064877;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    outline: none;
+                    color: #064877;
+    
+                    &[disabled]{
+                        border: 1px solid #cdcdcd;
+                        color: #cdcdcd;
+                    }
+                }
+    
+                .submit-result-message{
+                    height: 38px;
+                    width: 100%;
+                    text-align: center;
+                    color: #51acae;
+                    font-weight: bold;
+    
+                    &.error{
+                        color: red;
+                    }
                 }
             }
+        }
 
-            .submit-result-message{
-                height: 38px;
-                width: 100%;
-                text-align: center;
-                color: #51acae;
-                font-weight: bold;
+        
+    }
+}
 
-                &.error{
-                    color: red;
+@media (max-width: 1200px){
+    .contact-me-container{
+        .right-contact-panel{
+            .form-wrapper{
+                min-height: 100%;
+                top: 0;
+                transform: translateY(0%)
+            }
+        }
+    }
+}
+
+@media (max-width: 800px){
+    
+    .contact-me-container{
+        .right-contact-panel{
+            .form-wrapper{
+                .form-row{
+                    .form-col{
+                        width: 100%;
+                    }
                 }
             }
         }

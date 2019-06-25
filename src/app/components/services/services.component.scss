@@ -2,23 +2,22 @@ $mainColor: #00AFB3;
 .services-container{
     height: 100%;
     width: 100%;
-    padding: 20px 20px;
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: auto;
     
     .services-wrapper{
-        width: 2540px;
-        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        min-height: 100%;
     }
 
     .service-item{
-        height: 100%;
-        width: 500px;
         border: solid 5px $mainColor;
         border-radius: 5px;
-        float: left;
         margin: 0 3px;
-        padding: 30px;
+        padding: 10px 15px 10px 15px;
+        min-width: 450px;
         overflow: hidden;
 
         .top-part{

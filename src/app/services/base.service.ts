@@ -5,7 +5,7 @@ export const httpOptions = {
   };
 
 export class BaseService{
-    public baseAPIurl = 'http://localhost:13021/api';
+    public baseAPIurl = 'http://work.local/api';//'http://localhost:13021/api';
     public categoriesUrl = this.baseAPIurl + '/categories';
     public sectionUrl = this.baseAPIurl + '/section';
     public loginUrl = this.baseAPIurl + '/login';
