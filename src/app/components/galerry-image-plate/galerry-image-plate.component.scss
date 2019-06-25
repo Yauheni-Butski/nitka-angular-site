@@ -18,12 +18,12 @@ $fadeAndScaleTransitionTime: 0.2s;
         -o-transform: translate(0px,0px);
 
         &:hover{
-            .image-holder{
+            /* .image-holder{
                 -webkit-transform: scale(1.05);
                 -moz-transform: scale(1.05);
                 -ms-transform: scale(1.05);
                 -o-transform: scale(1.05);
-            }
+            } */
             .image-fader{
                 background-color: rgba(0,0,0,0.2);
             }

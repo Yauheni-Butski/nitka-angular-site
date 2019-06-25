@@ -19,12 +19,16 @@ $mainColor: #00AFB3;
         padding: 10px 15px 10px 15px;
         min-width: 450px;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         .top-part{
-            padding: 60px 40px 60px 40px;
+            margin: 60px 40px 40px 40px;
 
             .top-part-content{
                 position: relative;
+                margin-bottom: 60px;
 
                 .pp-price-from-w{
                     float: right;
@@ -70,14 +74,13 @@ $mainColor: #00AFB3;
                     -o-transform: rotate(45deg);
                 }
             }
+            .pp-desc{
+                overflow: hidden;
+            }
         }
         .bottom-part{
             padding: 0px 40px;
 
-            .pp-desc{
-                margin-bottom: 40px;
-                overflow: hidden;
-            }
             .packages-label{
                 color: #828282;
                 text-align: center;
