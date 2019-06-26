@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SocialLink } from '../../models/socialLink';
+import { SocialLink } from '../../../models/socialLink';
 
 @Component({
   selector: 'app-social-icons',
