@@ -16,7 +16,7 @@ import { GalerryImagePlateComponent } from './components/galerry-image-plate/gal
 import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { ServicesComponent } from './components/services/services.component';
-import { SocialIconsComponent } from './components/social-icons/social-icons.component';
+import { SocialIconsComponent } from './components/_shared/social-icons/social-icons.component';
 
 /* Directives */
 import { MouseWheelHzScrollDirective } from './directives/mouse-whell-hz-scroll.directive';
