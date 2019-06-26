@@ -16,6 +16,8 @@ import { GalerryImagePlateComponent } from './components/galerry-image-plate/gal
 import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { ServicesComponent } from './components/services/services.component';
+import { SocialIconsComponent } from './components/social-icons/social-icons.component';
+
 /* Directives */
 import { MouseWheelHzScrollDirective } from './directives/mouse-whell-hz-scroll.directive';
 import { ContextMenuProtectionDirective } from './directives/context-menu-protection.directive';
@@ -47,7 +49,8 @@ import { SiteFooterComponent } from './_layout/site-footer/site-footer.component
     MouseWheelHzScrollDirective,
     ContactMeComponent,
     ContextMenuProtectionDirective,
-    ServicesComponent
+    ServicesComponent,
+    SocialIconsComponent
   ],
   imports: [
     BrowserModule,

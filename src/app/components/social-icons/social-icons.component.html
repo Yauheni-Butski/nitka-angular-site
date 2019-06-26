@@ -1,0 +1,7 @@
+<div class="social-icons">
+<div class="s-icon" *ngFor="let icon of icons">
+  <a [href]="icon.url">
+      <i [ngClass]="getIconClasses(icon)" [ngStyle]="getIconStyles(icon)"></i>
+    </a>
+</div>
+</div>

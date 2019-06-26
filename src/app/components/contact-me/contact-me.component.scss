@@ -10,7 +10,7 @@
         min-width: 230px;
 
         color: #fff;
-        padding: 0 20px;
+        padding: 0 20px 10px 20px;
         
         .header{
             margin-top: 50px;
@@ -36,47 +36,9 @@
             }
         }
 
-        .social-links{
-            width: 100%;
+        .contact-social-icons{
             text-align: center;
-            margin-top: 50px;
-
-            .links-wrapper{
-                display: inline-block;
-
-                .social-icon{
-                    width: 59.5px;
-                    height: 57px;
-                    margin: 0 10px;
-                    font: normal normal normal 14px/1 FontAwesome;
-                    text-rendering: auto;
-                    border-radius: 10px;
-                    padding: 10px;
-                    cursor: pointer;
-                    float: left;
-
-                    -webkit-transition: .2s;
-                    -moz-transition: .2s;
-                    -o-transition: .2s;
-                    transition: .2s;
-    
-                    i{
-                        font-size: 2.5em;
-                        font-style: normal;
-    
-                        &.fa-telegram{
-                            font-size: 2.7em;
-                        }
-                    }
-    
-                    &:hover{
-                        -webkit-transform: scale(1.2);
-                        -moz-transform: scale(1.2);
-                        -ms-transform: scale(1.2);
-                        -o-transform: scale(1.2);
-                    }
-                }
-            }
+            margin-top: 25px;
         }
 
         .contact-info{
