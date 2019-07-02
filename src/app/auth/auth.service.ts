@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BaseService, httpOptions } from '../services/base.service';
 import { HttpClient } from '@angular/common/http';
 
-import { LoginResult } from '../models/loginResult';
+import { LoginResult } from './models/loginResult';
 
 import { shareReplay } from 'rxjs/operators';
 

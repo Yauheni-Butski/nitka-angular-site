@@ -9,7 +9,6 @@ import { CategoryComponent } from './components/category/category.component';
 import { SectionComponent } from './components/section/section.component';
 import { ImageCardPlatesComponent } from './components/image-card-plates/image-card-plates.component';
 import { CommonNavigationComponent } from './components/common-navigation/common-navigation.component';
-import { ServicesComponent } from './components/services/services.component';
 
 /* Feature modules */
 import { AdminModule } from './admin/admin.module';
@@ -17,6 +16,7 @@ import { GalleryModule } from './gallery/gallery.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { ContactMeModule } from './contact-me/contact-me.module';
+import { PricesModule } from './prices/prices.module';
 
 /* Layouts */
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
@@ -33,8 +33,7 @@ import { SiteFooterComponent } from './_layout/site-footer/site-footer.component
     CommonNavigationComponent,
     SiteLayoutComponent,
     SiteHeaderComponent,
-    SiteFooterComponent,
-    ServicesComponent
+    SiteFooterComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +43,8 @@ import { SiteFooterComponent } from './_layout/site-footer/site-footer.component
     AuthModule,
     GalleryModule,
     SharedModule,
-    ContactMeModule
+    ContactMeModule,
+    PricesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
