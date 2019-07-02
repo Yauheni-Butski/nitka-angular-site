@@ -21,9 +21,17 @@ const routes: Routes = [
       { path: 'section/:id', component: SectionComponent },
       { path: 'section/:id/prices', component: PricesComponent},
       { path: 'category/:id/prices', component: PricesComponent},
-      { path: 'prices', component: PricesComponent},
-      { path: 'contact', component: ContactMeComponent }
+      { path: 'prices', component: PricesComponent}, //TODO. Lazy load feature module
+      { path: 'contact', component: ContactMeComponent } //TODO. Lazy load feature module
     ]
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/auth.module').then(mod => mod.AuthModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(mod => mod.AdminModule)
   }
 ]
 
