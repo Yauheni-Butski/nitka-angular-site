@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 
@@ -10,21 +9,14 @@ import { CategoryComponent } from './components/category/category.component';
 import { SectionComponent } from './components/section/section.component';
 import { ImageCardPlatesComponent } from './components/image-card-plates/image-card-plates.component';
 import { CommonNavigationComponent } from './components/common-navigation/common-navigation.component';
-import { InnerNavComponent } from './components/_shared/inner-nav/inner-nav.component';
-import { LoadingSpinnerComponent } from './components/_shared/loading-spinner/loading-spinner.component';
-import { GalerryImagePlateComponent } from './components/galerry-image-plate/galerry-image-plate.component';
-import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
-import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { ServicesComponent } from './components/services/services.component';
-import { SocialIconsComponent } from './components/_shared/social-icons/social-icons.component';
 
-/* Directives */
-import { MouseWheelHzScrollDirective } from './directives/mouse-whell-hz-scroll.directive';
-import { ContextMenuProtectionDirective } from './directives/context-menu-protection.directive';
-
+/* Feature modules */
 import { AdminModule } from './admin/admin.module';
+import { GalleryModule } from './gallery/gallery.module';
+import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
-import { AppMaterialModule } from './app-material.module';
+import { ContactMeModule } from './contact-me/contact-me.module';
 
 /* Layouts */
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
@@ -42,24 +34,17 @@ import { SiteFooterComponent } from './_layout/site-footer/site-footer.component
     SiteLayoutComponent,
     SiteHeaderComponent,
     SiteFooterComponent,
-    InnerNavComponent,
-    LoadingSpinnerComponent,
-    GalerryImagePlateComponent,
-    ImageViewerComponent,
-    MouseWheelHzScrollDirective,
-    ContactMeComponent,
-    ContextMenuProtectionDirective,
-    ServicesComponent,
-    SocialIconsComponent
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     AdminModule,
     AuthModule,
-    AppMaterialModule
+    GalleryModule,
+    SharedModule,
+    ContactMeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { ContextMenuProtectionDirective } from './directives/context-menu-protection.directive';
+import { ContextMenuProtectionDirective } from './shared/directives/context-menu-protection.directive';
 
 describe('ContextMenuProtectionDirective', () => {
   it('should create an instance', () => {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ImagePlate } from '../../models/imagePlate';
+import { ImagePlate } from 'src/app/models/imagePlate';
 
 @Component({
   selector: 'app-galerry-image-plate',

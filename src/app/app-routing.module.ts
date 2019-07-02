@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CategoryComponent } from './components/category/category.component';
 import { SectionComponent } from './components/section/section.component';
-import { ContactMeComponent } from './components/contact-me/contact-me.component';
+import { ContactMeComponent } from './contact-me/components/contact-me/contact-me.component';
 import { ServicesComponent } from './components/services/services.component';
 
 /* Layouts */

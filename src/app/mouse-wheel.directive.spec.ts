@@ -1,4 +1,4 @@
-import { MouseWheelDirective } from './directives/mouse-whell-hz-scroll.directive';
+import { MouseWheelDirective } from './shared/directives/mouse-whell-hz-scroll.directive';
 
 describe('MouseWheelDirective', () => {
   it('should create an instance', () => {
