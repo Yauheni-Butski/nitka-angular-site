@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { AppMaterialModule } from '../app-material.module';
+import { ContactMeRoutingModule } from './contact-me-routing.module';
 
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 
@@ -11,7 +12,8 @@ import { ContactMeComponent } from './components/contact-me/contact-me.component
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
-    AppMaterialModule
+    AppMaterialModule,
+    ContactMeRoutingModule
   ],
   declarations: [
     ContactMeComponent

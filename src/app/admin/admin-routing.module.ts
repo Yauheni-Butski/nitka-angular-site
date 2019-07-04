@@ -9,6 +9,7 @@ const adminRoutes: Routes = [
   {
     path: '',
     component: AdminDashboardComponent,
+    pathMatch: 'full',
     canActivate: [AuthGuard] }
 ];
 

@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CategoryComponent } from './components/category/category.component';
 import { SectionComponent } from './components/section/section.component';
-import { ContactMeComponent } from './contact-me/components/contact-me/contact-me.component';
-import { PricesComponent } from './prices/components/prices/prices.component';
 
 /* Layouts */
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
@@ -19,10 +17,10 @@ const routes: Routes = [
       { path: '', component: CategoryComponent, pathMatch: 'full' },
       { path: 'category/:id', component: CategoryComponent, runGuardsAndResolvers: 'paramsChange' },
       { path: 'section/:id', component: SectionComponent },
-      { path: 'section/:id/prices', component: PricesComponent},
-      { path: 'category/:id/prices', component: PricesComponent},
-      { path: 'prices', component: PricesComponent}, //TODO. Lazy load feature module
-      { path: 'contact', component: ContactMeComponent } //TODO. Lazy load feature module
+      { path: 'section/:id/prices', loadChildren: () => import('./prices/prices.module').then(mod => mod.PricesModule)}, //TODO. Rework path. Use Id.
+      { path: 'category/:id/prices', loadChildren: () => import('./prices/prices.module').then(mod => mod.PricesModule)}, //TODO. Rework path. Use Id.
+      { path: 'prices', loadChildren: () => import('./prices/prices.module').then(mod => mod.PricesModule) },
+      { path: 'contact', loadChildren: () => import('./contact-me/contact-me.module').then(mod => mod.ContactMeModule) }
     ]
   },
   {

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './components/app/app.component';
 import { CategoryComponent } from './components/category/category.component';
@@ -11,12 +12,10 @@ import { ImageCardPlatesComponent } from './components/image-card-plates/image-c
 import { CommonNavigationComponent } from './components/common-navigation/common-navigation.component';
 
 /* Feature modules */
-import { AdminModule } from './admin/admin.module';
+/* import { AdminModule } from './admin/admin.module'; */
 import { GalleryModule } from './gallery/gallery.module';
 import { SharedModule } from './shared/shared.module';
-import { AuthModule } from './auth/auth.module';
-import { ContactMeModule } from './contact-me/contact-me.module';
-import { PricesModule } from './prices/prices.module';
+/* import { AuthModule } from './auth/auth.module'; */
 
 /* Layouts */
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
@@ -39,12 +38,11 @@ import { SiteFooterComponent } from './_layout/site-footer/site-footer.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AdminModule,
-    AuthModule,
+    BrowserAnimationsModule,
+/*     AdminModule, */
+/*     AuthModule, */
     GalleryModule,
-    SharedModule,
-    ContactMeModule,
-    PricesModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
