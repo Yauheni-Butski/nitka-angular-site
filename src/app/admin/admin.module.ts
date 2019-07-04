@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
-import { AuthModule } from '../auth/auth.module';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
@@ -11,8 +10,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutingModule,
-    AuthModule
+    AdminRoutingModule
   ],
   declarations: [AdminDashboardComponent],
   providers: [

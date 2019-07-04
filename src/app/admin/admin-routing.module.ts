@@ -7,9 +7,8 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 
 const adminRoutes: Routes = [
   {
-    path: '',
+    path: 'admin',
     component: AdminDashboardComponent,
-    pathMatch: 'full',
     canActivate: [AuthGuard] }
 ];
 

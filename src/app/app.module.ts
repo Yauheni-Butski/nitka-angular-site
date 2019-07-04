@@ -12,10 +12,9 @@ import { ImageCardPlatesComponent } from './components/image-card-plates/image-c
 import { CommonNavigationComponent } from './components/common-navigation/common-navigation.component';
 
 /* Feature modules */
-/* import { AdminModule } from './admin/admin.module'; */
+import { AdminModule } from './admin/admin.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { SharedModule } from './shared/shared.module';
-/* import { AuthModule } from './auth/auth.module'; */
 
 /* Layouts */
 import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
@@ -39,8 +38,7 @@ import { SiteFooterComponent } from './_layout/site-footer/site-footer.component
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-/*     AdminModule, */
-/*     AuthModule, */
+    AdminModule,
     GalleryModule,
     SharedModule
   ],
