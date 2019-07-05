@@ -1,4 +1,4 @@
-export class SubmitResult{
+export class SubmitResult {
     success: boolean;
     message: string;
 

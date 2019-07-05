@@ -7,13 +7,13 @@ import { Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminDashboardService extends BaseService{
+export class AdminDashboardService extends BaseService {
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     super();
   }
 
-  getAdminDashboard() : Observable<string>{
+  getAdminDashboard(): Observable<string> {
     return this.http.get<string>(this.adminDashboardUrl);
   }
 }

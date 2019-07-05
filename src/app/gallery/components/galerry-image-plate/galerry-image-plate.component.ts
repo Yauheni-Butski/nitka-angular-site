@@ -16,7 +16,7 @@ export class GalerryImagePlateComponent implements OnInit {
   ngOnInit() {
   }
 
-  zoomImage(){
+  zoomImage() {
     this.zoomingImage.emit(this.imagePlate.id);
   }
 }

@@ -18,9 +18,9 @@ export class AdminDashboardComponent implements OnInit {
     this.getAdminDashboardData();
   }
 
-  getAdminDashboardData() : void {
+  getAdminDashboardData(): void {
     this.adminDashboardService.getAdminDashboard()
-      .subscribe(res => { this.serverResponceText = res });
+      .subscribe(res => { this.serverResponceText = res; });
   }
 
 }

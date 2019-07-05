@@ -8,11 +8,10 @@ export class ContextMenuProtectionDirective {
   constructor() { }
 
   @HostListener('contextmenu', ['$event']) onContextMenu(event: MouseEvent) {
-    //TODO. Show message in needed point
-    //var clientX = event.clientX;
-    //var clientY = event.clientY;
+    // TODO. Show message in needed point
+    // var clientX = event.clientX;
+    // var clientY = event.clientY;
     event.stopPropagation();
     event.preventDefault();
   }
-
 }

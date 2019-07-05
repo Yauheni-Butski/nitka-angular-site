@@ -11,7 +11,7 @@ export class ImageViewerComponent {
   get activeImage(): ImagePlate {
     return this._activeImage;
   }
-  
+
   @Input('activeImage')
   set activeImage(value: ImagePlate) {
     this._activeImage = value;
@@ -19,19 +19,19 @@ export class ImageViewerComponent {
     this.tickAndScrollThumbs();
   }
 
-  @Input() images:ImagePlate[] = [];
+  @Input() images: ImagePlate[] = [];
   @Output() onCloseViewer = new EventEmitter();
 
-  isPrevButtonVisible: boolean = true;
-  isNextButtonVisible: boolean = true;
+  isPrevButtonVisible = true;
+  isNextButtonVisible = true;
 
   constructor(private elRef: ElementRef) { }
 
   tickAndScrollThumbs() {
     setTimeout(() => {
-      var activeElHtml = this.elRef.nativeElement.querySelector(".thumb-item.active");
-      if (activeElHtml !== null){
-        activeElHtml.scrollIntoView({behavior: "smooth", inline: "center"});
+      const activeElHtml = this.elRef.nativeElement.querySelector('.thumb-item.active');
+      if (activeElHtml !== null) {
+        activeElHtml.scrollIntoView({behavior: 'smooth', inline: 'center'});
       }
      }, 100);
   }
@@ -41,14 +41,14 @@ export class ImageViewerComponent {
     this.onCloseViewer.emit();
   }
 
-  updateActiveImage(newActiveImage: ImagePlate){
+  updateActiveImage(newActiveImage: ImagePlate) {
     this.activeImage = newActiveImage;
   }
 
-  showPrevImage(){
-    let activeImageIndex = this.images.findIndex(ip => ip.id === this.activeImage.id);
-    let prevIndex = activeImageIndex - 1;
-    if(prevIndex < 0){
+  showPrevImage() {
+    const activeImageIndex = this.images.findIndex(ip => ip.id === this.activeImage.id);
+    const prevIndex = activeImageIndex - 1;
+    if (prevIndex < 0) {
       return;
     }
 
@@ -56,9 +56,9 @@ export class ImageViewerComponent {
   }
 
   showNextImage(){
-    let activeImageIndex = this.images.findIndex(ip => ip.id === this.activeImage.id);
-    let nextIndex = activeImageIndex + 1;
-    if(nextIndex > this.images.length - 1){
+    const activeImageIndex = this.images.findIndex(ip => ip.id === this.activeImage.id);
+    const nextIndex = activeImageIndex + 1;
+    if (nextIndex > this.images.length - 1) {
       return;
     }
 
@@ -66,28 +66,26 @@ export class ImageViewerComponent {
   }
 
   updateViewerButtonsState(){
-    if(this.images.length === 0 || this._activeImage === null){
+    if (this.images.length === 0 || this._activeImage === null) {
       return;
     }
 
-    let activeImageIndex = this.images.findIndex(ip => ip.id === this.activeImage.id);
-    if (activeImageIndex === this.images.length -1){
+    const activeImageIndex = this.images.findIndex(ip => ip.id === this.activeImage.id);
+    if (activeImageIndex === this.images.length - 1) {
       this.isNextButtonVisible = false;
-    }
-    else{
+    } else {
       this.isNextButtonVisible = true;
     }
 
-    if(activeImageIndex === 0){
+    if (activeImageIndex === 0) {
       this.isPrevButtonVisible = false;
-    }
-    else{
+    } else {
       this.isPrevButtonVisible = true;
     }
   }
 
-  toggleLikeActiveImage(){
-    //TODO. Send request to server for updating state
+  toggleLikeActiveImage() {
+    // TODO. Send request to server for updating state
     this.activeImage.isUserLike = !this.activeImage.isUserLike;
     this.activeImage.likeCount = this.activeImage.isUserLike ? this.activeImage.likeCount + 1 : this.activeImage.likeCount - 1;
   }

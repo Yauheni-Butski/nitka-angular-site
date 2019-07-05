@@ -1,4 +1,4 @@
-export interface IImageCard{
+export interface IImageCard {
     id: number;
     parentId?: number;
     name: string;

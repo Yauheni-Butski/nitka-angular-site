@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 
 const contactMeRoutes: Routes = [
-  { 
+  {
     path: '',
     component: ContactMeComponent,
     pathMatch: 'full'

@@ -13,5 +13,4 @@ export class InnerNavComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

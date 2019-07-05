@@ -1,7 +1,7 @@
 import { NavLink } from './navLink';
 import { ImagePlate } from './imagePlate';
 
-export class Section{
+export class Section {
     navLinks: NavLink[];
     imagePlates: ImagePlate[];
 

@@ -1,6 +1,6 @@
-import { IImageCard } from './interfaces/IImageCard'
+import { IImageCard } from './interfaces/IImageCard';
 
-export class CategoryCard implements IImageCard{
+export class CategoryCard implements IImageCard {
     id: number;
     parentId?: number;
     name: string;

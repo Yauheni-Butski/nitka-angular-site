@@ -9,13 +9,13 @@ import { shareReplay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService extends BaseService{
+export class AuthService extends BaseService {
 
   private _isLoggedIn: boolean = JSON.parse(localStorage.getItem('loggedIn') || 'false');
-  //store the URL so we can redirect after logging in
+  // store the URL so we can redirect after logging in
   redirectUrl: string;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     super();
   }
 
@@ -24,12 +24,12 @@ export class AuthService extends BaseService{
     localStorage.setItem('loggedIn', value.toString());
     localStorage.setItem('userToken', userToken);
   }
-  getLoggedStatus(): boolean{
+  getLoggedStatus(): boolean {
     return this._isLoggedIn;
   }
 
   loginUser(username: string, password: string) {
-    var data = JSON.stringify({username, password});
+    const data = JSON.stringify({username, password});
     return this.http.post<LoginResult>(this.loginUrl, data, httpOptions)
         .pipe(shareReplay());
   }

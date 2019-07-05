@@ -21,4 +21,4 @@ import { ImageViewerComponent } from './components/image-viewer/image-viewer.com
     ImageViewerComponent
   ]
 })
-export class GalleryModule { }
+export class GalleryModule {}

@@ -8,14 +8,14 @@ import { SubmitResult } from '../models/submitResult';
 @Injectable({
   providedIn: 'root'
 })
-export class ContactService extends BaseService{
+export class ContactService extends BaseService {
 
   constructor(private http: HttpClient) {
     super();
    }
 
    submitContactForm(formData: Contact) {
-    var data = JSON.stringify(formData);
+    const data = JSON.stringify(formData);
     return this.http.post<SubmitResult>(this.contactUrl, data, httpOptions);
   }
 }

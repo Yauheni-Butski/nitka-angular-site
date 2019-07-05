@@ -10,11 +10,10 @@ import { IImageCard } from '../../models/interfaces/IImageCard';
 export class ImageCardPlatesComponent implements OnInit {
 
   @Input() imageCards: IImageCard[] = [];
-  @Input() isFullHeightPlates: boolean = false;
+  @Input() isFullHeightPlates = false;
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }

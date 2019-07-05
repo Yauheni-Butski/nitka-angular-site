@@ -30,14 +30,14 @@ export class LoginComponent {
     this.setMessage();
   }
 
-  loginUser(){
+  loginUser() {
     const username = this.loginForm.get('username').value;
     const password = this.loginForm.get('password').value;
 
     this.message = 'Trying to log in ...';
 
     this.authService.loginUser(username, password).subscribe(data => {
-      if (data.success){
+      if (data.success) {
         this.authService.setLoggedStatus(true, data.userToken);
       }
 
@@ -45,11 +45,11 @@ export class LoginComponent {
       if (this.authService.getLoggedStatus()) {
         // Get the redirect URL from our auth service
         // If no redirect has been set, use the default
-        let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin';
+        const redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin';
 
         // Set our navigation extras object
         // that passes on our global query params and fragment
-        let navigationExtras: NavigationExtras = {
+        const navigationExtras: NavigationExtras = {
           queryParamsHandling: 'preserve',
           preserveFragment: true
         };

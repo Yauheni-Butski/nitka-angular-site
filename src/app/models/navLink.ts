@@ -1,4 +1,4 @@
-export class NavLink{
+export class NavLink {
     title: string;
     relativeUrl: string;
     order: number;

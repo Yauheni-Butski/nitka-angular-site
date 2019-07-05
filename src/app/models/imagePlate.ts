@@ -1,4 +1,4 @@
-export class ImagePlate{
+export class ImagePlate {
     id: number;
     thumbPath: string;
     imagePath: string;

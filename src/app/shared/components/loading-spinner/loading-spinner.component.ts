@@ -6,13 +6,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./loading-spinner.component.scss']
 })
 export class LoadingSpinnerComponent {
-  @Input() spinnerWidth: number = 200;
-  @Input() spinnerHeight: number = 200;
+  @Input() spinnerWidth = 200;
+  @Input() spinnerHeight = 200;
 
   constructor() { }
 
-  getHalfMargin(value: number){
-    return -value/2;
+  getHalfMargin(value: number) {
+    return -value / 2;
   }
-
 }

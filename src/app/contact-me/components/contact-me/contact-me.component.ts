@@ -21,7 +21,7 @@ export class MaterialErrorStateMatcher implements ErrorStateMatcher {
 export class ContactMeComponent implements OnInit {
   contactMeForm: FormGroup;
   message: string;
-  isErrorSubmit: boolean = false;
+  isErrorSubmit = false;
 
   matcher = new MaterialErrorStateMatcher();
 
@@ -44,18 +44,15 @@ export class ContactMeComponent implements OnInit {
 
   onSubmit() {
     if (this.contactMeForm.valid){
-      var contactData = new Contact(this.contactMeForm.value);
+      const contactData = new Contact(this.contactMeForm.value);
       this.contactService.submitContactForm(contactData).subscribe(res => {
         if (res.success){
           this.contactMeForm.reset();
-        }
-        else{
+        } else {
           this.isErrorSubmit = true;
         }
         this.message = res.message;
       });
-
     }
   }
-
 }

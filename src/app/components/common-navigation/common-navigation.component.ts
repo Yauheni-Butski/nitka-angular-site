@@ -7,15 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommonNavigationComponent implements OnInit {
 
-  isNavPanelVisible: boolean = false;
+  isNavPanelVisible = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  showHideCommonNavPanel(): void{
+  showHideCommonNavPanel(): void {
     this.isNavPanelVisible = !this.isNavPanelVisible;
   }
-
 }

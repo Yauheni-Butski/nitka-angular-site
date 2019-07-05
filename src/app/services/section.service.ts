@@ -9,14 +9,14 @@ import { Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class SectionService extends BaseService{
+export class SectionService extends BaseService {
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     super();
   }
 
-  getSection(id :number) : Observable<Section[]>{
-    var url = this.sectionUrl + '/' + `${id}`;
+  getSection(id: number): Observable<Section[]> {
+    const url = this.sectionUrl + '/' + `${id}`;
 
     return this.http.get<Section[]>(url);
   }

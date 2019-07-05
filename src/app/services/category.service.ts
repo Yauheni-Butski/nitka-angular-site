@@ -9,14 +9,14 @@ import { Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService extends BaseService { 
-  constructor(private http: HttpClient) { 
+export class CategoryService extends BaseService {
+  constructor(private http: HttpClient) {
     super();
   }
 
-  getCategory(id? :number) : Observable<Category>{
-    var url = id 
-      ? this.categoriesUrl + '/' + `${id}` 
+  getCategory(id?: number): Observable<Category> {
+    const url = id
+      ? this.categoriesUrl + '/' + `${id}`
       : this.categoriesUrl;
 
     return this.http.get<Category>(url);

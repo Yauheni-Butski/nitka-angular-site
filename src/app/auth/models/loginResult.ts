@@ -1,4 +1,4 @@
-export class LoginResult{
+export class LoginResult {
     success: boolean;
     userToken: string;
 

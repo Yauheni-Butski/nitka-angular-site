@@ -1,5 +1,5 @@
-export class SocialLink{
-    url:string;
+export class SocialLink {
+    url: string;
     id: string;
     defColor: string;
     defBorderColor: string;
