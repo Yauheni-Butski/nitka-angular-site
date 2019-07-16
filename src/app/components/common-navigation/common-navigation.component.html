@@ -6,9 +6,9 @@
 <div class="nav-menu-panel" [class.active]="isNavPanelVisible">
     <div class="nav-menu-container">
         <ul>
-            <li (click)="showHideCommonNavPanel()"><a routerLink="/">Главная</a></li>
-            <li (click)="showHideCommonNavPanel()"><a routerLink="/prices">Услуги</a></li>
-            <li (click)="showHideCommonNavPanel()"><a routerLink="/contact">Контакты</a></li>
+            <li *ngFor="let navItem of navItems" (click)="showHideCommonNavPanel()">
+                <a routerLink="{{navItem.routerLinkPath}}">{{navItem.text}}</a>
+            </li>
         </ul>
     </div>
 </div>
