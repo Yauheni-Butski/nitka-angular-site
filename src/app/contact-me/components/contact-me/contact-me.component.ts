@@ -43,10 +43,10 @@ export class ContactMeComponent implements OnInit {
   get comment() { return this.contactMeForm.get('comment'); }
 
   onSubmit() {
-    if (this.contactMeForm.valid){
+    if (this.contactMeForm.valid) {
       const contactData = new Contact(this.contactMeForm.value);
       this.contactService.submitContactForm(contactData).subscribe(res => {
-        if (res.success){
+        if (res.success) {
           this.contactMeForm.reset();
         } else {
           this.isErrorSubmit = true;

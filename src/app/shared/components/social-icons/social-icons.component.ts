@@ -6,7 +6,7 @@ import { SocialLink } from '../../models/socialLink';
   templateUrl: './social-icons.component.html',
   styleUrls: ['./social-icons.component.scss']
 })
-export class SocialIconsComponent implements OnInit{
+export class SocialIconsComponent implements OnInit {
 
   @Input() iconWidthHeight = 26;
   @Input() useBorder = true;
@@ -28,7 +28,7 @@ export class SocialIconsComponent implements OnInit{
     return this.iconWidthHeight - 10;
   }
 
-  getBorderRadius(){
+  getBorderRadius() {
     return this.iconWidthHeight / 2;
   }
 
@@ -45,7 +45,7 @@ export class SocialIconsComponent implements OnInit{
     return style;
   }
 
-  getIconClasses(socialLinkIcon: SocialLink){
+  getIconClasses(socialLinkIcon: SocialLink) {
     const classes = {
       'fab': true,
       [socialLinkIcon.id]: true,

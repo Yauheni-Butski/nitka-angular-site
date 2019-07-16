@@ -55,7 +55,7 @@ export class ImageViewerComponent {
     this.activeImage = this.images[prevIndex];
   }
 
-  showNextImage(){
+  showNextImage() {
     const activeImageIndex = this.images.findIndex(ip => ip.id === this.activeImage.id);
     const nextIndex = activeImageIndex + 1;
     if (nextIndex > this.images.length - 1) {
@@ -65,7 +65,7 @@ export class ImageViewerComponent {
     this.activeImage = this.images[nextIndex];
   }
 
-  updateViewerButtonsState(){
+  updateViewerButtonsState() {
     if (this.images.length === 0 || this._activeImage === null) {
       return;
     }
