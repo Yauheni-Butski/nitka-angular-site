@@ -71,16 +71,21 @@ export class ImageViewerComponent {
     }
 
     const activeImageIndex = this.images.findIndex(ip => ip.id === this.activeImage.id);
-    if (activeImageIndex === this.images.length - 1) {
-      this.isNextButtonVisible = false;
-    } else {
-      this.isNextButtonVisible = true;
-    }
+    const lastImageIndex = this.images.length - 1;
 
-    if (activeImageIndex === 0) {
-      this.isPrevButtonVisible = false;
-    } else {
-      this.isPrevButtonVisible = true;
+    switch(activeImageIndex){
+      case 0:
+        this.isPrevButtonVisible = false;
+        this.isNextButtonVisible = true;
+        break;
+      case lastImageIndex:
+        this.isNextButtonVisible = false;
+        this.isPrevButtonVisible = true;
+        break;
+      default:
+        this.isPrevButtonVisible = true;
+        this.isNextButtonVisible = true;
+        break;
     }
   }
 
