@@ -1,20 +1,19 @@
-<div class="login-form-wrapper">
+<div class="login-form-wrapper" [ngSwitch]="authService.getLoggedStatus()">
   <h2>LOGIN</h2>
   <p>{{message}}</p>
 
-  <form [formGroup]="loginForm" (ngSubmit)="loginUser()" *ngIf="!authService.getLoggedStatus()">
-    <div>
-    <div>
-      <input type="text" autocomplete="off" placeholder="Username" formControlName="username" required>
+  <form *ngSwitchCase="false" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+      <div>
+        <div>
+          <input type="text" autocomplete="off" placeholder="Username" formControlName="username" required>
+        </div>
+        <div>
+          <input type="password" autocomplete="off" placeholder="Password" formControlName="password" required>
+        </div>
+        <div>
+          <button type="submit" [disabled]="!loginForm.valid">Login</button>
+        </div>
     </div>
-    <div>
-      <input type="password" autocomplete="off" placeholder="Password" formControlName="password" required>
-    </div>
-    <div>
-      <button type="submit" [disabled]="!loginForm.valid">Login</button>
-    </div>
-  </div>
   </form>
-
-  <button (click)="logout()" *ngIf="authService.getLoggedStatus()">Logout</button>
+  <button *ngSwitchCase="true" (click)="logout()">Logout</button>
 </div>

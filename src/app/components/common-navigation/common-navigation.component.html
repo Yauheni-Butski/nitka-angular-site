@@ -1,6 +1,5 @@
 <div class="nav-menu-icon" (click)="showHideCommonNavPanel()">
-    <i *ngIf="!isNavPanelVisible" class="fas fa-bars"></i>
-    <i *ngIf="isNavPanelVisible" class="fas fa-times"></i>
+    <i [ngClass]="isNavPanelVisible ? 'fas fa-times' : 'fas fa-bars'"></i>
 </div>
 
 <div class="nav-menu-panel" [class.active]="isNavPanelVisible">

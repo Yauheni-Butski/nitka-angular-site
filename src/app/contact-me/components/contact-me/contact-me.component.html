@@ -61,9 +61,9 @@
               <mat-error *ngIf="comment.hasError('maxLength')">Превышено максимальное количество символом (1000)</mat-error>
             </mat-form-field>
           </div>
-          <div class="form-row">
-              <button *ngIf="!this.message" [disabled]="!contactMeForm.valid" tabindex="5" mat-button class="submit-btn">Отправить</button>
-              <span *ngIf="this.message" class="submit-result-message" [class.error]="this.isErrorSubmit"> {{this.message}}</span>
+          <div class="form-row" [ngSwitch]="this.message">
+              <button *ngSwitchCase="undefined" [disabled]="!contactMeForm.valid" tabindex="5" mat-button class="submit-btn">Отправить</button>
+              <span *ngSwitchDefault class="submit-result-message" [class.error]="this.isErrorSubmit"> {{this.message}}</span>
           </div>
       </form>      
     </div>

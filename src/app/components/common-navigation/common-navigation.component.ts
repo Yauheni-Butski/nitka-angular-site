@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonNavItem } from '../../models/commonNavItem';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-common-navigation',
@@ -8,8 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./common-navigation.component.scss']
 })
 export class CommonNavigationComponent {
-
-  constructor(private router: Router) {}
 
   isNavPanelVisible = false;
 
