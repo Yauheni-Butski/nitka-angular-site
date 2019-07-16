@@ -31,12 +31,10 @@
   </div>
   <div class="thumbnails-container">
     <div #thumbNailDiv class="thumbnail-wrapper">
-      <ng-container *ngFor="let thumb of this.images">
-          <div class="thumb-item" [class.active]="thumb.id === this.activeImage.id" (click)="updateActiveImage(thumb)">
-              <div class="thumb-item-bg" [ngStyle]="getThumbImageStyle(thumb)"></div>
-              <div class="thumb-item-fader"></div>
-          </div>
-      </ng-container>
+      <div *ngFor="let thumb of this.images" class="thumb-item" [class.active]="thumb.id === this.activeImage.id" (click)="updateActiveImage(thumb)">
+          <div class="thumb-item-bg" [ngStyle]="getThumbImageStyle(thumb)"></div>
+          <div class="thumb-item-fader"></div>
+      </div>
     </div>
   </div>
 </div>

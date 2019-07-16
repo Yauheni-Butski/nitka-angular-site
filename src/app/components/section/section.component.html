@@ -3,9 +3,10 @@
 <div class="section-content-wrapper" [ngSwitch]="section">
     <app-loading-spinner *ngSwitchCase="undefined"></app-loading-spinner>
     <div *ngSwitchDefault class="image-plate-container">
-        <ng-container *ngFor="let imagePlate of section.imagePlates">
-            <app-galerry-image-plate [imagePlate]="imagePlate" (zoomingImage)="showImageViewer($event)"></app-galerry-image-plate>
-        </ng-container>
+        <app-galerry-image-plate *ngFor="let imagePlate of section.imagePlates"
+            [imagePlate]="imagePlate"
+            (zoomingImage)="showImageViewer($event)">
+        </app-galerry-image-plate>
     </div>
 </div>
 
