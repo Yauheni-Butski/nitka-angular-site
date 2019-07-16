@@ -11,8 +11,6 @@ export class GalerryImagePlateComponent {
   @Input() imagePlate: ImagePlate;
   @Output() zoomingImage = new EventEmitter<number>();
 
-  constructor() { }
-
   zoomImage() {
     this.zoomingImage.emit(this.imagePlate.id);
   }

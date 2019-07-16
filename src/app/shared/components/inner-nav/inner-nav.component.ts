@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavLink } from '../../../models/navLink';
 
 @Component({
@@ -6,11 +6,6 @@ import { NavLink } from '../../../models/navLink';
   templateUrl: './inner-nav.component.html',
   styleUrls: ['./inner-nav.component.scss']
 })
-export class InnerNavComponent implements OnInit {
+export class InnerNavComponent {
   @Input() navLinks: NavLink[] = [];
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 }

@@ -8,10 +8,4 @@ import { Component, Input } from '@angular/core';
 export class LoadingSpinnerComponent {
   @Input() spinnerWidth = 200;
   @Input() spinnerHeight = 200;
-
-  constructor() { }
-
-  getHalfMargin(value: number) {
-    return -value / 2;
-  }
 }

@@ -12,8 +12,6 @@ export class ImageCardPlatesComponent {
   @Input() imageCards: IImageCard[] = [];
   @Input() isFullHeightPlates = false;
 
-  constructor() { }
-
   getCardCoverStyle(imageCard: IImageCard) {
     const style = {
       'background-image': `url(${imageCard.coverImagePath})`

@@ -1,18 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-common-navigation',
   templateUrl: './common-navigation.component.html',
   styleUrls: ['./common-navigation.component.scss']
 })
-export class CommonNavigationComponent implements OnInit {
+export class CommonNavigationComponent {
 
   isNavPanelVisible = false;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   showHideCommonNavPanel(): void {
     this.isNavPanelVisible = !this.isNavPanelVisible;

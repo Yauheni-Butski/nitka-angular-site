@@ -4,9 +4,6 @@ import { Directive, HostListener } from '@angular/core';
   selector: '[contextMenuProtection]'
 })
 export class ContextMenuProtectionDirective {
-
-  constructor() { }
-
   @HostListener('contextmenu', ['$event']) onContextMenu(event: MouseEvent) {
     // TODO. Show message in needed point
     // var clientX = event.clientX;

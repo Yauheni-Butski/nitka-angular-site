@@ -10,9 +10,7 @@ export class AdminDashboardComponent implements OnInit {
 
   serverResponceText: string;
 
-  constructor(
-    private adminDashboardService: AdminDashboardService
-  ) { }
+  constructor(private adminDashboardService: AdminDashboardService) {}
 
   ngOnInit() {
     this.getAdminDashboardData();
@@ -22,5 +20,4 @@ export class AdminDashboardComponent implements OnInit {
     this.adminDashboardService.getAdminDashboard()
       .subscribe(res => { this.serverResponceText = res; });
   }
-
 }

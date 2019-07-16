@@ -22,8 +22,6 @@ export class SocialIconsComponent implements OnInit {
     ];
   }
 
-  constructor() { }
-
   getFontSize() {
     return this.iconWidthHeight - 10;
   }
