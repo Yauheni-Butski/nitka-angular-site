@@ -89,4 +89,20 @@ export class ImageViewerComponent {
     this.activeImage.isUserLike = !this.activeImage.isUserLike;
     this.activeImage.likeCount = this.activeImage.isUserLike ? this.activeImage.likeCount + 1 : this.activeImage.likeCount - 1;
   }
+
+  getActiveImageStyle() {
+    const style = {
+      'background-image': `url(${this.activeImage.imagePath})`
+    };
+
+    return style;
+  }
+
+  getThumbImageStyle(image: ImagePlate) {
+    const style = {
+      'background-image': `url(${image.thumbPath})`
+    };
+
+    return style;
+  }
 }

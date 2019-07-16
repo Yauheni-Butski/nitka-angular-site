@@ -11,6 +11,6 @@ export class CategoryCard implements IImageCard {
     isLeaf: boolean;
 
     getFullNameDescription() {
-        return this.name + ' [ Description: ' + this.description + ']';
+        return `${this.name} [ Description: ${this.description} ]`;
     }
 }

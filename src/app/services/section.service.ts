@@ -16,7 +16,7 @@ export class SectionService extends BaseService {
   }
 
   getSection(id: number): Observable<Section[]> {
-    const url = this.sectionUrl + '/' + `${id}`;
+    const url = `${this.sectionUrl}/${id}`;
 
     return this.http.get<Section[]>(url);
   }

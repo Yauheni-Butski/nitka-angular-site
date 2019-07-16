@@ -16,7 +16,7 @@ export class CategoryService extends BaseService {
 
   getCategory(id?: number): Observable<Category> {
     const url = id
-      ? this.categoriesUrl + '/' + `${id}`
+      ? `${this.categoriesUrl}/${id}`
       : this.categoriesUrl;
 
     return this.http.get<Category>(url);

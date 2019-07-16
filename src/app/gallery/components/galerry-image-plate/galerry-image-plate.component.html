@@ -6,7 +6,7 @@
               <i class="material-icons action-icon">zoom_in</i>
           </div>
       </div>
-      <div class="image-holder" [ngStyle]="{ 'background-image' : 'url('+ imagePlate.thumbPath +')'}">
+      <div class="image-holder" [ngStyle]="getGalleryImagePlateStyle()">
               <img [src]="imagePlate.thumbPath">
       </div>
   </div>

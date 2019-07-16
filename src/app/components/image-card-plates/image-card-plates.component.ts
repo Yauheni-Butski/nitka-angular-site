@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { IImageCard } from '../../models/interfaces/IImageCard';
 
@@ -7,13 +7,18 @@ import { IImageCard } from '../../models/interfaces/IImageCard';
   templateUrl: './image-card-plates.component.html',
   styleUrls: ['./image-card-plates.component.scss']
 })
-export class ImageCardPlatesComponent implements OnInit {
+export class ImageCardPlatesComponent {
 
   @Input() imageCards: IImageCard[] = [];
   @Input() isFullHeightPlates = false;
 
   constructor() { }
 
-  ngOnInit() {
+  getCardCoverStyle(imageCard: IImageCard) {
+    const style = {
+      'background-image': `url(${imageCard.coverImagePath})`
+    };
+
+    return style;
   }
 }

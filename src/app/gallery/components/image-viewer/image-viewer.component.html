@@ -22,7 +22,7 @@
     </div>
   </div>
     <app-loading-spinner></app-loading-spinner>
-  <div *ngIf="activeImage" class="active-image" [ngStyle]="{ 'background-image' : 'url('+ activeImage.imagePath +')'}"></div>
+  <div *ngIf="activeImage" class="active-image" [ngStyle]="getActiveImageStyle()"></div>
   <div class="img-nav-link prev" (click)="showPrevImage()" [hidden]="!isPrevButtonVisible">
     <div class="nav-icon"></div>
   </div>
@@ -33,7 +33,7 @@
     <div #thumbNailDiv class="thumbnail-wrapper">
       <ng-container *ngFor="let thumb of this.images">
           <div class="thumb-item" [class.active]="thumb.id === this.activeImage.id" (click)="updateActiveImage(thumb)">
-              <div class="thumb-item-bg" [ngStyle]="{ 'background-image' : 'url('+ thumb.thumbPath +')'}"></div>
+              <div class="thumb-item-bg" [ngStyle]="getThumbImageStyle(thumb)"></div>
               <div class="thumb-item-fader"></div>
           </div>
       </ng-container>

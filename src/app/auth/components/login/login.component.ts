@@ -22,7 +22,8 @@ export class LoginComponent {
   }
 
   setMessage() {
-    this.message = 'You are logged ' + (this.authService.getLoggedStatus() ? 'in' : 'out');
+    const isLogged = this.authService.getLoggedStatus();
+    this.message = `You are logged ${isLogged ? 'in' : 'out'}`;
   }
 
   logout() {
