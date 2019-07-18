@@ -73,7 +73,7 @@ export class ImageViewerComponent {
     const activeImageIndex = this.images.findIndex(ip => ip.id === this.activeImage.id);
     const lastImageIndex = this.images.length - 1;
 
-    switch(activeImageIndex){
+    switch (activeImageIndex) {
       case 0:
         this.isPrevButtonVisible = false;
         this.isNextButtonVisible = true;
