@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 
-import { GalerryImagePlateComponent } from './components/galerry-image-plate/galerry-image-plate.component';
-import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
+import { SharedModule } from '../shared/shared.module';
+import { GalerryImagePlateComponent, ImageViewerComponent } from './';
 
 @NgModule({
   imports: [

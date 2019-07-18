@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
-
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './interceptors/token.interceptor';
+import { AdminDashboardComponent, TokenInterceptor } from './';
 
 @NgModule({
   imports: [

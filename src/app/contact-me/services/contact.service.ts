@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { BaseService, httpOptions } from '../../services/base.service';
 import { HttpClient } from '@angular/common/http';
 
-import { Contact } from '../models/contact';
-import { SubmitResult } from '../models/submitResult';
+import { Contact, SubmitResult } from '../';
 
 @Injectable({
   providedIn: 'root'

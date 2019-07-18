@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PricesRoutingModule } from './price-routing.module';
-
-import { PricesComponent } from './components/prices/prices.component';
+import { PricesComponent } from './';
 
 @NgModule({
   imports: [

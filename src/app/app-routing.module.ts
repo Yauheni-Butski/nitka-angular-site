@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CategoryComponent } from './components/category/category.component';
-import { SectionComponent } from './components/section/section.component';
-
+import { CategoryComponent, SectionComponent } from './';
 /* Layouts */
-import { SiteLayoutComponent } from './_layout/site-layout/site-layout.component';
+import { SiteLayoutComponent } from './_layout';
 
 const routes: Routes = [
 
