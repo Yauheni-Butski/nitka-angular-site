@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminDashboardService } from '../../services/admin-dashboard.service';
+import { Observable} from 'rxjs';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -8,7 +9,7 @@ import { AdminDashboardService } from '../../services/admin-dashboard.service';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  serverResponceText: string;
+  serverResponceText$: Observable<string>;
 
   constructor(private adminDashboardService: AdminDashboardService) {}
 
@@ -17,7 +18,6 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   getAdminDashboardData(): void {
-    this.adminDashboardService.getAdminDashboard()
-      .subscribe(res => { this.serverResponceText = res; });
+    this.serverResponceText$ = this.adminDashboardService.getAdminDashboard();
   }
 }
