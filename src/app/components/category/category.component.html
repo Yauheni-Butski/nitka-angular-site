@@ -1,5 +1,6 @@
 <app-inner-nav *ngIf="hasInnerNavigation" [navLinks]="category.navLinks"></app-inner-nav>
-<div [class.full-h-cards]="!hasInnerNavigation" [ngSwitch]="category" class="category-cards-wrapper" contextMenuProtection>   
-    <app-loading-spinner *ngSwitchCase="undefined"></app-loading-spinner>
-    <app-image-card-plates *ngSwitchDefault [imageCards]="category.categoryCards" [isFullHeightPlates]="true"></app-image-card-plates>
+<div [class.full-h-cards]="!hasInnerNavigation" class="category-cards-wrapper" contextMenuProtection>
+    <app-spinner-container [isLoading]="category === undefined">
+        <app-image-card-plates [imageCards]="category?.categoryCards" [isFullHeightPlates]="true"></app-image-card-plates>
+    </app-spinner-container>
 </div>

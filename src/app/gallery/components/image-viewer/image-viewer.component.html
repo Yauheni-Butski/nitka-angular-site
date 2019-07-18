@@ -21,8 +21,9 @@
         <i class="material-icons">close</i>
     </div>
   </div>
-  <app-loading-spinner></app-loading-spinner>
-  <div *ngIf="activeImage" class="active-image" [ngStyle]="getActiveImageStyle()"></div>
+  <app-spinner-container [isLoading]="activeImage === undefined">
+    <div *ngIf="activeImage" class="active-image" [ngStyle]="getActiveImageStyle()"></div>
+  </app-spinner-container>
   <div class="img-nav-link prev" (click)="showPrevImage()" [hidden]="!isPrevButtonVisible">
     <div class="nav-icon"></div>
   </div>
@@ -31,7 +32,7 @@
   </div>
   <div class="thumbnails-container">
     <div #thumbNailDiv class="thumbnail-wrapper">
-      <div *ngFor="let thumb of this.images" class="thumb-item" [class.active]="thumb.id === this.activeImage.id" (click)="updateActiveImage(thumb)">
+      <div *ngFor="let thumb of this.images" class="thumb-item" [class.active]="thumb.id === this.activeImage?.id" (click)="updateActiveImage(thumb)">
           <div class="thumb-item-bg" [ngStyle]="getThumbImageStyle(thumb)"></div>
           <div class="thumb-item-fader"></div>
       </div>

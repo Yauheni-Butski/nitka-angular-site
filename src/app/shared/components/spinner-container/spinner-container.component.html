@@ -1,0 +1,4 @@
+<div class="spinner-container" [ngSwitch]="isLoading">
+  <app-loading-spinner *ngSwitchCase="true"></app-loading-spinner>
+  <ng-content *ngSwitchCase="false"></ng-content>
+</div>

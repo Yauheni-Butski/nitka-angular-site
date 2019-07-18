@@ -1,13 +1,14 @@
 <app-inner-nav *ngIf="section" [navLinks]="section.navLinks"></app-inner-nav>
 
-<div class="section-content-wrapper" [ngSwitch]="section">
-    <app-loading-spinner *ngSwitchCase="undefined"></app-loading-spinner>
-    <div *ngSwitchDefault class="image-plate-container">
-        <app-galerry-image-plate *ngFor="let imagePlate of section.imagePlates"
-            [imagePlate]="imagePlate"
-            (zoomingImage)="showImageViewer($event)">
-        </app-galerry-image-plate>
-    </div>
+<div class="section-content-wrapper">
+    <app-spinner-container [isLoading]="section === undefined">
+        <div class="image-plate-container">
+            <app-galerry-image-plate *ngFor="let imagePlate of section?.imagePlates"
+                [imagePlate]="imagePlate"
+                (zoomingImage)="showImageViewer($event)">
+            </app-galerry-image-plate>
+        </div>
+    </app-spinner-container>
 </div>
 
 <app-image-viewer *ngIf="section && section.imagePlates"
