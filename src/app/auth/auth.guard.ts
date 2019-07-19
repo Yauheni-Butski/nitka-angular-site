@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
-import { AuthService } from './';
+import { AuthService } from './auth.service';
+import { NavigationService } from '../services';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService,
+              private navService: NavigationService) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -25,9 +27,7 @@ export class AuthGuard implements CanActivate {
 
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
-
-    // Navigate to the login page with extras
-    this.router.navigate(['/login']);
+    this.navService.goToLogin();
     return false;
   }
 }

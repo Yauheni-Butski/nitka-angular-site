@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Router, NavigationExtras } from '@angular/router';
-import { AuthService } from '../../auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '../../auth.service';
+import { NavigationService } from '../../../services';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent {
   });
 
   constructor(public authService: AuthService,
-              public router: Router,
+              public navService: NavigationService,
               private fb: FormBuilder) {
     this.setMessage();
   }
@@ -46,17 +46,11 @@ export class LoginComponent {
       if (this.authService.getLoggedStatus()) {
         // Get the redirect URL from our auth service
         // If no redirect has been set, use the default
-        const redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin';
-
-        // Set our navigation extras object
-        // that passes on our global query params and fragment
-        const navigationExtras: NavigationExtras = {
-          queryParamsHandling: 'preserve',
-          preserveFragment: true
-        };
-
-        // Redirect the user
-        this.router.navigate([redirect], navigationExtras);
+        if (this.authService.redirectUrl) {
+          this.navService.goToPrerequestedUrl();
+        } else {
+          this.navService.goToAdmin();
+        }
       } else {
         this.message = 'Wrong login or password!';
         this.loginForm.setValue({username: '', password: ''});

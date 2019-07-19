@@ -1,7 +1,7 @@
 import { Component , OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { Section } from '../../models/section';
-import { SectionService } from '../../services/section.service';
+import { SectionService } from '../../services';
 import { ImagePlate } from 'src/app/models/imagePlate';
 
 import { delay } from 'rxjs/operators'; // TODO. Comment it. FOR TEST PURPOSE. LOADING SPINNER
