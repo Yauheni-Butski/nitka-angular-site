@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BaseService } from '../../services/base.service';
+import { apiEndpoints } from '../../services/api';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable} from 'rxjs';
@@ -7,13 +7,11 @@ import { Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminDashboardService extends BaseService {
+export class AdminDashboardService {
 
-  constructor(private http: HttpClient) {
-    super();
-  }
+  constructor(private http: HttpClient) {}
 
   getAdminDashboard(): Observable<string> {
-    return this.http.get<string>(this.adminDashboardUrl);
+    return this.http.get<string>(apiEndpoints.adminDashboardUrl);
   }
 }

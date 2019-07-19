@@ -1,23 +1,20 @@
 import { Injectable } from '@angular/core';
-
-import { Category } from '../models/category';
-import { BaseService} from './base.service';
 import { HttpClient } from '@angular/common/http';
+import { Category } from '../models/category';
+import { apiEndpoints } from './api';
 
 import { Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService extends BaseService {
-  constructor(private http: HttpClient) {
-    super();
-  }
+export class CategoryService {
+  constructor(private http: HttpClient) {}
 
   getCategory(id?: number): Observable<Category> {
     const url = id
-      ? `${this.categoriesUrl}/${id}`
-      : this.categoriesUrl;
+      ? `${apiEndpoints.categoriesUrl}/${id}`
+      : apiEndpoints.categoriesUrl;
 
     return this.http.get<Category>(url);
   }

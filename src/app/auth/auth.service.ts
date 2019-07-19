@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BaseService, httpOptions } from '../services/base.service';
+import { apiEndpoints, httpOptions } from '../services/api';
 import { HttpClient } from '@angular/common/http';
 
 import { LoginResult } from './';
@@ -9,15 +9,13 @@ import { shareReplay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService extends BaseService {
+export class AuthService {
 
   private _isLoggedIn: boolean = JSON.parse(localStorage.getItem('loggedIn') || 'false');
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
-  constructor(private http: HttpClient) {
-    super();
-  }
+  constructor(private http: HttpClient) {}
 
   setLoggedStatus(value: boolean, userToken: string) {
     this._isLoggedIn = value;
@@ -30,7 +28,7 @@ export class AuthService extends BaseService {
 
   loginUser(username: string, password: string) {
     const data = JSON.stringify({username, password});
-    return this.http.post<LoginResult>(this.loginUrl, data, httpOptions)
+    return this.http.post<LoginResult>(apiEndpoints.loginUrl, data, httpOptions)
         .pipe(shareReplay());
   }
 

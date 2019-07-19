@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BaseService } from './base.service';
+import { apiEndpoints } from './api';
 import { HttpClient } from '@angular/common/http';
 
 import { Section } from '../models/section';
@@ -9,14 +9,12 @@ import { Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class SectionService extends BaseService {
+export class SectionService {
 
-  constructor(private http: HttpClient) {
-    super();
-  }
+  constructor(private http: HttpClient) {}
 
   getSection(id: number): Observable<Section[]> {
-    const url = `${this.sectionUrl}/${id}`;
+    const url = `${apiEndpoints.sectionUrl}/${id}`;
 
     return this.http.get<Section[]>(url);
   }
