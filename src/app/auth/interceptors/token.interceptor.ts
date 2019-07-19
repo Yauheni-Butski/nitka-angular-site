@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpErrorResponse } from '@angular/common/http';
+import { Router, NavigationExtras } from '@angular/router';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
-import { AuthService } from '../../auth/auth.service';
-import { Router, NavigationExtras } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { authConstants } from '../const/auth.const';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -15,14 +16,14 @@ export class TokenInterceptor implements HttpInterceptor {
       let httpHandle: Observable<HttpEvent<any>>;
       let isUserTokenExist = false;
 
-      const loggedInData = localStorage.getItem('loggedIn');
+      const loggedInData = localStorage.getItem(authConstants.loginFlagKey);
       if (loggedInData) {
-        const isLoggedIn: boolean = JSON.parse(localStorage.getItem('loggedIn'));
+        const isLoggedIn: boolean = JSON.parse(localStorage.getItem(authConstants.loginFlagKey));
         if (isLoggedIn) {
-            const userToken = localStorage.getItem('userToken');
+            const userToken = localStorage.getItem(authConstants.userTokenKey);
             if (userToken) {
                 const clonedHeader = request.clone({
-                    headers: request.headers.set('Authorization', `Bearer ${userToken}`)
+                    headers: request.headers.set(authConstants.authorizationHeader, `${authConstants.tokenPrefix} ${userToken}`)
                 });
 
                 // return next.handle(clonedHeader);
