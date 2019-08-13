@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup, AbstractControl, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material';
 import { ContactService } from '../../services/contact.service';
 import { Contact } from '../../models/contact';
+import { whiteSpaceValidator, phoneNumberValidator, onlyLettersValidator } from '../../../shared/form-validators';
 
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -29,9 +30,9 @@ export class ContactMeComponent implements OnInit {
 
   ngOnInit() {
     this.contactMeForm = this.fb.group({
-      name: ['', Validators.required],
-      city: [''],
-      phoneNumber: ['', Validators.required],
+      name: ['', [Validators.required, whiteSpaceValidator(), onlyLettersValidator()]],
+      city: ['', [whiteSpaceValidator(), onlyLettersValidator()]],
+      phoneNumber: ['', [Validators.required, phoneNumberValidator()]],
       email: ['', Validators.email],
       comment: ['', Validators.maxLength(1000)]
     });
@@ -41,6 +42,7 @@ export class ContactMeComponent implements OnInit {
   get phoneNumber() { return this.contactMeForm.get('phoneNumber'); }
   get email() { return this.contactMeForm.get('email'); }
   get comment() { return this.contactMeForm.get('comment'); }
+  get city() { return this.contactMeForm.get('city'); }
 
   onSubmit() {
     if (this.contactMeForm.valid) {

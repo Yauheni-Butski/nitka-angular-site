@@ -36,10 +36,13 @@
               <mat-form-field>
                 <input formControlName="name" tabindex="1" matInput placeholder="Имя" autocomplete="off" [errorStateMatcher]="matcher" required>
                 <mat-error *ngIf="name.errors?.required">Укажите Ваше имя</mat-error>
+                <mat-error *ngIf="name.errors?.whiteSpace">Поле не должно состоять из пробелов и отступов</mat-error>
+                <mat-error *ngIf="name.errors?.onlyLetters">Имя должно состоять только из букв</mat-error>
               </mat-form-field>
               <mat-form-field>
                 <input formControlName="phoneNumber" matInput tabindex="3" placeholder="Номер телефона" class="phone-number" type="number" autocomplete="off" [errorStateMatcher]="matcher" required>
                 <mat-error *ngIf="phoneNumber.errors?.required">Укажите номер телефона, чтобы я смогла связаться с вами</mat-error>
+                <mat-error *ngIf="phoneNumber.errors?.phoneNumber">Номер телефона должен состоять из 10-12 цифр</mat-error>
                 <span matPrefix>+&nbsp;</span>
               </mat-form-field>
             </div>
@@ -47,6 +50,8 @@
                 <mat-form-field>
                     <input formControlName="city" tabindex="2" matInput placeholder="Город" autocomplete="off" [errorStateMatcher]="matcher">
                     <mat-hint>...в котором вы бы хотели съёмку</mat-hint>
+                    <mat-error *ngIf="city.errors?.whiteSpace">Поле не должно состоять из пробелов и отступов</mat-error>
+                    <mat-error *ngIf="city.errors?.onlyLetters">Название города должно состоять только из букв</mat-error>
                 </mat-form-field>
                 <mat-form-field>
                     <input formControlName="email" tabindex="4" matInput placeholder="Email" [errorStateMatcher]="matcher">
