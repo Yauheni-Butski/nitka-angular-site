@@ -35,11 +35,11 @@
             <div class="form-col">
               <mat-form-field>
                 <input formControlName="name" tabindex="1" matInput placeholder="Имя" autocomplete="off" [errorStateMatcher]="matcher" required>
-                <mat-error *ngIf="name.hasError('required')">Укажите Ваше имя</mat-error>
+                <mat-error *ngIf="name.errors?.required">Укажите Ваше имя</mat-error>
               </mat-form-field>
               <mat-form-field>
                 <input formControlName="phoneNumber" matInput tabindex="3" placeholder="Номер телефона" class="phone-number" type="number" autocomplete="off" [errorStateMatcher]="matcher" required>
-                <mat-error *ngIf="phoneNumber.hasError('required')">Укажите номер телефона, чтобы я смогла связаться с вами</mat-error>
+                <mat-error *ngIf="phoneNumber.errors?.required">Укажите номер телефона, чтобы я смогла связаться с вами</mat-error>
                 <span matPrefix>+&nbsp;</span>
               </mat-form-field>
             </div>
@@ -50,7 +50,7 @@
                 </mat-form-field>
                 <mat-form-field>
                     <input formControlName="email" tabindex="4" matInput placeholder="Email" [errorStateMatcher]="matcher">
-                    <mat-error *ngIf="email.hasError('email')">Неверный формат email-адреса</mat-error>
+                    <mat-error *ngIf="email.errors?.email">Неверный формат email-адреса</mat-error>
                 </mat-form-field>
             </div>
           </div>
@@ -58,7 +58,7 @@
             <mat-form-field appearance="outline">
               <mat-label>Сообщение</mat-label>
               <textarea formControlName="comment" maxlength="1000" tabindex="5" class="comment" matInput rows="5" [errorStateMatcher]="matcher"></textarea>
-              <mat-error *ngIf="comment.hasError('maxLength')">Превышено максимальное количество символом (1000)</mat-error>
+              <mat-error *ngIf="comment.errors?.maxlength">Превышено максимальное количество символом (1000)</mat-error>
             </mat-form-field>
           </div>
           <div class="form-row" [ngSwitch]="this.message">
