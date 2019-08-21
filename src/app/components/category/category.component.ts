@@ -46,14 +46,5 @@ export class CategoryComponent implements OnDestroy {
   getCategoryOnLoad(category: Category) {
     this.category = new Category(category);
     this.hasInnerNavigation = (category.navLinks !== null && category.navLinks.length !== 0);
-    this.prepareCategoryUrls();
   }
-
-  prepareCategoryUrls(): void {
-    this.category.categoryCards.forEach(element => {
-      const elementType = element.isLeaf === true ? 'section' : 'category';
-      element.routerLinkUrl = `/${elementType}/${element.id}`;
-    });
-  }
-
 }

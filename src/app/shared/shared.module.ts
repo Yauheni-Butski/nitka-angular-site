@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import {ContextMenuProtectionDirective, MouseWheelHzScrollDirective, LoadingSpinnerComponent,
-        SocialIconsComponent, InnerNavComponent, SpinnerContainerComponent} from './';
+        SocialIconsComponent, InnerNavComponent, SpinnerContainerComponent, ImageCardLinkPipe} from './';
 
 @NgModule({
   imports: [
@@ -16,7 +16,8 @@ import {ContextMenuProtectionDirective, MouseWheelHzScrollDirective, LoadingSpin
     LoadingSpinnerComponent,
     SocialIconsComponent,
     InnerNavComponent,
-    SpinnerContainerComponent
+    SpinnerContainerComponent,
+    ImageCardLinkPipe
   ],
   exports: [
     ContextMenuProtectionDirective,
@@ -24,7 +25,8 @@ import {ContextMenuProtectionDirective, MouseWheelHzScrollDirective, LoadingSpin
     LoadingSpinnerComponent,
     SocialIconsComponent,
     InnerNavComponent,
-    SpinnerContainerComponent
+    SpinnerContainerComponent,
+    ImageCardLinkPipe
   ]
 })
 export class SharedModule { }

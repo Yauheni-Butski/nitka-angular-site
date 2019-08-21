@@ -7,7 +7,6 @@ export class CategoryCard implements IImageCard {
     order: number;
     description: string;
     coverImagePath: string;
-    routerLinkUrl: string;
     isLeaf: boolean;
 
     getFullNameDescription() {

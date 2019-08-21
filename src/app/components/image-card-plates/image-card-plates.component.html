@@ -1,6 +1,6 @@
 <div class="cards-container" [class.fullHeight]="isFullHeightPlates">
   <div class="card" [class.largeCard]="isFullHeightPlates" *ngFor="let card of imageCards">
-    <a routerLink="{{card.routerLinkUrl}}">
+    <a routerLink="{{card | imageCardLink}}">
       <div class="title-container">
         <div class="title">
           <h4>

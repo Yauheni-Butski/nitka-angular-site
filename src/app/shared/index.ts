@@ -4,3 +4,4 @@ export * from './components/loading-spinner/loading-spinner.component';
 export * from './components/social-icons/social-icons.component';
 export * from './components/inner-nav/inner-nav.component';
 export * from './components/spinner-container/spinner-container.component';
+export * from './pipes/image-card-link.pipe';
