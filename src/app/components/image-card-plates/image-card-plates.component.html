@@ -1,10 +1,10 @@
 <div class="cards-container" [class.fullHeight]="isFullHeightPlates">
-  <div class="card" [class.largeCard]="isFullHeightPlates" *ngFor="let card of imageCards">
+  <div class="card" [class.largeCard]="isFullHeightPlates" *appForTop6="let card of imageCards">
     <a routerLink="{{card | imageCardLink}}">
       <div class="title-container">
         <div class="title">
           <h4>
-            <span>{{card.name }}</span></h4>
+            <span>{{card.name}}</span></h4>
         </div>
       </div>
       <div class="cover-fader"></div>
