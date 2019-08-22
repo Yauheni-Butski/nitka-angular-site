@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import {ContextMenuProtectionDirective, MouseWheelHzScrollDirective, LoadingSpinnerComponent,
         SocialIconsComponent, InnerNavComponent, SpinnerContainerComponent, ImageCardLinkPipe,
-        ForTop6Directive} from './';
+        ForTop6Directive, IfNotEmptyDirective} from './';
 
 @NgModule({
   imports: [
@@ -19,7 +19,8 @@ import {ContextMenuProtectionDirective, MouseWheelHzScrollDirective, LoadingSpin
     InnerNavComponent,
     SpinnerContainerComponent,
     ImageCardLinkPipe,
-    ForTop6Directive
+    ForTop6Directive,
+    IfNotEmptyDirective
   ],
   exports: [
     ContextMenuProtectionDirective,
@@ -29,7 +30,8 @@ import {ContextMenuProtectionDirective, MouseWheelHzScrollDirective, LoadingSpin
     InnerNavComponent,
     SpinnerContainerComponent,
     ImageCardLinkPipe,
-    ForTop6Directive
+    ForTop6Directive,
+    IfNotEmptyDirective
   ]
 })
 export class SharedModule { }

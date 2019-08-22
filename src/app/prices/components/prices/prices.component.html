@@ -15,7 +15,7 @@
             <p>{{priceItem.description}}</p>
           </div>
         </div>
-        <div class="bottom-part" *ngIf="priceItem.packages.length !== 0">
+        <div class="bottom-part" *appIfNotEmpty="priceItem.packages">
             <h4 class="packages-label">Предложения:</h4>
             <div class="pp-packages" *ngFor="let pricePackage of priceItem.packages">
               <div class="pp-package-w">

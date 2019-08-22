@@ -5,7 +5,7 @@ import { Directive, Input, TemplateRef, ViewContainerRef, OnChanges } from '@ang
 })
 export class ForTop6Directive implements OnChanges {
 
-  topSixItems: Array<any>;
+  private topSixItems: Array<any>;
 
   constructor(private templateRef: TemplateRef<any>,
               private viewContainer: ViewContainerRef) { }

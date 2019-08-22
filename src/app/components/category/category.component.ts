@@ -40,7 +40,6 @@ export class CategoryComponent implements OnDestroy {
     this.categoryService.getCategory(id)
       .pipe(delay(1000)) // TODO. Comment it. FOR TEST PURPOSE. LOADING SPINNER
       .subscribe(categoryRes => this.getCategoryOnLoad(categoryRes));
-
   }
 
   getCategoryOnLoad(category: Category) {

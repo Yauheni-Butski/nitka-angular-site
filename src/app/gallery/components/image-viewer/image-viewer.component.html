@@ -1,4 +1,4 @@
-<div class="image-lightbox-viewer" *ngIf="activeImage !== null" [mouseWheelHzScroll]="thumbNailDiv" [scrollStep]="40" contextMenuProtection>
+<div class="image-lightbox-viewer" *ngIf="activeImage" [mouseWheelHzScroll]="thumbNailDiv" [scrollStep]="40" contextMenuProtection>
   <div class="top-left">
     <div class="action-panel">
         <div class="action-wrapper" (click)="this.toggleLikeActiveImage()">
