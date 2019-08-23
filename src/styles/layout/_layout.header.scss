@@ -1,0 +1,22 @@
+.header{
+    height: 10%;
+    position: relative;
+
+    &__logo{
+        text-align: center;
+        height: 100%;
+        padding-bottom: 5px;
+    }
+
+    &__link{
+        height: 100%;
+        display: inline-block;
+        padding: 5px 10px;
+        overflow: hidden;
+        user-select: none;
+    }
+
+    &__image{
+        height: 100%;
+    }
+}
